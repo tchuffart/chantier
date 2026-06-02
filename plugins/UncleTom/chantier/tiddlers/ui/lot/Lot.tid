@@ -1,0 +1,24 @@
+created: 20210601000000000
+modified: 20210601000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/lot/Lot
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$list filter="[all[current]tag[lot]]" variable="ignore">
+  <div class="ch-lot-view">
+    <table class="ch-intervenant-table">
+      <tr>
+        <th><<lingo Entreprise/Caption>></th>
+        <td><$view field="ch-entreprise"/></td>
+      </tr>
+    </table>
+
+    <h3><<lingo Intervenants/Caption>></h3>
+    <$list filter="[all[tiddlers]tag[intervenant]field:ch-lot{!!title}!has[draft.of]sort[title]]"
+      template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
+      emptyMessage="""<em><<lingo EmptyIntervenantsTitle>></em>"""
+    />
+  </div>
+</$list>
