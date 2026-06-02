@@ -1,0 +1,50 @@
+title: $:/language/chantier/
+
+AddIntervenant/Caption: Add participant
+AddIntervenant/Hint: Add a new participant to this project
+AddLot/Caption: Add trade
+AddLot/Hint: Add a new trade
+AddPoint/Caption: Add item
+AddPoint/Hint: Add a new meeting item
+AddPointToReunion/Placeholder: Describe this item...
+AddReference/Caption: Add reference
+AddReference/Hint: Add a permanent reference
+AddReferenceToChantier/Placeholder: Name this reference...
+AddReunion/Caption: New meeting
+AddReunion/Hint: Create a new site meeting
+Cancel/Caption: Cancel
+Chantier/Caption: Site
+Close/Caption: Close
+Convoque/Caption: Invited to next meeting
+Dashboard: Dashboard
+Delete/Caption: Delete
+Edit/Caption: Edit
+EmptyIntervenantsDescription: Add your first participant.
+EmptyIntervenantsTitle: No participants yet
+EmptyLotsDescription: Add your first trade.
+EmptyLotsTitle: No trades yet
+EmptyPointsDescription: Add your first item to this meeting.
+EmptyPointsTitle: No items yet
+EmptyReferencesDescription: Add your first permanent reference.
+EmptyReferencesTitle: No references yet
+EmptyReunionsDescription: Create the first site meeting.
+EmptyReunionsTitle: No meetings yet
+Excuse/Caption: Excused
+Intervenants/Caption: Participants
+Lot/Caption: Trade
+Lots/Caption: Trades
+NewChantier: New site
+Point/Caption: Item
+Points/Caption: Items
+PourRappel/Caption: Reminder
+Present/Caption: Present
+Reference/Caption: Reference
+References/Caption: References
+Reunion/Caption: Meeting
+Reunions/Caption: Meetings
+Save/Caption: Save
+Statut/Ouvert: Open
+Statut/PourRappel: Reminder
+Statut/Reference: Reference
+Statut/Resolu: Resolved
+TableauPresences/Caption: Attendance table
