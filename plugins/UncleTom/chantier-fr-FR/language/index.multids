@@ -1,0 +1,50 @@
+title: $:/language/chantier/
+
+AddIntervenant/Caption: Ajouter un intervenant
+AddIntervenant/Hint: Ajouter un nouvel intervenant à cette opération
+AddLot/Caption: Ajouter un lot
+AddLot/Hint: Ajouter un nouveau lot
+AddPoint/Caption: Ajouter un point
+AddPoint/Hint: Ajouter un nouveau point à la réunion
+AddPointToReunion/Placeholder: Décrivez ce point...
+AddReference/Caption: Ajouter une référence
+AddReference/Hint: Ajouter une référence permanente
+AddReferenceToChantier/Placeholder: Nommez cette référence...
+AddReunion/Caption: Nouvelle réunion
+AddReunion/Hint: Créer un nouveau compte-rendu de réunion de chantier
+Cancel/Caption: Annuler
+Chantier/Caption: Chantier
+Close/Caption: Fermer
+Convoque/Caption: Convoqué à la prochaine réunion
+Dashboard: Tableau de bord
+Delete/Caption: Supprimer
+Edit/Caption: Modifier
+EmptyIntervenantsDescription: Ajoutez votre premier intervenant.
+EmptyIntervenantsTitle: Aucun intervenant
+EmptyLotsDescription: Ajoutez votre premier lot.
+EmptyLotsTitle: Aucun lot
+EmptyPointsDescription: Ajoutez votre premier point à cette réunion.
+EmptyPointsTitle: Aucun point
+EmptyReferencesDescription: Ajoutez votre première référence permanente.
+EmptyReferencesTitle: Aucune référence
+EmptyReunionsDescription: Créez le premier compte-rendu de réunion.
+EmptyReunionsTitle: Aucune réunion
+Excuse/Caption: Excusé
+Intervenants/Caption: Intervenants
+Lot/Caption: Lot
+Lots/Caption: Lots
+NewChantier: Nouveau chantier
+Point/Caption: Point
+Points/Caption: Points
+PourRappel/Caption: Pour rappel
+Present/Caption: Présent
+Reference/Caption: Référence
+References/Caption: Références
+Reunion/Caption: Réunion
+Reunions/Caption: Réunions
+Save/Caption: Enregistrer
+Statut/Ouvert: Ouvert
+Statut/PourRappel: Pour rappel
+Statut/Reference: Référence permanente
+Statut/Resolu: Résolu
+TableauPresences/Caption: Tableau des présences
