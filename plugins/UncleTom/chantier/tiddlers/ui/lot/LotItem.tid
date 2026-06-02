@@ -1,0 +1,16 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/lot/LotItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-item ch-lot-item">
+  <div class="ch-item-actions">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/LotActions}}
+  </div>
+  <span class="ch-lot-titre">[[<$view field="title"/>|<$view field="title"/>]]</span>
+  <$list filter="[all[current]has[ch-entreprise]]">
+    <span class="ch-lot-entreprise"> — <$view field="ch-entreprise"/></span>
+  </$list>
+</div>
