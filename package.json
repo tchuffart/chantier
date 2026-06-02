@@ -1,0 +1,13 @@
+{
+  "name": "chantier",
+  "version": "0.1.0",
+  "description": "Plugin TiddlyWiki de gestion de comptes-rendus de chantier",
+  "scripts": {
+    "build-demo": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/demo/ --build index"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "tiddlywiki": "^5.2.3"
+  }
+}
