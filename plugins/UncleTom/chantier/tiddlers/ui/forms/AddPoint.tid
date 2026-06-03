@@ -10,14 +10,14 @@ type: text/vnd.tiddlywiki
     $basetitle={{{ [<stateTiddler>get[description]] }}}
     $savetitle="$:/state/chantier/new-point"
     tags="point"
-    ch-numero={{{ [<stateTiddler>get[numero]] }}}
+    ch-numero={{{ [{!!ch-numero}addsuffix[.]] [all[tiddlers]tag[point]field:ch-reunion-creation<currentTiddler>count[]add[1]] +[join[]] }}}
     ch-reunion-creation=<<currentTiddler>>
     ch-lots={{{ [<stateTiddler>get[lots]] }}}
     ch-responsables={{{ [<stateTiddler>get[responsables]] }}}
     ch-echeance={{{ [<stateTiddler>get[echeance]] }}}
     ch-statut="ouvert"
   />
-  <$action-setfield $tiddler=<<stateTiddler>> description="" numero="" lots="" responsables="" echeance=""/>
+  <$action-setfield $tiddler=<<stateTiddler>> description="" lots="" responsables="" echeance=""/>
 \end
 
 <$vars stateTiddler=<<qualify "$:/temp/chantier/point-form">>>
@@ -28,10 +28,6 @@ type: text/vnd.tiddlywiki
         class="ch-input"
       />
     </$keyboard>
-    <$edit-text tiddler=<<stateTiddler>> field="numero"
-      placeholder={{$:/language/chantier/Numero/Placeholder}}
-      class="ch-input ch-input-small"
-    />
     <$edit-text tiddler=<<stateTiddler>> field="lots"
       placeholder={{$:/language/chantier/Lots/Caption}}
       class="ch-input"
