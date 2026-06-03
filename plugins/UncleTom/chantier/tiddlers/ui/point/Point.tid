@@ -2,32 +2,40 @@ created: 20210601000000000
 modified: 20210601000000000
 tags: $:/tags/ViewTemplate
 title: $:/plugins/UncleTom/chantier/ui/point/Point
+list-before: $:/core/ui/ViewTemplate/body
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 
 <$list filter="[all[current]tag[point]]" variable="ignore">
   <div class="ch-point-view">
-    <div class="ch-point-view-header">
-      <span class="ch-point-numero"><$view field="ch-numero"/></span>
-      <span class="ch-point-statut ch-point-statut-<$view field="ch-statut"/>">
-        <<lingo Statut/Caption>>
-      </span>
-    </div>
-    <$list filter="[all[current]has[ch-lots]]">
-      <div class="ch-point-view-lots">
-        <strong><<lingo Lots/Caption>> :</strong> <$view field="ch-lots"/>
-      </div>
-    </$list>
-    <$list filter="[all[current]has[ch-responsables]]">
-      <div class="ch-point-view-responsables">
-        <strong><<lingo Responsables/Placeholder>> :</strong> <$view field="ch-responsables"/>
-      </div>
-    </$list>
-    <$list filter="[all[current]has[ch-echeance]]">
-      <div class="ch-point-view-echeance">
-        <strong><<lingo Echeance/Caption>> :</strong> <$view field="ch-echeance"/>
-      </div>
-    </$list>
+    <table class="ch-point-table">
+      <tr>
+        <th>N°</th>
+        <td class="ch-point-numero"><$view field="ch-numero"/></td>
+      </tr>
+      <tr>
+        <th><<lingo Statut/Caption>></th>
+        <td><$view field="ch-statut"/></td>
+      </tr>
+      <$list filter="[all[current]has[ch-lots]]">
+        <tr>
+          <th><<lingo Lots/Caption>></th>
+          <td><$view field="ch-lots"/></td>
+        </tr>
+      </$list>
+      <$list filter="[all[current]has[ch-responsables]]">
+        <tr>
+          <th><<lingo Responsables/Placeholder>></th>
+          <td><$view field="ch-responsables"/></td>
+        </tr>
+      </$list>
+      <$list filter="[all[current]has[ch-echeance]]">
+        <tr>
+          <th><<lingo Echeance/Caption>></th>
+          <td><$view field="ch-echeance"/></td>
+        </tr>
+      </$list>
+    </table>
   </div>
 </$list>
