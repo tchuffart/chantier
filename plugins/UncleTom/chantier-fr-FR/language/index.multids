@@ -21,6 +21,12 @@ Numero/Caption: Numéro
 Numero/Placeholder: Numéro de réunion (ex: 1)
 Reunion/Placeholder: Titre de la réunion
 Absent/Caption: Absent
+Echeance/Caption: Échéance
+Echeance/Placeholder: Échéance (ex: 01/07/2024)
+EmptyPointsReportesTitle: Aucun point reporté
+PointsNouveaux/Caption: Nouveaux points de cette réunion
+PointsReportes/Caption: Points reportés des réunions précédentes
+Responsables/Placeholder: Responsables
 Cancel/Caption: Annuler
 Intervenant/Caption: Intervenant
 Chantier/Caption: Chantier

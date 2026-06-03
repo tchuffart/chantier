@@ -1,0 +1,51 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddPoint
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+\define add-point-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[description]] }}}
+    $savetitle="$:/state/chantier/new-point"
+    tags="point"
+    ch-numero={{{ [<stateTiddler>get[numero]] }}}
+    ch-reunion-creation=<<currentTiddler>>
+    ch-lots={{{ [<stateTiddler>get[lots]] }}}
+    ch-responsables={{{ [<stateTiddler>get[responsables]] }}}
+    ch-echeance={{{ [<stateTiddler>get[echeance]] }}}
+    ch-statut="ouvert"
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> description="" numero="" lots="" responsables="" echeance=""/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/point-form">>>
+  <div class="ch-form">
+    <$keyboard key="Enter" actions=<<add-point-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="description"
+        placeholder={{$:/language/chantier/AddPointToReunion/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <$edit-text tiddler=<<stateTiddler>> field="numero"
+      placeholder={{$:/language/chantier/Numero/Placeholder}}
+      class="ch-input ch-input-small"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="lots"
+      placeholder={{$:/language/chantier/Lots/Caption}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="responsables"
+      placeholder={{$:/language/chantier/Responsables/Placeholder}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="echeance"
+      placeholder={{$:/language/chantier/Echeance/Placeholder}}
+      class="ch-input ch-input-small"
+    />
+    <$button actions=<<add-point-actions>> class="ch-btn-primary">
+      <<lingo AddPoint/Caption>>
+    </$button>
+  </div>
+</$vars>

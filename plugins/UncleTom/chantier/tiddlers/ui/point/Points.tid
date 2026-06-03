@@ -1,0 +1,23 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/point/Points
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define ch-points-reportes() [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]!field:ch-reunion-creation{!!title}sort[ch-numero]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
+\define ch-points-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}sort[ch-numero]]
+
+<h3><<lingo PointsReportes/Caption>></h3>
+<$list filter=<<ch-points-reportes>>
+  template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
+  emptyMessage="""<em><<lingo EmptyPointsReportesTitle>></em>"""
+/>
+
+<h3><<lingo PointsNouveaux/Caption>></h3>
+<$list filter=<<ch-points-nouveaux>>
+  template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
+  emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
+/>
+
+<h3><<lingo AddPoint/Caption>></h3>
+{{||$:/plugins/UncleTom/chantier/ui/forms/AddPoint}}

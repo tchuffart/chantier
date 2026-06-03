@@ -21,6 +21,12 @@ Numero/Caption: Number
 Numero/Placeholder: Meeting number (e.g. 1)
 Reunion/Placeholder: Meeting title
 Absent/Caption: Absent
+Echeance/Caption: Deadline
+Echeance/Placeholder: Deadline (e.g. 2024-07-01)
+EmptyPointsReportesTitle: No carried-over items
+PointsNouveaux/Caption: New items this meeting
+PointsReportes/Caption: Carried-over items
+Responsables/Placeholder: Responsible parties
 Cancel/Caption: Cancel
 Intervenant/Caption: Participant
 Chantier/Caption: Site

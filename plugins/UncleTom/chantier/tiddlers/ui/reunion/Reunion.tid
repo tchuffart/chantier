@@ -24,5 +24,6 @@ type: text/vnd.tiddlywiki
     </table>
 
     {{||$:/plugins/UncleTom/chantier/ui/presence/PresencesReunion}}
+    {{||$:/plugins/UncleTom/chantier/ui/point/Points}}
   </div>
 </$list>
