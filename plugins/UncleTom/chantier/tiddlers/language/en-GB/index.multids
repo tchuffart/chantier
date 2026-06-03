@@ -13,6 +13,13 @@ AddReference/Hint: Add a permanent reference
 AddReferenceToChantier/Placeholder: Name this reference...
 AddReunion/Caption: New meeting
 AddReunion/Hint: Create a new site meeting
+Date/Caption: Date
+Date/Placeholder: Meeting date (e.g. 2024-06-03)
+Lieu/Caption: Location
+Lieu/Placeholder: Meeting location
+Numero/Caption: Number
+Numero/Placeholder: Meeting number (e.g. 1)
+Reunion/Placeholder: Meeting title
 Cancel/Caption: Cancel
 Chantier/Caption: Site
 Close/Caption: Close

@@ -13,6 +13,13 @@ AddReference/Hint: Ajouter une référence permanente
 AddReferenceToChantier/Placeholder: Nommez cette référence...
 AddReunion/Caption: Nouvelle réunion
 AddReunion/Hint: Créer un nouveau compte-rendu de réunion de chantier
+Date/Caption: Date
+Date/Placeholder: Date de la réunion (ex: 03/06/2024)
+Lieu/Caption: Lieu
+Lieu/Placeholder: Lieu de la réunion
+Numero/Caption: Numéro
+Numero/Placeholder: Numéro de réunion (ex: 1)
+Reunion/Placeholder: Titre de la réunion
 Cancel/Caption: Annuler
 Chantier/Caption: Chantier
 Close/Caption: Fermer

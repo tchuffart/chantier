@@ -83,8 +83,8 @@ plugins/
 ## Plan de développement
 - [x] Étape 1 — Squelette du plugin, fichiers de langue FR/EN, macros filtres, styles
 - [x] Étape 2 — Interface intervenants (liste, formulaire, vue, actions)
-- [ ] Étape 3 — Gestion des lots
-- [ ] Étape 4 — Création et navigation entre réunions
+- [x] Étape 3 — Gestion des lots
+- [x] Étape 4 — Création et navigation entre réunions
 - [ ] Étape 5 — Saisie des présences
 - [ ] Étape 6 — Création et suivi des points
 - [ ] Étape 7 — Références permanentes (avec catégories)

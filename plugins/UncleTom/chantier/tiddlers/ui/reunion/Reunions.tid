@@ -1,0 +1,18 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/reunion/Reunions
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-heading">
+  <h2><<lingo Reunions/Caption>></h2>
+</div>
+
+<$list filter=<<ch-all-reunions>>
+  template="$:/plugins/UncleTom/chantier/ui/reunion/ReunionItem"
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyReunionsTitle>></p><p><<lingo EmptyReunionsDescription>></p></div>"""
+/>
+
+<h3><<lingo AddReunion/Caption>></h3>
+{{$:/plugins/UncleTom/chantier/ui/forms/AddReunion}}
