@@ -35,6 +35,9 @@ Echeance/Placeholder: Échéance (ex: 01/07/2024)
 EmptyPointsReportesTitle: Aucun point reporté
 PointsNouveaux/Caption: Nouveaux points de cette réunion
 PointsReportes/Caption: Points reportés des réunions précédentes
+PointsResolus/Caption: Points résolus cette séance
+PrintCR/Caption: Imprimer CR
+PrintCR/Hint: Aperçu et impression du compte-rendu
 Responsables/Placeholder: Responsables
 Cancel/Caption: Annuler
 Categorie/Acces: Accès

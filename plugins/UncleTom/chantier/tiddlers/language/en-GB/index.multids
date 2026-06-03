@@ -35,6 +35,9 @@ Echeance/Placeholder: Deadline (e.g. 2024-07-01)
 EmptyPointsReportesTitle: No carried-over items
 PointsNouveaux/Caption: New items this meeting
 PointsReportes/Caption: Carried-over items
+PointsResolus/Caption: Items resolved this meeting
+PrintCR/Caption: Print minutes
+PrintCR/Hint: Preview and print the meeting minutes
 Responsables/Placeholder: Responsible parties
 Cancel/Caption: Cancel
 Categorie/Acces: Access

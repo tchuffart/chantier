@@ -7,6 +7,7 @@ type: text/vnd.tiddlywiki
 \define ch-points-reportes() [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]!field:ch-reunion-creation{!!title}sort[ch-numero]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
 \define ch-points-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}sort[ch-numero]]
 \define addPointState() $:/state/chantier/add-point/$(currentTiddler)$
+\define previewCRState() $:/state/chantier/preview-cr/$(currentTiddler)$
 
 <h3><<lingo PointsReportes/Caption>></h3>
 <$list filter=<<ch-points-reportes>>
@@ -26,6 +27,11 @@ type: text/vnd.tiddlywiki
     {{$:/core/images/new-button}}
     <<lingo AddPoint/Caption>>
   </$button>
+  <$button class="ch-btn-tool ch-no-print" tooltip={{$:/language/chantier/PrintCR/Hint}}>
+    <$action-setfield $tiddler=<<previewCRState>> text={{{ [<previewCRState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/print-button}}
+    <<lingo PrintCR/Caption>>
+  </$button>
   <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]" variable="toolTitle">
     <$transclude tiddler=<<toolTitle>>/>
   </$list>
@@ -33,4 +39,10 @@ type: text/vnd.tiddlywiki
 
 <$reveal type="match" state=<<addPointState>> text="open">
   {{||$:/plugins/UncleTom/chantier/ui/forms/AddPoint}}
+</$reveal>
+
+<$reveal type="match" state=<<previewCRState>> text="open">
+  <div class="ch-cr-preview ch-print-target">
+    {{||$:/plugins/UncleTom/chantier/ui/print/PrintCR}}
+  </div>
 </$reveal>

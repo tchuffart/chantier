@@ -89,7 +89,7 @@ plugins/
 - [x] Étape 6 — Création et suivi des points
 - [x] Étape 7 — Références permanentes (avec catégories)
 - [x] Étape 8 — Dashboard
-- [ ] Étape 9 — Vue CR imprimable avec en-tête logos
+- [x] Étape 9 — Vue CR imprimable avec en-tête logos
 
 ## Éditions
 - `editions/demo/` — build de démonstration (`npm run build-demo`)
