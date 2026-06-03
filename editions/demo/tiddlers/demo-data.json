@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Dupont Jean",
+    "tags": "intervenant",
+    "ch-entreprise": "Cabinet Dupont Architecture",
+    "ch-lot": "Maîtrise d'œuvre",
+    "ch-role": "Architecte",
+    "ch-email": "j.dupont@dupont-archi.fr",
+    "ch-tel": "06 01 02 03 04"
+  },
+  {
+    "title": "Martin Sophie",
+    "tags": "intervenant",
+    "ch-entreprise": "BET Structure Plus",
+    "ch-lot": "Structure",
+    "ch-role": "Ingénieur structure",
+    "ch-email": "s.martin@structure-plus.fr",
+    "ch-tel": "06 05 06 07 08"
+  },
+  {
+    "title": "Leroy Michel",
+    "tags": "intervenant",
+    "ch-entreprise": "Leroy Gros Œuvre SARL",
+    "ch-lot": "Gros-œuvre",
+    "ch-role": "Conducteur de travaux",
+    "ch-email": "m.leroy@leroy-go.fr",
+    "ch-tel": "06 09 10 11 12"
+  },
+  {
+    "title": "Petit Isabelle",
+    "tags": "intervenant",
+    "ch-entreprise": "Mairie de Somewhere",
+    "ch-lot": "",
+    "ch-role": "Maître d'ouvrage",
+    "ch-email": "i.petit@mairie-somewhere.fr",
+    "ch-tel": "04 13 14 15 16"
+  },
+  {
+    "title": "Gros-œuvre",
+    "tags": "lot",
+    "ch-entreprise": "Leroy Gros Œuvre SARL"
+  },
+  {
+    "title": "Charpente - Couverture",
+    "tags": "lot",
+    "ch-entreprise": "Bois & Toit SAS"
+  },
+  {
+    "title": "Électricité",
+    "tags": "lot",
+    "ch-entreprise": "Elec Pro 34"
+  }
+]
