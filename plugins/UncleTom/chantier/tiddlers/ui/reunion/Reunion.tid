@@ -22,5 +22,7 @@ type: text/vnd.tiddlywiki
         <td><$view field="ch-lieu"/></td>
       </tr>
     </table>
+
+    {{||$:/plugins/UncleTom/chantier/ui/presence/PresencesReunion}}
   </div>
 </$list>

@@ -122,6 +122,22 @@ type: text/vnd.tiddlywiki
 .ch-excuse  { color: #e77a39; font-weight: bold; }
 .ch-absent  { color: #ccc; }
 
+.ch-btn-presence {
+  min-width: 28px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .85em;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+.ch-btn-presence.ch-btn-active {
+  color: #fff;
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
 /* Impression */
 @media print {
   .ch-no-print { display: none !important; }

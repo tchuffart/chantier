@@ -20,7 +20,9 @@ Lieu/Placeholder: Meeting location
 Numero/Caption: Number
 Numero/Placeholder: Meeting number (e.g. 1)
 Reunion/Placeholder: Meeting title
+Absent/Caption: Absent
 Cancel/Caption: Cancel
+Intervenant/Caption: Participant
 Chantier/Caption: Site
 Close/Caption: Close
 Convoque/Caption: Invited to next meeting

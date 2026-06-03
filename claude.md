@@ -85,7 +85,7 @@ plugins/
 - [x] Étape 2 — Interface intervenants (liste, formulaire, vue, actions)
 - [x] Étape 3 — Gestion des lots
 - [x] Étape 4 — Création et navigation entre réunions
-- [ ] Étape 5 — Saisie des présences
+- [x] Étape 5 — Saisie des présences
 - [ ] Étape 6 — Création et suivi des points
 - [ ] Étape 7 — Références permanentes (avec catégories)
 - [ ] Étape 8 — Dashboard
