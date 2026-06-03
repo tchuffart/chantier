@@ -21,8 +21,8 @@ type: text/vnd.tiddlywiki
 />
 
 <div class="ch-toolbar">
-  <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]">
-    {{||!!title}}
+  <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]" variable="toolTitle">
+    <$transclude tiddler=<<toolTitle>>/>
   </$list>
 </div>
 
