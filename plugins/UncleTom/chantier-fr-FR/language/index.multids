@@ -4,6 +4,7 @@ AddIntervenant/Caption: Ajouter un intervenant
 AddIntervenant/Hint: Ajouter un nouvel intervenant à cette opération
 AddLot/Caption: Ajouter un lot
 AddLot/Hint: Ajouter un nouveau lot
+Lot/Placeholder: Nom du lot (ex: Gros-oeuvre, Peinture...)
 AddPoint/Caption: Ajouter un point
 AddPoint/Hint: Ajouter un nouveau point à la réunion
 AddPointToReunion/Placeholder: Décrivez ce point...
