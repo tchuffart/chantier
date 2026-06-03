@@ -69,6 +69,42 @@
     "text": "Le périmètre de sécurité côté rue n'est pas conforme. Prévoir barrières de chantier homologuées et panneau de signalisation avant reprise des travaux."
   },
   {
+    "title": "Réunion de chantier n°2",
+    "tags": "reunion",
+    "ch-numero": "2",
+    "ch-date": "10/06/2026",
+    "ch-lieu": "Base de chantier"
+  },
+  {
+    "title": "Réunion de chantier n°3",
+    "tags": "reunion",
+    "ch-numero": "3",
+    "ch-date": "17/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+  },
+  {
+    "title": "Choix coloris menuiseries extérieures",
+    "tags": "point",
+    "ch-numero": "2.1",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "Charpente - Couverture",
+    "ch-responsables": "Dupont Jean",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "resolu",
+    "text": "Le maître d'ouvrage a validé le coloris RAL 7016 gris anthracite pour l'ensemble des menuiseries extérieures. Transmettre bon de commande à l'entreprise."
+  },
+  {
+    "title": "Raccordement électrique provisoire",
+    "tags": "point",
+    "ch-numero": "2.2",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "Électricité",
+    "ch-responsables": "Leroy Michel",
+    "ch-echeance": "24/06/2026",
+    "ch-statut": "pour-rappel",
+    "text": "Le raccordement électrique provisoire n'est toujours pas réalisé malgré la demande du CR n°1. Point en retard — intervention Elec Pro 34 à programmer d'urgence."
+  },
+  {
     "title": "Validation plan de fondations",
     "tags": "point",
     "ch-numero": "1.2",
