@@ -88,7 +88,7 @@ plugins/
 - [x] Étape 5 — Saisie des présences
 - [x] Étape 6 — Création et suivi des points
 - [x] Étape 7 — Références permanentes (avec catégories)
-- [ ] Étape 8 — Dashboard
+- [x] Étape 8 — Dashboard
 - [ ] Étape 9 — Vue CR imprimable avec en-tête logos
 
 ## Éditions

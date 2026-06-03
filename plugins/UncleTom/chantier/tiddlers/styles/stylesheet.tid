@@ -95,6 +95,39 @@ type: text/vnd.tiddlywiki
   color: #2da562;
 }
 
+/* Dashboard */
+.ch-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.ch-dashboard-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1em;
+  text-align: center;
+  background: rgba(0,0,0,0.02);
+}
+
+.ch-dashboard-card-count {
+  font-size: 2.4em;
+  font-weight: bold;
+  color: <<colour primary>>;
+  line-height: 1.1;
+}
+
+.ch-dashboard-card-label {
+  font-size: .85em;
+  color: #888;
+  margin: 4px 0 8px;
+}
+
+.ch-dashboard-card-link {
+  font-size: .8em;
+}
+
 /* Tableau des présences */
 .ch-presences-table {
   width: 100%;

@@ -27,6 +27,7 @@ EmptyPointsReportesTitle: No carried-over items
 PointsNouveaux/Caption: New items this meeting
 PointsReportes/Caption: Carried-over items
 Responsables/Placeholder: Responsible parties
+Cancel/Caption: Cancel
 Categorie/Acces: Access
 Categorie/Altimetrie: Altimetry
 Categorie/Caption: Category
@@ -58,6 +59,8 @@ Lots/Caption: Trades
 NewChantier: New site
 Point/Caption: Item
 Points/Caption: Items
+PointsOuverts/Caption: Open items
+PointsPourRappel/Caption: Reminder items
 PourRappel/Caption: Reminder
 Present/Caption: Present
 Reference/Caption: Reference

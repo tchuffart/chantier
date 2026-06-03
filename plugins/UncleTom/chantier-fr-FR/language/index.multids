@@ -27,6 +27,7 @@ EmptyPointsReportesTitle: Aucun point reporté
 PointsNouveaux/Caption: Nouveaux points de cette réunion
 PointsReportes/Caption: Points reportés des réunions précédentes
 Responsables/Placeholder: Responsables
+Cancel/Caption: Annuler
 Categorie/Acces: Accès
 Categorie/Altimetrie: Altimétrie
 Categorie/Caption: Catégorie
@@ -58,6 +59,8 @@ Lots/Caption: Lots
 NewChantier: Nouveau chantier
 Point/Caption: Point
 Points/Caption: Points
+PointsOuverts/Caption: Points ouverts
+PointsPourRappel/Caption: Points pour rappel
 PourRappel/Caption: Pour rappel
 Present/Caption: Présent
 Reference/Caption: Référence
