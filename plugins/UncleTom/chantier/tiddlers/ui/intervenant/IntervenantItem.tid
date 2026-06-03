@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
   <div class="ch-item-actions">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/IntervenantActions}}
   </div>
-  <span class="ch-intervenant-nom">[[<$view field="title"/>|<$view field="title"/>]]</span>
+  <span class="ch-intervenant-nom"><$link to={{!!title}}><$view field="title"/></$link></span>
   <$list filter="[all[current]has[ch-entreprise]]">
     <span class="ch-intervenant-entreprise"> — <$view field="ch-entreprise"/></span>
   </$list>
