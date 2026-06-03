@@ -21,6 +21,11 @@ type: text/vnd.tiddlywiki
 />
 
 <div class="ch-toolbar">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddPoint/Hint}}>
+    <$action-setfield $tiddler=<<addPointState>> text={{{ [<addPointState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddPoint/Caption>>
+  </$button>
   <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]" variable="toolTitle">
     <$transclude tiddler=<<toolTitle>>/>
   </$list>
