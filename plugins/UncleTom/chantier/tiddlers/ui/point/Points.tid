@@ -6,6 +6,7 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define ch-points-reportes() [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]!field:ch-reunion-creation{!!title}sort[ch-numero]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
 \define ch-points-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}sort[ch-numero]]
+\define addPointState() $:/state/chantier/add-point/$(currentTiddler)$
 
 <h3><<lingo PointsReportes/Caption>></h3>
 <$list filter=<<ch-points-reportes>>
@@ -19,5 +20,12 @@ type: text/vnd.tiddlywiki
   emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
 />
 
-<h3><<lingo AddPoint/Caption>></h3>
-{{||$:/plugins/UncleTom/chantier/ui/forms/AddPoint}}
+<div class="ch-toolbar">
+  <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]">
+    {{||!!title}}
+  </$list>
+</div>
+
+<$reveal type="match" state=<<addPointState>> text="open">
+  {{||$:/plugins/UncleTom/chantier/ui/forms/AddPoint}}
+</$reveal>

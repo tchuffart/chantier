@@ -6,6 +6,104 @@ type: text/vnd.tiddlywiki
 
 \rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
 
+/* Toolbar */
+.ch-toolbar {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0 4px;
+  padding: 4px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.ch-btn-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid <<colour primary>>;
+  border-radius: 4px;
+  color: <<colour primary>>;
+  font-size: .85em;
+  background: transparent;
+}
+
+.ch-btn-tool svg {
+  width: 14px;
+  height: 14px;
+  fill: <<colour primary>>;
+}
+
+.ch-btn-tool:hover {
+  background: <<colour primary>>;
+  color: #fff;
+}
+
+.ch-btn-tool:hover svg {
+  fill: #fff;
+}
+
+/* Formulaire point */
+.ch-form-point {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+  background: rgba(0,0,0,0.02);
+}
+
+.ch-form-row {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.ch-form-group {
+  flex: 1;
+}
+
+.ch-form-label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 4px;
+  font-size: .85em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.ch-lots-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ch-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .88em;
+}
+
+.ch-textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.ch-textarea-full {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.ch-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .ch-heading {
   display: flex;
   justify-content: space-between;
@@ -55,39 +153,7 @@ type: text/vnd.tiddlywiki
   }
 }
 
-/* Formulaire lots checkboxes */
-.ch-form-label {
-  display: block;
-  font-weight: bold;
-  margin: 6px 0 2px;
-  font-size: .9em;
-}
-
-.ch-lots-checkboxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.ch-checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: .9em;
-}
-
-.ch-textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-/* Points */
-.ch-point {
+.ch-heading {
   padding: 6px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
