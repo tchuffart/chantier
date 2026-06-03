@@ -49,5 +49,34 @@
     "title": "Électricité",
     "tags": "lot",
     "ch-entreprise": "Elec Pro 34"
+  },
+  {
+    "title": "Réunion de chantier n°1",
+    "tags": "reunion",
+    "ch-numero": "1",
+    "ch-date": "03/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+  },
+  {
+    "title": "Accès chantier non sécurisé côté rue",
+    "tags": "point",
+    "ch-numero": "1.1",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "Gros-œuvre",
+    "ch-responsables": "Leroy Michel",
+    "ch-echeance": "10/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le périmètre de sécurité côté rue n'est pas conforme. Prévoir barrières de chantier homologuées et panneau de signalisation avant reprise des travaux."
+  },
+  {
+    "title": "Validation plan de fondations",
+    "tags": "point",
+    "ch-numero": "1.2",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "Gros-œuvre Structure",
+    "ch-responsables": "Martin Sophie",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le BET structure doit valider le plan de fondations révisé (indice B) transmis par l'architecte le 28/05/2026. Retour attendu avant la prochaine réunion."
   }
 ]
