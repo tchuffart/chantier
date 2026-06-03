@@ -1,0 +1,16 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/reference/ReferenceItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-item ch-reference-item">
+  <div class="ch-item-actions ch-no-print">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/ReferenceActions}}
+  </div>
+  <span class="ch-reference-categorie ch-tag-<$view field="ch-categorie"/>">
+    <$view field="ch-categorie"/>
+  </span>
+  <span class="ch-reference-titre"><$view field="title"/></span>
+</div>

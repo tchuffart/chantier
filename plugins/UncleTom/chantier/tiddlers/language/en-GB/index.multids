@@ -27,7 +27,13 @@ EmptyPointsReportesTitle: No carried-over items
 PointsNouveaux/Caption: New items this meeting
 PointsReportes/Caption: Carried-over items
 Responsables/Placeholder: Responsible parties
-Cancel/Caption: Cancel
+Categorie/Acces: Access
+Categorie/Altimetrie: Altimetry
+Categorie/Caption: Category
+Categorie/ChoixProduit: Product choice
+Categorie/Materiau: Materials
+Categorie/Reglementation: Regulations
+Categorie/Securite: Safety
 Intervenant/Caption: Participant
 Chantier/Caption: Site
 Close/Caption: Close

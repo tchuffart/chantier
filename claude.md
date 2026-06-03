@@ -87,7 +87,7 @@ plugins/
 - [x] Étape 4 — Création et navigation entre réunions
 - [x] Étape 5 — Saisie des présences
 - [x] Étape 6 — Création et suivi des points
-- [ ] Étape 7 — Références permanentes (avec catégories)
+- [x] Étape 7 — Références permanentes (avec catégories)
 - [ ] Étape 8 — Dashboard
 - [ ] Étape 9 — Vue CR imprimable avec en-tête logos
 

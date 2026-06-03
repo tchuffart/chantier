@@ -1,0 +1,54 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/reference/References
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-heading">
+  <h2><<lingo References/Caption>></h2>
+</div>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[reglementation]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/Reglementation>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[reglementation]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[materiau]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/Materiau>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[materiau]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[securite]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/Securite>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[securite]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[altimetrie]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/Altimetrie>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[altimetrie]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[acces]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/Acces>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[acces]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[choix-produit]]" variable="ignore" emptyMessage="">
+  <h3><<lingo Categorie/ChoixProduit>></h3>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[choix-produit]sort[title]]"
+    template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+</$list>
+
+<$list filter=<<ch-references>>
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyReferencesTitle>></p><p><<lingo EmptyReferencesDescription>></p></div>"""
+  variable="ignore">
+</$list>
+
+<h3><<lingo AddReference/Caption>></h3>
+{{$:/plugins/UncleTom/chantier/ui/forms/AddReference}}

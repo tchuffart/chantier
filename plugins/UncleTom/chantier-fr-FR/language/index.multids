@@ -27,7 +27,13 @@ EmptyPointsReportesTitle: Aucun point reporté
 PointsNouveaux/Caption: Nouveaux points de cette réunion
 PointsReportes/Caption: Points reportés des réunions précédentes
 Responsables/Placeholder: Responsables
-Cancel/Caption: Annuler
+Categorie/Acces: Accès
+Categorie/Altimetrie: Altimétrie
+Categorie/Caption: Catégorie
+Categorie/ChoixProduit: Choix de produit
+Categorie/Materiau: Matériaux
+Categorie/Reglementation: Réglementation
+Categorie/Securite: Sécurité
 Intervenant/Caption: Intervenant
 Chantier/Caption: Chantier
 Close/Caption: Fermer
