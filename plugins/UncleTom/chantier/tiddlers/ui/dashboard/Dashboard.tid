@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
         <$count filter=<<ch-all-reunions>>/>
       </div>
       <div class="ch-dashboard-card-label"><<lingo Reunions/Caption>></div>
-      <$link to="$:/plugins/UncleTom/chantier/ui/reunion/Reunions" class="ch-dashboard-card-link">
+      <$link to="Réunions" class="ch-dashboard-card-link">
         <<lingo Reunions/Caption>> &raquo;
       </$link>
     </div>
@@ -24,7 +24,7 @@ type: text/vnd.tiddlywiki
         <$count filter=<<ch-all-intervenants>>/>
       </div>
       <div class="ch-dashboard-card-label"><<lingo Intervenants/Caption>></div>
-      <$link to="$:/plugins/UncleTom/chantier/ui/intervenant/Intervenants" class="ch-dashboard-card-link">
+      <$link to="Intervenants" class="ch-dashboard-card-link">
         <<lingo Intervenants/Caption>> &raquo;
       </$link>
     </div>
@@ -34,7 +34,7 @@ type: text/vnd.tiddlywiki
         <$count filter=<<ch-all-lots>>/>
       </div>
       <div class="ch-dashboard-card-label"><<lingo Lots/Caption>></div>
-      <$link to="$:/plugins/UncleTom/chantier/ui/lot/Lots" class="ch-dashboard-card-link">
+      <$link to="Lots" class="ch-dashboard-card-link">
         <<lingo Lots/Caption>> &raquo;
       </$link>
     </div>
@@ -44,7 +44,7 @@ type: text/vnd.tiddlywiki
         <$count filter=<<ch-references>>/>
       </div>
       <div class="ch-dashboard-card-label"><<lingo References/Caption>></div>
-      <$link to="$:/plugins/UncleTom/chantier/ui/reference/References" class="ch-dashboard-card-link">
+      <$link to="Références" class="ch-dashboard-card-link">
         <<lingo References/Caption>> &raquo;
       </$link>
     </div>
