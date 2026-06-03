@@ -21,18 +21,8 @@ type: text/vnd.tiddlywiki
   emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
 />
 
-<div class="ch-toolbar">
-  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddPoint/Hint}}>
-    <$action-setfield $tiddler=<<addPointState>> text={{{ [<addPointState>get[text]match[open]then[closed]else[open]] }}}/>
-    {{$:/core/images/new-button}}
-    <<lingo AddPoint/Caption>>
-  </$button>
-  <$button class="ch-btn-tool ch-no-print" tooltip={{$:/language/chantier/PrintCR/Hint}}>
-    <$action-setfield $tiddler=<<previewCRState>> text={{{ [<previewCRState>get[text]match[open]then[closed]else[open]] }}}/>
-    {{$:/core/images/print-button}}
-    <<lingo PrintCR/Caption>>
-  </$button>
-  <$list filter="[all[tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]" variable="toolTitle">
+<div class="ch-toolbar ch-no-print">
+  <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/ReunionTools]!has[draft.of]sort[list]]" variable="toolTitle">
     <$transclude tiddler=<<toolTitle>>/>
   </$list>
 </div>
