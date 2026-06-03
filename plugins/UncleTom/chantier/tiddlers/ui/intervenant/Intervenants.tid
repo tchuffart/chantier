@@ -1,0 +1,18 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/intervenant/Intervenants
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-heading">
+  <h2><<lingo Intervenants/Caption>></h2>
+</div>
+
+<$list filter=<<ch-all-intervenants>>
+  template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyIntervenantsTitle>></p><p><<lingo EmptyIntervenantsDescription>></p></div>"""
+/>
+
+<h3><<lingo AddIntervenant/Caption>></h3>
+{{$:/plugins/UncleTom/chantier/ui/forms/AddIntervenant}}

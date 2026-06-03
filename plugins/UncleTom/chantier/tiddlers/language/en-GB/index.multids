@@ -21,6 +21,15 @@ Numero/Caption: Number
 Numero/Placeholder: Meeting number (e.g. 1)
 Reunion/Placeholder: Meeting title
 Absent/Caption: Absent
+Email/Caption: Email
+Email/Placeholder: Email address
+Entreprise/Caption: Company
+Entreprise/Placeholder: Company name
+Intervenant/Placeholder: Full name
+Role/Caption: Role
+Role/Placeholder: Role (e.g. Project manager)
+Tel/Caption: Phone
+Tel/Placeholder: Phone number
 Echeance/Caption: Deadline
 Echeance/Placeholder: Deadline (e.g. 2024-07-01)
 EmptyPointsReportesTitle: No carried-over items

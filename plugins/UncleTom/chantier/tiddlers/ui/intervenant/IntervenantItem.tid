@@ -1,0 +1,19 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-item ch-intervenant-item">
+  <div class="ch-item-actions">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/IntervenantActions}}
+  </div>
+  <span class="ch-intervenant-nom">[[<$view field="title"/>|<$view field="title"/>]]</span>
+  <$list filter="[all[current]has[ch-entreprise]]">
+    <span class="ch-intervenant-entreprise"> — <$view field="ch-entreprise"/></span>
+  </$list>
+  <$list filter="[all[current]has[ch-role]]">
+    <span class="ch-intervenant-role"> (<$view field="ch-role"/>)</span>
+  </$list>
+</div>

@@ -21,6 +21,15 @@ Numero/Caption: Numéro
 Numero/Placeholder: Numéro de réunion (ex: 1)
 Reunion/Placeholder: Titre de la réunion
 Absent/Caption: Absent
+Email/Caption: Email
+Email/Placeholder: Adresse email
+Entreprise/Caption: Entreprise
+Entreprise/Placeholder: Nom de l'entreprise
+Intervenant/Placeholder: Nom complet
+Role/Caption: Rôle
+Role/Placeholder: Rôle (ex: Maître d'œuvre)
+Tel/Caption: Téléphone
+Tel/Placeholder: Numéro de téléphone
 Echeance/Caption: Échéance
 Echeance/Placeholder: Échéance (ex: 01/07/2024)
 EmptyPointsReportesTitle: Aucun point reporté
