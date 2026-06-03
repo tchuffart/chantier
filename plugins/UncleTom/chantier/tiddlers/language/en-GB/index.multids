@@ -4,6 +4,7 @@ AddIntervenant/Caption: Add participant
 AddIntervenant/Hint: Add a new participant to this project
 AddLot/Caption: Add trade
 AddLot/Hint: Add a new trade
+Lot/Placeholder: Trade name (e.g. Masonry, Painting...)
 AddPoint/Caption: Add item
 AddPoint/Hint: Add a new meeting item
 AddPointToReunion/Placeholder: Describe this item...
