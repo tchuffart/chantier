@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
   <div class="ch-item-actions">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/ReunionActions}}
   </div>
-  <span class="ch-reunion-numero">N°<$view field="ch-numero"/></span>
+  <span class="ch-reunion-numero"><$link to={{!!title}}>N°<$view field="ch-numero"/></$link></span>
   <$list filter="[all[current]has[ch-date]]">
     <span class="ch-reunion-date"> — <$view field="ch-date"/></span>
   </$list>
