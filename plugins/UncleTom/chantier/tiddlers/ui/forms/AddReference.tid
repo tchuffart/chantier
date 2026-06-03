@@ -1,5 +1,5 @@
 created: 20210601000000000
-modified: 20210601000000000
+modified: 20260603000000000
 title: $:/plugins/UncleTom/chantier/ui/forms/AddReference
 type: text/vnd.tiddlywiki
 
@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 \end
 
 <$vars stateTiddler=<<qualify "$:/temp/chantier/reference-form">>>
-  <div class="ch-form">
+  <div class="ch-form-point">
     <$keyboard key="Enter" actions=<<add-reference-actions>>>
       <$edit-text tiddler=<<stateTiddler>> field="titre"
         placeholder={{$:/language/chantier/AddReferenceToChantier/Placeholder}}
@@ -25,16 +25,15 @@ type: text/vnd.tiddlywiki
       />
     </$keyboard>
     <$select tiddler=<<stateTiddler>> field="categorie" class="ch-select">
-      <option value=""><<lingo Categorie/Caption>></option>
-      <option value="reglementation"><<lingo Categorie/Reglementation>></option>
-      <option value="materiau"><<lingo Categorie/Materiau>></option>
-      <option value="securite"><<lingo Categorie/Securite>></option>
-      <option value="altimetrie"><<lingo Categorie/Altimetrie>></option>
-      <option value="acces"><<lingo Categorie/Acces>></option>
-      <option value="choix-produit"><<lingo Categorie/ChoixProduit>></option>
+      <option value="">— Catégorie —</option>
+      <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+        <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+      </$list>
     </$select>
-    <$button actions=<<add-reference-actions>> class="ch-btn-primary">
-      <<lingo AddReference/Caption>>
-    </$button>
+    <div class="ch-form-actions">
+      <$button actions=<<add-reference-actions>> class="ch-btn-primary">
+        <<lingo AddReference/Caption>>
+      </$button>
+    </div>
   </div>
 </$vars>

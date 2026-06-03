@@ -4,15 +4,21 @@ title: $:/plugins/UncleTom/chantier/ui/intervenant/Intervenants
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
-
-<div class="ch-heading">
-  <h2><<lingo Intervenants/Caption>></h2>
-</div>
+\define addIntervenantState() $:/state/chantier/add-intervenant
 
 <$list filter=<<ch-all-intervenants>>
   template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyIntervenantsTitle>></p><p><<lingo EmptyIntervenantsDescription>></p></div>"""
 />
 
-<h3><<lingo AddIntervenant/Caption>></h3>
-{{$:/plugins/UncleTom/chantier/ui/forms/AddIntervenant}}
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddIntervenant/Hint}}>
+    <$action-setfield $tiddler=<<addIntervenantState>> text={{{ [<addIntervenantState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddIntervenant/Caption>>
+  </$button>
+</div>
+
+<$reveal type="match" state=<<addIntervenantState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddIntervenant}}
+</$reveal>

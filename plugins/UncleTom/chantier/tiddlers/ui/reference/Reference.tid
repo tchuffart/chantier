@@ -1,0 +1,20 @@
+created: 20210601000000000
+modified: 20260603000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/reference/Reference
+list-before: $:/core/ui/ViewTemplate/body
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$list filter="[all[current]tag[reference]]" variable="ignore">
+  <div class="ch-reference-view">
+    <label class="ch-form-label"><<lingo Categorie/Caption>></label>
+    <$select tiddler={{!!title}} field="ch-categorie" class="ch-select">
+      <option value="">—</option>
+      <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+        <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+      </$list>
+    </$select>
+  </div>
+</$list>

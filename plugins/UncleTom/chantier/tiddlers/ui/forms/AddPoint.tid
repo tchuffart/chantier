@@ -48,7 +48,7 @@ type: text/vnd.tiddlywiki
           class="ch-input"
         />
         <$edit-text tiddler=<<stateTiddler>> field="echeance"
-          placeholder={{$:/language/chantier/Echeance/Placeholder}}
+          type="date"
           class="ch-input ch-input-small"
         />
       </div>

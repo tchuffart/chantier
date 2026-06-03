@@ -4,15 +4,21 @@ title: $:/plugins/UncleTom/chantier/ui/reunion/Reunions
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
-
-<div class="ch-heading">
-  <h2><<lingo Reunions/Caption>></h2>
-</div>
+\define addReunionState() $:/state/chantier/add-reunion
 
 <$list filter=<<ch-all-reunions>>
   template="$:/plugins/UncleTom/chantier/ui/reunion/ReunionItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyReunionsTitle>></p><p><<lingo EmptyReunionsDescription>></p></div>"""
 />
 
-<h3><<lingo AddReunion/Caption>></h3>
-{{$:/plugins/UncleTom/chantier/ui/forms/AddReunion}}
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddReunion/Hint}}>
+    <$action-setfield $tiddler=<<addReunionState>> text={{{ [<addReunionState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddReunion/Caption>>
+  </$button>
+</div>
+
+<$reveal type="match" state=<<addReunionState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddReunion}}
+</$reveal>

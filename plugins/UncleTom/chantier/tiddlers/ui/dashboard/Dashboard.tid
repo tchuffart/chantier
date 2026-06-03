@@ -9,45 +9,25 @@ type: text/vnd.tiddlywiki
 
   <div class="ch-dashboard-grid">
 
-    <div class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count">
-        <$count filter=<<ch-all-reunions>>/>
-      </div>
+    <$link to="Réunions" class="ch-dashboard-card">
+      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-reunions>>/></div>
       <div class="ch-dashboard-card-label"><<lingo Reunions/Caption>></div>
-      <$link to="Réunions" class="ch-dashboard-card-link">
-        <<lingo Reunions/Caption>> &raquo;
-      </$link>
-    </div>
+    </$link>
 
-    <div class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count">
-        <$count filter=<<ch-all-intervenants>>/>
-      </div>
+    <$link to="Intervenants" class="ch-dashboard-card">
+      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-intervenants>>/></div>
       <div class="ch-dashboard-card-label"><<lingo Intervenants/Caption>></div>
-      <$link to="Intervenants" class="ch-dashboard-card-link">
-        <<lingo Intervenants/Caption>> &raquo;
-      </$link>
-    </div>
+    </$link>
 
-    <div class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count">
-        <$count filter=<<ch-all-lots>>/>
-      </div>
+    <$link to="Lots" class="ch-dashboard-card">
+      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-lots>>/></div>
       <div class="ch-dashboard-card-label"><<lingo Lots/Caption>></div>
-      <$link to="Lots" class="ch-dashboard-card-link">
-        <<lingo Lots/Caption>> &raquo;
-      </$link>
-    </div>
+    </$link>
 
-    <div class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count">
-        <$count filter=<<ch-references>>/>
-      </div>
+    <$link to="Références" class="ch-dashboard-card">
+      <div class="ch-dashboard-card-count"><$count filter=<<ch-references>>/></div>
       <div class="ch-dashboard-card-label"><<lingo References/Caption>></div>
-      <$link to="Références" class="ch-dashboard-card-link">
-        <<lingo References/Caption>> &raquo;
-      </$link>
-    </div>
+    </$link>
 
   </div>
 

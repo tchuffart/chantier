@@ -114,5 +114,23 @@
     "ch-echeance": "17/06/2026",
     "ch-statut": "ouvert",
     "text": "Le BET structure doit valider le plan de fondations révisé (indice B) transmis par l'architecte le 28/05/2026. Retour attendu avant la prochaine réunion."
+  },
+  {
+    "title": "DTU 20.1 — Ouvrages en maçonnerie",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Réglementation",
+    "ch-statut": "reference"
+  },
+  {
+    "title": "Décret n°2004-924 — Travail en hauteur",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Sécurité",
+    "ch-statut": "reference"
+  },
+  {
+    "title": "Fiche technique béton C25/30",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Matériau",
+    "ch-statut": "reference"
   }
 ]

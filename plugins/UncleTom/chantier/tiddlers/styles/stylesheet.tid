@@ -87,6 +87,21 @@ type: text/vnd.tiddlywiki
   font-size: .88em;
 }
 
+.ch-select {
+  padding: 4px 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  font-size: .88em;
+  background: transparent;
+}
+
+.ch-select-inline {
+  margin-right: 8px;
+  font-size: .82em;
+  color: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
 .ch-textarea {
   min-height: 70px;
   resize: vertical;
@@ -217,15 +232,30 @@ type: text/vnd.tiddlywiki
 }
 
 .ch-dashboard-card {
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none !important;
+  color: inherit !important;
+  background: rgba(100,120,220,0.06);
+  transition: background .15s, box-shadow .15s;
+}
+
+.ch-dashboard-card:hover {
+  background: rgba(100,120,220,0.13);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-decoration: none !important;
+}
+
   padding: 1em;
   text-align: center;
   background: rgba(0,0,0,0.02);
 }
 
 .ch-dashboard-card-count {
-  font-size: 2.4em;
+  font-size: 3.2em;
   font-weight: bold;
   color: <<colour primary>>;
   line-height: 1.1;
@@ -233,13 +263,11 @@ type: text/vnd.tiddlywiki
 
 .ch-dashboard-card-label {
   font-size: .85em;
-  color: #888;
-  margin: 4px 0 8px;
+  color: <<colour primary>>;
+  opacity: 0.7;
+  margin: 4px 0 0;
 }
 
-.ch-dashboard-card-link {
-  font-size: .8em;
-}
 
 /* Tableau des présences */
 .ch-presences-table {
