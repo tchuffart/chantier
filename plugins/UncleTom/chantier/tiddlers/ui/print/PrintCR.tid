@@ -83,20 +83,10 @@ type: text/vnd.tiddlywiki
   </$list>
 
   <!-- Références permanentes -->
-  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
-  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
+  <$set name="refFilter" value="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]">
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <table class="lignesmini">
-      <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
-      <tbody>
-        <$list filter=<<ch-references>>>
-          <tr>
-            <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
-            <td><$view field="title"/></td>
-          </tr>
-        </$list>
-      </tbody>
-    </table>
+    <$list filter=<<refFilter>> template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
   </$list>
   </$set>
 

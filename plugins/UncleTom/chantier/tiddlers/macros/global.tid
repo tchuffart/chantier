@@ -57,7 +57,11 @@ type: text/vnd.tiddlywiki
           <tr>
             <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
             <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
-            <td><$text text=<<intervenantTitle>>/></td>
+            <td>
+              <$text text=<<intervenantTitle>>/>
+              <$list filter="[<intervenantTitle>get[ch-email]!is[blank]]" variable="ignore"><br/><span class="ch-cr-contact-detail"><$view tiddler=<<intervenantTitle>> field="ch-email"/></span></$list>
+              <$list filter="[<intervenantTitle>get[ch-tel]!is[blank]]" variable="ignore"><br/><span class="ch-cr-contact-detail"><$view tiddler=<<intervenantTitle>> field="ch-tel"/></span></$list>
+            </td>
             <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
             <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
             <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
