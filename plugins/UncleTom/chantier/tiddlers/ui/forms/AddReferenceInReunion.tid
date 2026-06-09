@@ -1,0 +1,53 @@
+created: 20260605000000000
+modified: 20260605000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddReferenceInReunion
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addRefReunionState() $:/state/chantier/add-reference-reunion/$(currentTiddler)$
+
+\define add-reference-reunion-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[titre]] }}}
+    $savetitle="$:/state/chantier/new-reference"
+    tags="reference"
+    ch-numero={{{ [{!!ch-numero}addprefix[R]addsuffix[.]] [all[tiddlers]tag[reference]field:ch-reunion-creation<currentTiddler>count[]add[1]] +[join[]] }}}
+    ch-reunion-creation=<<currentTiddler>>
+    ch-categorie={{{ [<stateTiddler>get[categorie]] }}}
+    ch-statut="reference"
+    text={{{ [<stateTiddler>get[texte]] }}}
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie="" texte=""/>
+  <$action-setfield $tiddler=<<addRefReunionState>> text="closed"/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/reference-reunion-form">>>
+  <div class="ch-form-point">
+    <$keyboard key="Enter" actions=<<add-reference-reunion-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="titre"
+        placeholder="Nommez cette référence…"
+        class="ch-input"
+      />
+    </$keyboard>
+    <$select tiddler=<<stateTiddler>> field="categorie" class="ch-select">
+      <option value="">— Catégorie —</option>
+      <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+        <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+      </$list>
+    </$select>
+    <$edit-text tiddler=<<stateTiddler>> field="texte"
+      placeholder="Contenu, description, lien…"
+      class="ch-input ch-textarea ch-textarea-full"
+      tag="textarea"
+    />
+    <div class="ch-form-actions">
+      <$button actions=<<add-reference-reunion-actions>> class="ch-btn-primary">
+        Ajouter
+      </$button>
+      <$button class="ch-btn">
+        <$action-setfield $tiddler=<<addRefReunionState>> text="closed"/>
+        <<lingo Cancel/Caption>>
+      </$button>
+    </div>
+  </div>
+</$vars>

@@ -1,0 +1,62 @@
+created: 20260605000000000
+modified: 20260605000000000
+title: $:/plugins/UncleTom/chantier/ui/config/ProjetConfig
+type: text/vnd.tiddlywiki
+
+\define configTiddler() $:/config/UncleTom/chantier/projet
+\define logoArchiTiddler() $:/plugins/UncleTom/chantier/config/logo-architecte
+
+<div class="ch-config-form">
+
+  <h3>Opération</h3>
+  <div class="ch-form-row">
+    <div class="ch-form-group">
+      <label class="ch-form-label">Nom du chantier</label>
+      <$edit-text tiddler=<<configTiddler>> field="ch-nom" class="ch-input" placeholder="Ex : Construction mairie de Somewhere"/>
+    </div>
+  </div>
+  <div class="ch-form-row">
+    <div class="ch-form-group">
+      <label class="ch-form-label">Adresse</label>
+      <$edit-text tiddler=<<configTiddler>> field="ch-adresse" class="ch-input" placeholder="Ex : 1 place de la Mairie, 34000 Montpellier"/>
+    </div>
+  </div>
+
+  <h3>Maître d'ouvrage</h3>
+  <div class="ch-form-row">
+    <div class="ch-form-group">
+      <label class="ch-form-label">Nom</label>
+      <$edit-text tiddler=<<configTiddler>> field="ch-moa-nom" class="ch-input" placeholder="Ex : Mairie de Somewhere"/>
+    </div>
+    <div class="ch-form-group">
+      <label class="ch-form-label">Adresse</label>
+      <$edit-text tiddler=<<configTiddler>> field="ch-moa-adresse" class="ch-input" placeholder="Ex : 1 place de la Mairie"/>
+    </div>
+  </div>
+  <div class="ch-form-row">
+    <div class="ch-form-group">
+      <label class="ch-form-label">Logo MOA — titre du tiddler image</label>
+      <$edit-text tiddler=<<configTiddler>> field="ch-logo-moa" class="ch-input" placeholder="Ex : logo-moa.png"/>
+      <p class="ch-config-hint">Glissez votre logo dans TiddlyWiki, notez son titre, saisissez-le ici.</p>
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore">
+        <div class="ch-config-logo-preview">
+          <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} height="60"/>
+        </div>
+      </$list>
+    </div>
+  </div>
+
+  <h3>Logo architecte <small style="font-weight:normal;opacity:.6">(paramètre du plugin — commun à tous les chantiers)</small></h3>
+  <div class="ch-form-row">
+    <div class="ch-form-group">
+      <$list filter="[<logoArchiTiddler>has[text]]" variable="ignore"
+        emptyMessage="""<p class="ch-config-hint">Aucun logo architecte défini. Importez une image dans TiddlyWiki et renommez-la <code>$:/plugins/UncleTom/chantier/config/logo-architecte</code>.</p>""">
+        <div class="ch-config-logo-preview">
+          <$image source=<<logoArchiTiddler>> height="60"/>
+        </div>
+        <p class="ch-config-hint">Pour changer le logo : importez une nouvelle image et renommez-la <code>$:/plugins/UncleTom/chantier/config/logo-architecte</code>.</p>
+      </$list>
+    </div>
+  </div>
+
+</div>

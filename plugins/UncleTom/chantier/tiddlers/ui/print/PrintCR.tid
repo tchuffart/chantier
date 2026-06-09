@@ -1,90 +1,91 @@
 created: 20210601000000000
-modified: 20210601000000000
+modified: 20260605000000000
 title: $:/plugins/UncleTom/chantier/ui/print/PrintCR
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
-\define ch-points-cr-reportes() [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]!field:ch-reunion-creation{!!title}sort[ch-numero]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
 \define ch-points-cr-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}!field:ch-statut[resolu]sort[ch-numero]]
 \define ch-points-cr-resolus() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}field:ch-statut[resolu]sort[ch-numero]]
 \define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
+
+<$set name="thisNumero" value={{!!ch-numero}}>
+<$set name="projetConfig" value="$:/config/UncleTom/chantier/projet">
 
 <div class="ch-cr">
 
   <!-- En-tête -->
   <div class="ch-cr-header">
     <div class="ch-cr-logo ch-cr-logo-left">
-      <em>Logo architecte</em>
+      <$list filter="[[$:/plugins/UncleTom/chantier/config/logo-architecte]has[text]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo architecte</em>""">
+        <$image source="$:/plugins/UncleTom/chantier/config/logo-architecte" width="120"/>
+      </$list>
     </div>
     <div class="ch-cr-title">
-      <div class="ch-cr-chantier"><<lingo Chantier/Caption>></div>
+      <div class="ch-cr-chantier">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
       <div class="ch-cr-reunion-info">
         <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
       </div>
       <div class="ch-cr-lieu"><$view field="ch-lieu"/></div>
     </div>
     <div class="ch-cr-logo ch-cr-logo-right">
-      <em>Logo maître d'ouvrage</em>
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo MOA</em>""">
+        <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} width="120"/>
+      </$list>
     </div>
   </div>
 
-  <!-- Tableau intervenants -->
+  <!-- Info MOA -->
+  <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-nom]!field:ch-moa-nom[]]" variable="ignore">
+    <div class="ch-cr-moa-info">
+      <strong>Maître d'ouvrage :</strong>
+      {{$:/config/UncleTom/chantier/projet!!ch-moa-nom}}
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-adresse]!field:ch-moa-adresse[]]" variable="ignore">
+        — {{$:/config/UncleTom/chantier/projet!!ch-moa-adresse}}
+      </$list>
+    </div>
+  </$list>
+
+  <!-- Tableau intervenants groupés par type -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
-    <table class="ch-cr-table ch-cr-intervenants">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th><<lingo Entreprise/Caption>></th>
-          <th><<lingo Lot/Caption>></th>
-          <th><<lingo Role/Caption>></th>
-          <th><<lingo Present/Caption>></th>
-          <th><<lingo Excuse/Caption>></th>
-          <th><<lingo Convoque/Caption>></th>
-        </tr>
-      </thead>
-      <tbody>
-        <$list filter=<<ch-all-intervenants>> variable="intervenantTitle">
-          <$vars presenceTiddler=<<presenceTid>>>
-            <tr>
-              <td><$text text=<<intervenantTitle>>/></td>
-              <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
-              <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
-              <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
-              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
-              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
-              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
-            </tr>
-          </$vars>
-        </$list>
-      </tbody>
-    </table>
+    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage">>
+    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre">>
+    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises">>
+    <<ch-intervenants-table "!has[ch-type]" "Non classé">>
+    <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
   </$vars>
 
   <!-- Références permanentes -->
-  <$list filter=<<ch-references>> variable="ignore" emptyMessage="">
+  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
+  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <table class="ch-cr-table">
+    <table class="lignesmini">
       <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
       <tbody>
         <$list filter=<<ch-references>>>
           <tr>
-            <td><$view field="ch-categorie"/></td>
+            <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
             <td><$view field="title"/></td>
           </tr>
         </$list>
       </tbody>
     </table>
   </$list>
+  </$set>
 
-  <!-- Points reportés -->
+  <!-- Points reportés (uniquement des réunions précédentes) -->
   <h2 class="ch-cr-section"><<lingo PointsReportes/Caption>></h2>
-  <$list filter=<<ch-points-cr-reportes>>
-    template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
-    emptyMessage="""<p><em><<lingo EmptyPointsReportesTitle>></em></p>"""
-  />
+  <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
+    <$set name="ptReunionNumero" value={{{ [<pt>get[ch-reunion-creation]get[ch-numero]] }}}>
+      <$list filter="[<ptReunionNumero>compare:number:lt<thisNumero>]" variable="ignore" emptyMessage="">
+        <$list filter="[<pt>]" template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
+      </$list>
+    </$set>
+  </$list>
 
-  <!-- Nouveaux points -->
+  <!-- Décisions du jour -->
   <h2 class="ch-cr-section"><<lingo PointsNouveaux/Caption>></h2>
   <$list filter=<<ch-points-cr-nouveaux>>
     template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
@@ -100,3 +101,6 @@ type: text/vnd.tiddlywiki
   </$list>
 
 </div>
+
+</$set>
+</$set>

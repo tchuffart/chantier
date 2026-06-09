@@ -12,11 +12,12 @@ type: text/vnd.tiddlywiki
     tags="intervenant"
     ch-entreprise={{{ [<stateTiddler>get[entreprise]] }}}
     ch-lot={{{ [<stateTiddler>get[lot]] }}}
+    ch-type={{{ [<stateTiddler>get[type]] }}}
     ch-role={{{ [<stateTiddler>get[role]] }}}
     ch-email={{{ [<stateTiddler>get[email]] }}}
     ch-tel={{{ [<stateTiddler>get[tel]] }}}
   />
-  <$action-setfield $tiddler=<<stateTiddler>> nom="" entreprise="" lot="" role="" email="" tel=""/>
+  <$action-setfield $tiddler=<<stateTiddler>> nom="" entreprise="" lot="" type="" role="" email="" tel=""/>
 \end
 
 <$vars stateTiddler=<<qualify "$:/temp/chantier/intervenant-form">>>
@@ -35,6 +36,12 @@ type: text/vnd.tiddlywiki
       placeholder={{$:/language/chantier/Lot/Caption}}
       class="ch-input"
     />
+    <$select tiddler=<<stateTiddler>> field="type" class="ch-select">
+      <option value="">— Type —</option>
+      <option value="entreprise">Entreprise</option>
+      <option value="moa">Maîtrise d'ouvrage</option>
+      <option value="moe">Maîtrise d'œuvre</option>
+    </$select>
     <$edit-text tiddler=<<stateTiddler>> field="role"
       placeholder={{$:/language/chantier/Role/Placeholder}}
       class="ch-input"

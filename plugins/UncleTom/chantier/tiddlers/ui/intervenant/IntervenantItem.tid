@@ -16,4 +16,9 @@ type: text/vnd.tiddlywiki
   <$list filter="[all[current]has[ch-role]]">
     <span class="ch-intervenant-role"> (<$view field="ch-role"/>)</span>
   </$list>
+  <$list filter="[all[current]has[ch-type]]">
+    <$set name="chType" value={{!!ch-type}}>
+      <span class="ch-intervenant-type"> — <$list filter="[<chType>match[moa]]" variable="ignore">Maîtrise d'ouvrage</$list><$list filter="[<chType>match[moe]]" variable="ignore">Maîtrise d'œuvre</$list><$list filter="[<chType>match[entreprise]]" variable="ignore">Entreprise</$list></span>
+    </$set>
+  </$list>
 </div>

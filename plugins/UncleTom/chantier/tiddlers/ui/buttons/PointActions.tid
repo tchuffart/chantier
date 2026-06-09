@@ -21,7 +21,7 @@ type: text/vnd.tiddlywiki
 </$button>
 
 <$button class="ch-btn tc-btn-invisible" tooltip={{$:/language/chantier/Edit/Caption}}>
-  <$action-setfield $tiddler=<<currentTiddler>> draft.of=<<currentTiddler>>/>
+  <$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>>/>
   {{$:/core/images/edit-button}}
 </$button>
 

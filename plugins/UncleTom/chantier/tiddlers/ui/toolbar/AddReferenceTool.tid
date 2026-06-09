@@ -1,0 +1,14 @@
+created: 20260605000000000
+modified: 20260605000000000
+tags: $:/plugins/UncleTom/chantier/ReunionTools
+title: $:/plugins/UncleTom/chantier/ui/toolbar/AddReferenceTool
+list: AddReferenceTool
+type: text/vnd.tiddlywiki
+
+\define addRefReunionState() $:/state/chantier/add-reference-reunion/$(currentTiddler)$
+
+<$button class="ch-btn-tool" tooltip="Ajouter une référence à cette réunion">
+  <$action-setfield $tiddler=<<addRefReunionState>> text={{{ [<addRefReunionState>get[text]match[open]then[closed]else[open]] }}}/>
+  {{$:/core/images/new-button}}
+  Ajouter une référence
+</$button>
