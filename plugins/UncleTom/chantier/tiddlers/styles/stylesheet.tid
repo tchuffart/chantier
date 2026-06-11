@@ -700,6 +700,7 @@ type: text/vnd.tiddlywiki
   border-bottom: 2px solid #346790;
   color: #346790;
   padding: 10px;
+  text-align: left;
 }
 .lignes td {
   background: <<colour tiddler-background>>;
@@ -723,6 +724,7 @@ type: text/vnd.tiddlywiki
   border-bottom: 2px solid #346790;
   color: #346790;
   padding: 3px;
+  text-align: left;
 }
 .lignesmini td {
   background: <<colour tiddler-background>>;
