@@ -13,7 +13,7 @@ type: text/vnd.tiddlywiki
     <thead>
       <tr>
         <th>Lot</th>
-        <th>Entreprise</th>
+        <th>Société</th>
         <th>Contact</th>
         <th>Rôle</th>
         <th class="ch-presence-cell">P</th>
@@ -27,7 +27,7 @@ type: text/vnd.tiddlywiki
         <$vars presenceTiddler=<<presenceTid>>>
           <tr>
             <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
-            <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-societe"/></td>
             <td><$link to=<<intervenantTitle>>><$text text=<<intervenantTitle>>/></$link></td>
             <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
             <td class="ch-presence-cell">

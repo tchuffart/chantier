@@ -10,14 +10,14 @@ type: text/vnd.tiddlywiki
     $basetitle={{{ [<stateTiddler>get[nom]] }}}
     $savetitle="$:/state/chantier/new-intervenant"
     tags="intervenant"
-    ch-entreprise={{{ [<stateTiddler>get[entreprise]] }}}
+    ch-societe={{{ [<stateTiddler>get[societe]] }}}
     ch-lot={{{ [<stateTiddler>get[lot]] }}}
     ch-type={{{ [<stateTiddler>get[type]] }}}
     ch-role={{{ [<stateTiddler>get[role]] }}}
     ch-email={{{ [<stateTiddler>get[email]] }}}
     ch-tel={{{ [<stateTiddler>get[tel]] }}}
   />
-  <$action-setfield $tiddler=<<stateTiddler>> nom="" entreprise="" lot="" type="" role="" email="" tel=""/>
+  <$action-setfield $tiddler=<<stateTiddler>> nom="" societe="" lot="" type="" role="" email="" tel=""/>
 \end
 
 <$vars stateTiddler=<<qualify "$:/temp/chantier/intervenant-form">>>
@@ -28,7 +28,7 @@ type: text/vnd.tiddlywiki
         class="ch-input"
       />
     </$keyboard>
-    <$edit-text tiddler=<<stateTiddler>> field="entreprise"
+    <$edit-text tiddler=<<stateTiddler>> field="societe"
       placeholder={{$:/language/chantier/Entreprise/Placeholder}}
       class="ch-input"
     />

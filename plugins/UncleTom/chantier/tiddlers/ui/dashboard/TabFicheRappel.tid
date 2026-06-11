@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
       <$select tiddler=<<ficheState>> field="intervenant" class="ch-select">
         <option value="">— Choisir un intervenant —</option>
         <$list filter=<<ch-all-intervenants>> variable="intTitle">
-          <option value=<<intTitle>>><$text text=<<intTitle>>/> — <$view tiddler=<<intTitle>> field="ch-entreprise"/></option>
+          <option value=<<intTitle>>><$text text=<<intTitle>>/> — <$view tiddler=<<intTitle>> field="ch-societe"/></option>
         </$list>
       </$select>
     </div>
@@ -52,7 +52,7 @@ type: text/vnd.tiddlywiki
 
   <$reveal type="nomatch" state=<<printFicheState>> text="open">
     <div class="ch-fiche-screen">
-      <h3><$view tiddler=<<selectedIntervenant>> field="title"/> — <$view tiddler=<<selectedIntervenant>> field="ch-entreprise"/></h3>
+      <h3><$view tiddler=<<selectedIntervenant>> field="title"/> — <$view tiddler=<<selectedIntervenant>> field="ch-societe"/></h3>
       <p style="font-size:.88em;opacity:.6"><$view tiddler=<<selectedIntervenant>> field="ch-role"/></p>
       <$set name="fichePoints" value={{{ [all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[resolu]sort[ch-numero]count[]] }}}>
         <$list filter="[<fichePoints>compare:number:gt[0]]" variable="ignore"

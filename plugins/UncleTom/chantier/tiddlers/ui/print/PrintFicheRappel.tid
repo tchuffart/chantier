@@ -35,7 +35,7 @@ type: text/vnd.tiddlywiki
   <h2 class="ch-cr-section">Destinataire</h2>
   <table class="invisible" style="width:auto;margin-bottom:16px;">
     <tr><th>Nom</th><td><$view tiddler=<<selectedIntervenant>> field="title"/></td></tr>
-    <tr><th>Entreprise</th><td><$view tiddler=<<selectedIntervenant>> field="ch-entreprise"/></td></tr>
+    <tr><th>Société</th><td><$view tiddler=<<selectedIntervenant>> field="ch-societe"/></td></tr>
     <tr><th>Rôle</th><td><$view tiddler=<<selectedIntervenant>> field="ch-role"/></td></tr>
     <$list filter="[<selectedIntervenant>get[ch-email]!match[]]" variable="ignore">
       <tr><th>Email</th><td><$view tiddler=<<selectedIntervenant>> field="ch-email"/></td></tr>

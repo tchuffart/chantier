@@ -5,7 +5,7 @@ title: $:/plugins/UncleTom/chantier/macros/global
 type: text/vnd.tiddlywiki
 
 \define ch-all-intervenants()
-[all[tiddlers]tag[intervenant]!has[draft.of]sort[entreprise]]
+[all[tiddlers]tag[intervenant]!has[draft.of]sort[ch-societe]]
 \end
 
 \define ch-all-lots()
@@ -44,7 +44,7 @@ type: text/vnd.tiddlywiki
     <$list filter="[[$showHeader$]match[yes]]" variable="ignore">
     <thead><tr>
       <th>Lot</th>
-      <th>Entreprise</th>
+      <th>Société</th>
       <th>Contact</th>
       <th>Rôle</th>
       <th class="ch-cr-cell-presence" title="Présent">P</th>
@@ -54,11 +54,11 @@ type: text/vnd.tiddlywiki
     </tr></thead>
     </$list>
     <tbody>
-      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[entreprise]]" variable="intervenantTitle">
+      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[ch-societe]]" variable="intervenantTitle">
         <$vars presenceTiddler=<<presenceTid>>>
           <tr>
             <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
-            <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-societe"/></td>
             <td>
               <$text text=<<intervenantTitle>>/>
               <$list filter="[<intervenantTitle>get[ch-email]!is[blank]]" variable="ignore"><br/><span class="ch-cr-contact-detail"><$view tiddler=<<intervenantTitle>> field="ch-email"/></span></$list>

@@ -11,7 +11,7 @@ type: text/vnd.tiddlywiki
     <table class="invisible ch-header-table">
       <tr>
         <th><<lingo Entreprise/Caption>></th>
-        <td><$view field="ch-entreprise"/></td>
+        <td><$view field="ch-societe"/></td>
         <th>Type</th>
         <td><$set name="chType" value={{!!ch-type}}><$list filter="[<chType>match[moa]]" variable="ignore">Maîtrise d'ouvrage</$list><$list filter="[<chType>match[moe]]" variable="ignore">Maîtrise d'œuvre</$list><$list filter="[<chType>match[entreprise]]" variable="ignore">Entreprise</$list></$set></td>
       </tr>

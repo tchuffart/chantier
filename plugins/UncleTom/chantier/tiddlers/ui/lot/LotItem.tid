@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
     {{||$:/plugins/UncleTom/chantier/ui/buttons/LotActions}}
   </div>
   <span class="ch-lot-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
-  <$list filter="[all[current]has[ch-entreprise]]">
-    <span class="ch-lot-entreprise"> — <$view field="ch-entreprise"/></span>
+  <$list filter="[all[current]has[ch-societe]]">
+    <span class="ch-lot-entreprise"> — <$view field="ch-societe"/></span>
   </$list>
 </div>

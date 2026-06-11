@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
     <table class="invisible ch-header-table">
       <tr>
         <th><<lingo Entreprise/Caption>></th>
-        <td><$view field="ch-entreprise"/></td>
+        <td><$view field="ch-societe"/></td>
       </tr>
     </table>
 
@@ -25,7 +25,7 @@ type: text/vnd.tiddlywiki
     <div class="ch-toolbar ch-no-print">
       <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddIntervenant/Hint}}>
         <$action-setfield $tiddler=<<addIntervenantInLotState>> text={{{ [<addIntervenantInLotState>get[text]match[open]then[closed]else[open]] }}}/>
-        <$action-setfield $tiddler="$:/temp/chantier/intervenant-lot-form" entreprise={{!!ch-entreprise}}/>
+        <$action-setfield $tiddler="$:/temp/chantier/intervenant-lot-form" societe={{!!ch-societe}}/>
         {{$:/core/images/new-button}}
         <<lingo AddIntervenant/Caption>>
       </$button>
