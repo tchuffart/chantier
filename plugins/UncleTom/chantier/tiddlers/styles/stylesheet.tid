@@ -238,6 +238,16 @@ type: text/vnd.tiddlywiki
   color: #e73939;
 }
 
+.ch-point-view-resolu {
+  border-left: 4px solid #27ae60;
+  padding-left: 12px;
+}
+
+.ch-point-view-resolu .lignes th {
+  border-bottom-color: #27ae60;
+  color: #27ae60;
+}
+
 .ch-item-actions {
   float: right;
 }
