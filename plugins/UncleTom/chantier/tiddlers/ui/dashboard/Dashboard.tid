@@ -3,8 +3,4 @@ modified: 20260605000000000
 title: $:/plugins/UncleTom/chantier/ui/dashboard/Dashboard
 type: text/vnd.tiddlywiki
 
-<$tabs
-  tabsList="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/DashboardTab]!has[draft.of]nsort[order]]"
-  default="$:/plugins/UncleTom/chantier/ui/dashboard/TabVue"
-  class="ch-dashboard-tabs"
-/>
+<<tabs "[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/DashboardTab]!has[draft.of]nsort[order]]" "$:/plugins/UncleTom/chantier/ui/dashboard/TabVue">>
