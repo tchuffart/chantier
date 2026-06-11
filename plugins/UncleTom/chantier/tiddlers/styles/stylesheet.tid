@@ -458,6 +458,11 @@ type: text/vnd.tiddlywiki
   text-align: center;
 }
 
+/* Fiche de rappel */
+.ch-fiche-screen h3 {
+  margin: 0 0 2px;
+}
+
 /* Impression */
 @media print {
   .ch-no-print { display: none !important; }
