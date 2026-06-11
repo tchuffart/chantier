@@ -50,45 +50,48 @@ type: text/vnd.tiddlywiki
   <!-- Tableau intervenants groupés par type -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
-    <$list filter="[[(moa)]] [[(moe)]] [[(entreprise)]] [[()] ]" variable="chType">
-      <$set name="typeLabel" value={{{ [<chType>match[moa]then[Maîtrise d'ouvrage]] [<chType>match[moe]then[Maîtrise d'œuvre]] [<chType>match[entreprise]then[Entreprises]] [<chType>match[]then[Non classé]] +[first[]] }}}>
-        <$set name="typeCount" value={{{ [<<ch-all-intervenants>>field:ch-type<chType>count[]] }}}>
-          <$list filter="[<typeCount>compare:number:gt[0]]" variable="ignore">
-            <p class="ch-cr-type-header"><<typeLabel>></p>
-            <table class="lignesmini ch-cr-intervenants">
-              <thead>
-                <tr>
-                  <th><<lingo Lot/Caption>></th>
-                  <th><<lingo Entreprise/Caption>></th>
-                  <th>Contact</th>
-                  <th><<lingo Role/Caption>></th>
-                  <th title="Présent">P</th>
-                  <th title="Excusé">E</th>
-                  <th title="Absent">A</th>
-                  <th title="Convoqué">C</th>
-                </tr>
-              </thead>
-              <tbody>
-                <$list filter="[<<ch-all-intervenants>>field:ch-type<chType>]" variable="intervenantTitle">
-                  <$vars presenceTiddler=<<presenceTid>>>
-                    <tr>
-                      <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
-                      <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
-                      <td><$text text=<<intervenantTitle>>/></td>
-                      <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
-                      <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
-                      <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
-                      <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[absent]]" variable="ignore">✗</$list></td>
-                      <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
-                    </tr>
-                  </$vars>
-                </$list>
-              </tbody>
-            </table>
-          </$list>
-        </$set>
-      </$set>
-    </$list>
+
+\define ch-intervenants-table(typeFilter, typeLabel)
+<$set name="count" value={{{ [all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$count[]] }}}>
+<$list filter="[<count>compare:number:gt[0]]" variable="ignore">
+  <p class="ch-cr-type-header">$typeLabel$</p>
+  <table class="lignesmini ch-cr-intervenants">
+    <thead><tr>
+      <th><<lingo Lot/Caption>></th>
+      <th><<lingo Entreprise/Caption>></th>
+      <th>Contact</th>
+      <th><<lingo Role/Caption>></th>
+      <th title="Présent">P</th>
+      <th title="Excusé">E</th>
+      <th title="Absent">A</th>
+      <th title="Convoqué">C</th>
+    </tr></thead>
+    <tbody>
+      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[entreprise]]" variable="intervenantTitle">
+        <$vars presenceTiddler=<<presenceTid>>>
+          <tr>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+            <td><$text text=<<intervenantTitle>>/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
+            <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
+            <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
+            <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[absent]]" variable="ignore">✗</$list></td>
+            <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
+          </tr>
+        </$vars>
+      </$list>
+    </tbody>
+  </table>
+</$list>
+</$set>
+\end
+
+    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage">>
+    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre">>
+    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises">>
+    <<ch-intervenants-table "!field:ch-type[moa]!field:ch-type[moe]!field:ch-type[entreprise]" "Non classé">>
+
     <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
   </$vars>
 
