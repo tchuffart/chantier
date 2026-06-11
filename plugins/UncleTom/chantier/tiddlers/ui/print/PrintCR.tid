@@ -83,13 +83,13 @@ type: text/vnd.tiddlywiki
   </$list>
 
   <!-- Références permanentes -->
-  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]limit[1]]" variable="ignore" emptyMessage="">
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
     <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]!has[draft.of]sort[ch-label]]" variable="catTid">
-      <$set name="refsInCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>count[]] }}}>
+      <$set name="refsInCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>count[]] }}}>
       <$list filter="[<refsInCat>compare:number:gt[0]]" variable="ignore">
         <h3 class="ch-cr-subsection"><$view tiddler=<<catTid>> field="ch-label"/></h3>
-        <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>sort[title]]"
+        <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>sort[ch-date-creation]]"
           template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
       </$list>
       </$set>
