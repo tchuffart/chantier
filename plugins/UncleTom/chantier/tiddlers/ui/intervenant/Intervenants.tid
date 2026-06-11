@@ -6,6 +6,10 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define addIntervenantState() $:/state/chantier/add-intervenant
 
+<div class="ch-heading">
+  <h2><<lingo Intervenants/Caption>></h2>
+</div>
+
 <$list filter=<<ch-all-intervenants>>
   template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyIntervenantsTitle>></p><p><<lingo EmptyIntervenantsDescription>></p></div>"""

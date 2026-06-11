@@ -6,6 +6,10 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define addLotState() $:/state/chantier/add-lot
 
+<div class="ch-heading">
+  <h2><<lingo Lots/Caption>></h2>
+</div>
+
 <$list filter=<<ch-all-lots>>
   template="$:/plugins/UncleTom/chantier/ui/lot/LotItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyLotsTitle>></p><p><<lingo EmptyLotsDescription>></p></div>"""
