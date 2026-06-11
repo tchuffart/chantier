@@ -133,14 +133,16 @@
   },
   {
     "title": "Choix coloris menuiseries extérieures",
-    "tags": "point",
+    "tags": "point levé",
     "ch-numero": "2.1",
     "ch-reunion-creation": "Réunion de chantier n°2",
     "ch-lots": "04 - Menuiseries extérieures",
     "ch-responsables": "Dupont Jean",
     "ch-echeance": "17/06/2026",
     "ch-statut": "leve",
-    "text": "Le maître d'ouvrage a validé le coloris RAL 7016 gris anthracite pour l'ensemble des menuiseries extérieures. Transmettre bon de commande à l'entreprise."
+    "text": "Le maître d'ouvrage a validé le coloris RAL 7016 gris anthracite pour l'ensemble des menuiseries extérieures. Transmettre bon de commande à l'entreprise.",
+    "ch-reunion-validation": "Réunion de chantier n°2",
+    "ch-date-validation": "17/06/2026"
   },
   {
     "title": "Raccordement électrique provisoire",
