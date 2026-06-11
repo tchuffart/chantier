@@ -9,9 +9,9 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]tag[lot]]" variable="ignore">
   <div class="ch-lot-view">
-    <table class="invisible ch-header-table">
+    <table class="lignes ch-header-table">
       <tr>
-        <th><<lingo Entreprise/Caption>></th>
+        <th>Société</th>
         <td><$view field="ch-societe"/></td>
       </tr>
     </table>
