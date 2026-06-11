@@ -8,13 +8,34 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 
 <$list filter="[all[current]tag[reference]]" variable="ignore">
-  <div class="ch-reference-view">
-    <label class="ch-form-label"><<lingo Categorie/Caption>></label>
-    <$select tiddler={{!!title}} field="ch-categorie" class="ch-select">
-      <option value="">—</option>
-      <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
-        <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+  <div class={{{ [all[current]get[ch-statut]addprefix[ch-reference-view ch-reference-view-]] }}}>
+    <table class="lignes ch-header-table">
+      <tr>
+        <th>Catégorie</th>
+        <td>
+          <$select tiddler={{!!title}} field="ch-categorie" class="ch-select">
+            <option value="">—</option>
+            <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+              <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+            </$list>
+          </$select>
+        </td>
+        <th>Statut</th>
+        <td>
+          <$list filter="[all[current]field:ch-statut[archivé]]" variable="ignore">
+            <span class="ch-reference-archive-badge">archivé</span>
+          </$list>
+          <$list filter="[all[current]!field:ch-statut[archivé]]" variable="ignore">
+            <span>active</span>
+          </$list>
+        </td>
+      </tr>
+      <$list filter="[all[current]has[ch-date-creation]]" variable="ignore">
+        <tr>
+          <th>Créée le</th>
+          <td colspan="3"><$view field="ch-date-creation" format="date" template="DD/MM/YYYY"/></td>
+        </tr>
       </$list>
-    </$select>
+    </table>
   </div>
 </$list>

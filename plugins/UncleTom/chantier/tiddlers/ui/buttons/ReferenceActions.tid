@@ -5,6 +5,20 @@ type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 
+<$list filter="[all[current]!field:ch-statut[archivé]]" variable="ignore">
+  <$button class="ch-btn tc-btn-invisible" tooltip="Archiver cette référence">
+    <$action-setfield $tiddler=<<currentTiddler>> ch-statut="archivé"/>
+    {{$:/core/images/fold-button}}
+  </$button>
+</$list>
+
+<$list filter="[all[current]field:ch-statut[archivé]]" variable="ignore">
+  <$button class="ch-btn tc-btn-invisible" tooltip="Restaurer cette référence">
+    <$action-setfield $tiddler=<<currentTiddler>> ch-statut="reference"/>
+    {{$:/core/images/unfold-button}}
+  </$button>
+</$list>
+
 <$button class="ch-btn tc-btn-invisible" tooltip={{$:/language/chantier/Edit/Caption}}>
   <$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>>/>
   {{$:/core/images/edit-button}}

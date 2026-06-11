@@ -15,6 +15,7 @@ type: text/vnd.tiddlywiki
     ch-reunion-creation=<<currentTiddler>>
     ch-categorie={{{ [<stateTiddler>get[categorie]] }}}
     ch-statut="reference"
+    ch-date-creation=<<now "YYYY0MM0DD">>
     text={{{ [<stateTiddler>get[texte]] }}}
   />
   <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie="" texte=""/>

@@ -12,6 +12,7 @@ type: text/vnd.tiddlywiki
     tags="reference"
     ch-categorie={{{ [<stateTiddler>get[categorie]] }}}
     ch-statut="reference"
+    ch-date-creation=<<now "YYYY0MM0DD">>
   />
   <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie=""/>
 \end
