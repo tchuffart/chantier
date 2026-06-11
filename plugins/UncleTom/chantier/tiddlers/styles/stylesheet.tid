@@ -525,6 +525,21 @@ type: text/vnd.tiddlywiki
   box-shadow: none !important;
 }
 
+/* Tableaux d'en-tête réunion / point */
+.ch-header-table th {
+  color: <<colour primary>>;
+  font-size: .82em;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-right: 6px !important;
+  padding-left: 0 !important;
+  opacity: 0.75;
+}
+.ch-header-table td {
+  padding-right: 20px !important;
+}
+
 /* Impression */
 @media print {
   .ch-no-print { display: none !important; }
