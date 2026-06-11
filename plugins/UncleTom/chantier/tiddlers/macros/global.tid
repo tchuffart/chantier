@@ -54,7 +54,7 @@ type: text/vnd.tiddlywiki
     </tr></thead>
     </$list>
     <tbody>
-      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[ch-societe]]" variable="intervenantTitle">
+      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[ch-lot]]" variable="intervenantTitle">
         <$vars presenceTiddler=<<presenceTid>>>
           <tr>
             <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
