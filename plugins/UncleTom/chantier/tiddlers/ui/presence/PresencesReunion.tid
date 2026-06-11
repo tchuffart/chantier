@@ -16,10 +16,10 @@ type: text/vnd.tiddlywiki
         <th>Entreprise</th>
         <th>Contact</th>
         <th>Rôle</th>
-        <th>P</th>
-        <th>E</th>
-        <th>A</th>
-        <th>Conv.</th>
+        <th class="ch-presence-cell">P</th>
+        <th class="ch-presence-cell">E</th>
+        <th class="ch-presence-cell">A</th>
+        <th class="ch-presence-cell">C</th>
       </tr>
     </thead>
     <tbody>

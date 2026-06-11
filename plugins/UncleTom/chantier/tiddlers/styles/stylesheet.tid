@@ -438,13 +438,15 @@ type: text/vnd.tiddlywiki
   width: 100%;
   border-collapse: collapse;
   font-size: .9em;
+  table-layout: fixed;
 }
 
 .ch-presences-table th,
 .ch-presences-table td {
   border: 1px solid rgba(0,0,0,0.1);
-  padding: 4px 8px;
+  padding: 4px 6px;
   text-align: center;
+  overflow: hidden;
 }
 
 .ch-presences-table th {
@@ -452,13 +454,28 @@ type: text/vnd.tiddlywiki
   font-weight: bold;
 }
 
+.ch-presences-table td:nth-child(1) { width: 5%; text-align: left; }
+.ch-presences-table td:nth-child(2) { width: 22%; overflow-wrap: break-word; text-align: left; }
+.ch-presences-table td:nth-child(3) { width: 20%; overflow-wrap: break-word; text-align: left; }
+.ch-presences-table td:nth-child(4) { width: 15%; overflow-wrap: break-word; text-align: left; }
+
 .ch-presence-cell {
-  text-align: center;
-  width: 40px;
+  text-align: center !important;
+  width: 28px !important;
+  padding: 2px !important;
 }
 
 .ch-presences-table td:first-child {
   text-align: left;
+}
+
+.ch-btn-presence {
+  min-width: unset;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: .8em;
+  line-height: 24px;
 }
 
 .ch-present { color: #2da562; font-weight: bold; }
