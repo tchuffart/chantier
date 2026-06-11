@@ -25,6 +25,7 @@ type: text/vnd.tiddlywiki
     <div class="ch-toolbar ch-no-print">
       <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddIntervenant/Hint}}>
         <$action-setfield $tiddler=<<addIntervenantInLotState>> text={{{ [<addIntervenantInLotState>get[text]match[open]then[closed]else[open]] }}}/>
+        <$action-setfield $tiddler="$:/temp/chantier/intervenant-lot-form" entreprise={{!!ch-entreprise}}/>
         {{$:/core/images/new-button}}
         <<lingo AddIntervenant/Caption>>
       </$button>
