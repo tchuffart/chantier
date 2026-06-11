@@ -6,6 +6,7 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define addPointState() $:/state/chantier/add-point/$(currentTiddler)$
 \define previewCRState() $:/state/chantier/preview-cr/$(currentTiddler)$
+\define addRefReunionState() $:/state/chantier/add-reference-reunion/$(currentTiddler)$
 
 <$set name="thisNumero" value={{!!ch-numero}}>
 
@@ -32,6 +33,10 @@ type: text/vnd.tiddlywiki
 
 <$reveal type="match" state=<<addPointState>> text="open">
   {{||$:/plugins/UncleTom/chantier/ui/forms/AddPoint}}
+</$reveal>
+
+<$reveal type="match" state=<<addRefReunionState>> text="open">
+  {{||$:/plugins/UncleTom/chantier/ui/forms/AddReferenceInReunion}}
 </$reveal>
 
 <$reveal type="match" state=<<previewCRState>> text="open">

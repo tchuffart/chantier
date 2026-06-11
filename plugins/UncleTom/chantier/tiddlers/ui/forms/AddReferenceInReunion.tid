@@ -15,9 +15,8 @@ type: text/vnd.tiddlywiki
     ch-reunion-creation=<<currentTiddler>>
     ch-categorie={{{ [<stateTiddler>get[categorie]] }}}
     ch-statut="reference"
-    text={{{ [<stateTiddler>get[texte]] }}}
   />
-  <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie="" texte=""/>
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie=""/>
   <$action-setfield $tiddler=<<addRefReunionState>> text="closed"/>
 \end
 
@@ -35,11 +34,6 @@ type: text/vnd.tiddlywiki
         <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
       </$list>
     </$select>
-    <$edit-text tiddler=<<stateTiddler>> field="texte"
-      placeholder="Contenu, description, lien…"
-      class="ch-input ch-textarea ch-textarea-full"
-      tag="textarea"
-    />
     <div class="ch-form-actions">
       <$button actions=<<add-reference-reunion-actions>> class="ch-btn-primary">
         Ajouter

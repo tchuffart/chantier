@@ -6,4 +6,22 @@ caption: Références
 order: 5
 type: text/vnd.tiddlywiki
 
-{{$:/plugins/UncleTom/chantier/ui/reference/References}}
+\define printReferencesState() $:/state/chantier/print-references
+
+<div class="ch-toolbar ch-no-print" style="margin-bottom:1em;">
+  <$button class="ch-btn-tool">
+    <$action-setfield $tiddler=<<printReferencesState>> text={{{ [<printReferencesState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/print-button}}
+    Imprimer les références
+  </$button>
+</div>
+
+<$reveal type="match" state=<<printReferencesState>> text="open">
+  <div class="ch-cr-preview ch-print-target">
+    {{$:/plugins/UncleTom/chantier/ui/print/PrintReferences}}
+  </div>
+</$reveal>
+
+<$reveal type="nomatch" state=<<printReferencesState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/reference/References}}
+</$reveal>

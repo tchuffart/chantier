@@ -9,6 +9,9 @@ type: text/vnd.tiddlywiki
   <div class="ch-item-actions ch-no-print">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/ReferenceActions}}
   </div>
+  <$list filter="[all[current]has[ch-numero]]" variable="ignore">
+    <span class="ch-point-numero"><$view field="ch-numero"/></span>
+  </$list>
   <$select tiddler={{!!title}} field="ch-categorie" class="ch-select ch-select-inline ch-no-print">
     <option value="">—</option>
     <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
