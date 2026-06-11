@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
         </$list>
       </div>
       <div class="ch-reunion-header-diffuse">
-        <$checkbox field="ch-diffuse" checked="oui" unchecked="" default="">
+        <$checkbox tag="diffusé">
           <span class="ch-diffuse-label">CR diffusé</span>
         </$checkbox>
       </div>
