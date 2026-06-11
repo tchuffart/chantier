@@ -14,10 +14,15 @@ type: text/vnd.tiddlywiki
         <td><$view field="ch-numero"/></td>
         <th><<lingo Date/Caption>></th>
         <td><$view field="ch-date"/></td>
+        <td class="ch-diffuse-cell">
+          <$checkbox field="ch-diffuse" checked="oui" unchecked="" default="">
+            <span class="ch-diffuse-label">CR diffusé</span>
+          </$checkbox>
+        </td>
       </tr>
       <tr>
         <th><<lingo Lieu/Caption>></th>
-        <td colspan="3"><$view field="ch-lieu"/></td>
+        <td colspan="4"><$view field="ch-lieu"/></td>
       </tr>
     </table>
 

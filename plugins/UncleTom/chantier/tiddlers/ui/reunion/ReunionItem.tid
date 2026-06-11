@@ -5,10 +5,13 @@ type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 
-<div class="ch-item ch-reunion-item">
+<div class={{{ [all[current]field:ch-diffuse[oui]then[ch-item ch-reunion-item ch-reunion-diffuse]else[ch-item ch-reunion-item]] }}}>
   <div class="ch-item-actions">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/ReunionActions}}
   </div>
+  <$list filter="[all[current]field:ch-diffuse[oui]]" variable="ignore">
+    <span class="ch-reunion-diffuse-badge" title="CR diffusé">✓</span>
+  </$list>
   <span class="ch-reunion-numero"><$link to={{!!title}}>N°<$view field="ch-numero"/></$link></span>
   <$list filter="[all[current]has[ch-date]]">
     <span class="ch-reunion-date"> — <$view field="ch-date"/></span>
