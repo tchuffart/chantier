@@ -290,6 +290,7 @@ type: text/vnd.tiddlywiki
 .ch-point-meta-inline {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0 12px;
   margin-top: 2px;
 }
