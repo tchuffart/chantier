@@ -656,39 +656,19 @@ type: text/vnd.tiddlywiki
 @media print {
   .ch-no-print { display: none !important; }
 
-  /* Masquer tout sauf le contenu CR */
-  body > *,
-  .tc-sidebar-header,
-  .tc-topbar,
-  .tc-story-river,
-  .tc-tiddler-controls,
-  .tc-tiddler-title,
-  .ch-toolbar,
-  .ch-reunion-table,
-  .ch-presences-table {
-    display: none !important;
-  }
+  /* Masquer tout le corps, puis révéler uniquement la chaîne vers ch-print-target */
+  body * { visibility: hidden; }
 
-  .ch-modal-overlay {
-    position: static !important;
-    background: none !important;
-    padding: 0 !important;
-    display: block !important;
-  }
+  .ch-print-target,
+  .ch-print-target * { visibility: visible; }
 
-  .ch-modal-a4 {
+  .ch-print-target {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
-    min-height: unset !important;
-    box-shadow: none !important;
-    display: block !important;
-  }
-
-  .ch-modal-toolbar {
-    display: none !important;
-  }
-
-  .ch-cr-preview {
-    padding: 0 !important;
+    padding: 15mm !important;
+    box-sizing: border-box !important;
   }
 
   .ch-cr-logo {
