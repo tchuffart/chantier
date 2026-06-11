@@ -50,10 +50,10 @@ type: text/vnd.tiddlywiki
   <!-- Tableau intervenants groupés par type -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
-    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage">>
-    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre">>
-    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises">>
-    <<ch-intervenants-table "!has[ch-type]" "Non classé">>
+    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage" "yes">>
+    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre" "no">>
+    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises" "no">>
+    <<ch-intervenants-table "!has[ch-type]" "Non classé" "no">>
     <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
   </$vars>
 

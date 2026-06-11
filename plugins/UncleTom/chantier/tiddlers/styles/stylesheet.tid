@@ -507,6 +507,13 @@ type: text/vnd.tiddlywiki
   margin: 10px 0 2px;
 }
 
+.ch-cr-cell-presence {
+  width: 16px !important;
+  min-width: unset !important;
+  padding: 2px !important;
+  text-align: center;
+}
+
 .ch-cr-subsection {
   font-size: 9pt;
   font-weight: bold;
@@ -639,23 +646,15 @@ type: text/vnd.tiddlywiki
   overflow: hidden;
 }
 
-/* Lot, Entreprise, Contact, Rôle, P, E, A, C */
+/* Lot, Entreprise, Contact, Rôle — largeurs relatives */
 .ch-cr-intervenants th:nth-child(1),
-.ch-cr-intervenants td:nth-child(1) { width: 12%; }
+.ch-cr-intervenants td:nth-child(1) { width: 14%; }
 .ch-cr-intervenants th:nth-child(2),
-.ch-cr-intervenants td:nth-child(2) { width: 22%; }
+.ch-cr-intervenants td:nth-child(2) { width: 24%; }
 .ch-cr-intervenants th:nth-child(3),
-.ch-cr-intervenants td:nth-child(3) { width: 22%; }
+.ch-cr-intervenants td:nth-child(3) { width: 24%; }
 .ch-cr-intervenants th:nth-child(4),
-.ch-cr-intervenants td:nth-child(4) { width: 18%; }
-.ch-cr-intervenants th:nth-child(5),
-.ch-cr-intervenants td:nth-child(5),
-.ch-cr-intervenants th:nth-child(6),
-.ch-cr-intervenants td:nth-child(6),
-.ch-cr-intervenants th:nth-child(7),
-.ch-cr-intervenants td:nth-child(7),
-.ch-cr-intervenants th:nth-child(8),
-.ch-cr-intervenants td:nth-child(8) { width: 6.5%; }
+.ch-cr-intervenants td:nth-child(4) { width: 20%; }
 
 .invisible {
   border-collapse: collapse !important;
