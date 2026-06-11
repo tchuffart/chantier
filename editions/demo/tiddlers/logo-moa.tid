@@ -1,0 +1,15 @@
+title: logo-moa
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="#1a5276" rx="6"/>
+  <!-- Symbole mairie stylisé -->
+  <rect x="25" y="30" width="10" height="25" fill="#aed6f1"/>
+  <rect x="40" y="25" width="10" height="30" fill="#aed6f1"/>
+  <rect x="55" y="35" width="10" height="20" fill="#aed6f1"/>
+  <line x1="20" y1="55" x2="70" y2="55" stroke="#aed6f1" stroke-width="2"/>
+  <!-- Texte -->
+  <text x="85" y="30" font-family="Arial, sans-serif" font-size="9" fill="#aed6f1" font-weight="bold">VILLE DE</text>
+  <text x="85" y="46" font-family="Arial, sans-serif" font-size="13" fill="#ecf0f1" font-weight="bold">MONTPELLIER</text>
+  <text x="85" y="62" font-family="Arial, sans-serif" font-size="8" fill="#7fb3d3">Direction de l'Urbanisme</text>
+</svg>
