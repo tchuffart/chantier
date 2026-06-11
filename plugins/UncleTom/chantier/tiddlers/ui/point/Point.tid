@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]tag[point]]" variable="ignore">
   <div class="ch-point-view">
-    <table class="invisible ch-header-table">
+    <table class="lignes ch-header-table">
       <tr>
         <th>N°</th>
         <td class="ch-point-numero"><$view field="ch-numero"/></td>
