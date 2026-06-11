@@ -279,11 +279,70 @@ type: text/vnd.tiddlywiki
 
 .ch-point {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8px 0;
+  padding: 6px 0 6px 6px;
 }
 
 .ch-point:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Layout 2 colonnes */
+.ch-point-body {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.ch-point-main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ch-point-meta {
+  flex: 0 0 160px;
+  font-size: .8em;
+  color: <<colour foreground>>;
+  opacity: 0.85;
+  border-left: 1px solid rgba(0,0,0,0.08);
+  padding-left: 8px;
+}
+
+.ch-point-meta-label {
+  display: block;
+  font-size: .85em;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  opacity: 0.6;
+}
+
+.ch-point-meta-row {
+  margin-bottom: 3px;
+}
+
+.ch-point-statut-badge {
+  display: inline-block;
+  font-size: .75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+.ch-point-statut-ouvert {
+  background: rgba(0,0,0,0.06);
+  color: <<colour foreground>>;
+}
+
+.ch-point-statut-pour-rappel {
+  background: rgba(231, 57, 57, 0.12);
+  color: #e73939;
+}
+
+.ch-point-statut-resolu {
+  background: rgba(39, 174, 96, 0.12);
+  color: #27ae60;
 }
 
 .ch-point-header {
@@ -324,17 +383,10 @@ type: text/vnd.tiddlywiki
   color: white;
 }
 
-.ch-point-date-validation {
-  font-size: .82em;
-  color: #27ae60;
-  font-style: italic;
-}
-
 .ch-point-texte {
   margin: 4px 0 2px 0;
   font-size: .92em;
   color: <<colour foreground>>;
-  opacity: 0.85;
   white-space: pre-wrap;
 }
 
@@ -344,9 +396,8 @@ type: text/vnd.tiddlywiki
 }
 
 .ch-point-pour-rappel {
-  background: rgba(231, 57, 57, 0.05);
-  padding: 6px 4px;
   border-left: 3px solid #e73939;
+  padding-left: 8px;
 }
 
 .ch-point-reference {
@@ -356,11 +407,12 @@ type: text/vnd.tiddlywiki
 }
 
 .ch-point-resolu {
-  opacity: 0.6;
+  border-left: 3px solid #27ae60;
+  padding-left: 8px;
 }
 
 .ch-point-resolu .ch-point-numero {
-  color: #2da562;
+  color: #27ae60;
 }
 
 /* En-tête projet */
