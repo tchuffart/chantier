@@ -508,17 +508,21 @@ type: text/vnd.tiddlywiki
   min-width: 150px;
 }
 
-.invisible,
-.invisible thead td {
-  background-color: white;
-  padding: 6px 8px;
-}
-.invisible tr,
-.invisible td {
+.invisible {
+  border-collapse: collapse !important;
+  border: 0 !important;
   background: white;
+}
+.invisible th,
+.invisible td,
+.invisible tr,
+.invisible thead td,
+.invisible thead th {
+  background: white !important;
   color: #000;
-  padding: 6px 8px;
-  border: 0;
+  padding: 4px 8px;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Impression */
