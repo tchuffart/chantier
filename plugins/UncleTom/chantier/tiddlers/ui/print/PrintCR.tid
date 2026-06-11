@@ -55,6 +55,7 @@ type: text/vnd.tiddlywiki
         <tr>
           <th>Nom</th>
           <th><<lingo Entreprise/Caption>></th>
+          <th>Type</th>
           <th><<lingo Lot/Caption>></th>
           <th><<lingo Role/Caption>></th>
           <th><<lingo Present/Caption>></th>
@@ -69,6 +70,7 @@ type: text/vnd.tiddlywiki
             <tr>
               <td><$text text=<<intervenantTitle>>/></td>
               <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+              <td><$set name="chType" value={{{ [<intervenantTitle>get[ch-type]] }}}><$list filter="[<chType>match[moa]]" variable="ignore">MOA</$list><$list filter="[<chType>match[moe]]" variable="ignore">MOE</$list><$list filter="[<chType>match[entreprise]]" variable="ignore">Entreprise</$list></$set></td>
               <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
               <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
               <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>

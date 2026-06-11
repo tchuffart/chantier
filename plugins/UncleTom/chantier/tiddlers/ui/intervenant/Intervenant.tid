@@ -12,12 +12,14 @@ type: text/vnd.tiddlywiki
       <tr>
         <th><<lingo Entreprise/Caption>></th>
         <td><$view field="ch-entreprise"/></td>
-        <th><<lingo Role/Caption>></th>
-        <td><$view field="ch-role"/></td>
+        <th>Type</th>
+        <td><$set name="chType" value={{!!ch-type}}><$list filter="[<chType>match[moa]]" variable="ignore">Maîtrise d'ouvrage</$list><$list filter="[<chType>match[moe]]" variable="ignore">Maîtrise d'œuvre</$list><$list filter="[<chType>match[entreprise]]" variable="ignore">Entreprise</$list></$set></td>
       </tr>
       <tr>
         <th><<lingo Lot/Caption>></th>
-        <td colspan="3"><$view field="ch-lot"/></td>
+        <td><$view field="ch-lot"/></td>
+        <th><<lingo Role/Caption>></th>
+        <td><$view field="ch-role"/></td>
       </tr>
       <tr>
         <th><<lingo Email/Caption>></th>
