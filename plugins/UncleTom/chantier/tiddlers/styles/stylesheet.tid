@@ -87,6 +87,21 @@ type: text/vnd.tiddlywiki
   font-size: .88em;
 }
 
+.ch-select {
+  padding: 4px 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  font-size: .88em;
+  background: transparent;
+}
+
+.ch-select-inline {
+  margin-right: 8px;
+  font-size: .82em;
+  color: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
 .ch-textarea {
   min-height: 70px;
   resize: vertical;

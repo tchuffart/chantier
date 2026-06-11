@@ -9,5 +9,13 @@ type: text/vnd.tiddlywiki
   <div class="ch-item-actions ch-no-print">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/ReferenceActions}}
   </div>
+  <$select tiddler={{!!title}} field="ch-categorie" class="ch-select ch-select-inline ch-no-print">
+    <option value="reglementation"><<lingo Categorie/Reglementation>></option>
+    <option value="materiau"><<lingo Categorie/Materiau>></option>
+    <option value="securite"><<lingo Categorie/Securite>></option>
+    <option value="altimetrie"><<lingo Categorie/Altimetrie>></option>
+    <option value="acces"><<lingo Categorie/Acces>></option>
+    <option value="choix-produit"><<lingo Categorie/ChoixProduit>></option>
+  </$select>
   <span class="ch-reference-titre"><$view field="title"/></span>
 </div>
