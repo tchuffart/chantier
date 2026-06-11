@@ -173,6 +173,11 @@ type: text/vnd.tiddlywiki
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.ch-point {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
+}
+
 .ch-point:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
