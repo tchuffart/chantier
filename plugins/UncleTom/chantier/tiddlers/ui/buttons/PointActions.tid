@@ -16,7 +16,8 @@ type: text/vnd.tiddlywiki
 </$button>
 
 <$button class="ch-btn tc-btn-invisible" tooltip={{$:/language/chantier/Statut/Resolu}}>
-  <$action-setfield $tiddler=<<currentTiddler>> ch-statut="resolu"/>
+  <$action-setfield $tiddler=<<currentTiddler>> ch-statut="resolu" ch-reunion-validation=<<reunionTitle>> ch-date-validation={{{ [<reunionTitle>get[ch-date]] }}}/>
+  <$action-listops $tiddler=<<currentTiddler>> $field="tags" $subfilter="+[append[résolu]]"/>
   {{$:/core/images/done-button}}
 </$button>
 
