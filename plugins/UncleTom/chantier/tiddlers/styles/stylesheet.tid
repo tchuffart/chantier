@@ -364,10 +364,20 @@ type: text/vnd.tiddlywiki
   white-space: pre-line;
 }
 
+/* Sous-titres globaux plugin */
+.ch-reunion-view h3,
+.ch-lot-view h3,
+.ch-intervenant-view h3 {
+  color: <<colour primary>>;
+  border-bottom: 1px solid <<colour primary>>;
+  padding-bottom: 4px;
+}
+
 /* Config form */
 .ch-config-form h3 {
   margin: 1.2em 0 .5em;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  color: <<colour primary>>;
+  border-bottom: 1px solid <<colour primary>>;
   padding-bottom: 4px;
 }
 
@@ -617,9 +627,9 @@ type: text/vnd.tiddlywiki
 .ch-cr-subsection {
   font-size: 9pt;
   font-weight: bold;
-  color: #444;
+  color: <<colour primary>>;
   margin: 8px 0 2px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid <<colour primary>>;
   padding-bottom: 2px;
 }
 
@@ -645,7 +655,8 @@ type: text/vnd.tiddlywiki
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid #333;
+  color: <<colour primary>>;
+  border-bottom: 2px solid <<colour primary>>;
   margin: 16px 0 8px;
   padding-bottom: 4px;
 }
