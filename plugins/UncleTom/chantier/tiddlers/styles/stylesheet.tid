@@ -183,6 +183,46 @@ type: text/vnd.tiddlywiki
   vertical-align: middle;
 }
 
+/* En-tête réunion */
+.ch-reunion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  margin-bottom: 1.2em;
+  border-radius: 8px;
+  background: <<colour primary>>;
+  color: #fff;
+}
+
+.ch-reunion-header-info {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.ch-reunion-header-sep {
+  opacity: 0.7;
+}
+
+.ch-reunion-header-numero {
+  font-weight: bold;
+}
+
+.ch-reunion-header-date,
+.ch-reunion-header-lieu {
+  font-weight: normal;
+  opacity: 0.9;
+}
+
+.ch-reunion-header-diffuse {
+  font-size: .88em;
+  opacity: 0.9;
+}
+
+.ch-reunion-header-diffuse .ch-diffuse-label {
+  color: #fff;
+}
+
 .ch-item-actions {
   float: right;
 }
