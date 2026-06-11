@@ -43,7 +43,7 @@ type: text/vnd.tiddlywiki
   <div class="ch-modal-overlay">
     <div class="ch-modal-a4">
       <div class="ch-modal-toolbar ch-no-print">
-        <button class="ch-btn" onclick="window.print()">{{$:/core/images/print-button}} Imprimer</button>
+        <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>
         <$button class="ch-btn">
           <$action-setfield $tiddler=<<previewCRState>> text="closed"/>
           {{$:/core/images/close-button}}
