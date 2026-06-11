@@ -214,13 +214,54 @@ type: text/vnd.tiddlywiki
   opacity: 0.9;
 }
 
-.ch-reunion-header-diffuse {
+.ch-reunion-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   font-size: .88em;
   opacity: 0.9;
 }
 
-.ch-reunion-header-diffuse .ch-diffuse-label {
+.ch-reunion-header-right .ch-diffuse-label {
   color: #fff;
+}
+
+.ch-reunion-prochaine {
+  color: #fff;
+  font-size: .85em;
+  opacity: 0.85;
+}
+
+.ch-input-inline {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 3px;
+  color: #fff;
+  padding: 1px 4px;
+  font-size: .9em;
+  width: auto;
+}
+
+.ch-reunion-prochaine-add button {
+  color: rgba(255,255,255,0.7) !important;
+  font-size: .82em;
+}
+
+.ch-cr-prochaine-reunion {
+  margin: 16px 0;
+  padding: 10px 14px;
+  border: 1.5px solid <<colour primary>>;
+  border-radius: 5px;
+  font-size: .95em;
+  color: <<colour primary>>;
+}
+
+@media print {
+  .ch-cr-prochaine-reunion {
+    border-color: #2c3e50;
+    color: #2c3e50;
+  }
 }
 
 .ch-reunion-diffuse-view .ch-reunion-header {

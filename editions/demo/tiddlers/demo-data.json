@@ -72,7 +72,8 @@
     "tags": "reunion diffusé",
     "ch-numero": "1",
     "ch-date": "03/06/2026",
-    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere",
+    "ch-prochaine-reunion": "10/06/2026"
   },
   {
     "title": "Accès chantier non sécurisé côté rue",
@@ -90,7 +91,8 @@
     "tags": "reunion diffusé",
     "ch-numero": "2",
     "ch-date": "10/06/2026",
-    "ch-lieu": "Base de chantier"
+    "ch-lieu": "Base de chantier",
+    "ch-prochaine-reunion": "17/06/2026"
   },
   {
     "title": "Réunion de chantier n°3",

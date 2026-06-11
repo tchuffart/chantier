@@ -18,7 +18,18 @@ type: text/vnd.tiddlywiki
           <span class="ch-reunion-header-lieu"><$view field="ch-lieu"/></span>
         </$list>
       </div>
-      <div class="ch-reunion-header-diffuse">
+      <div class="ch-reunion-header-right">
+        <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
+          <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
+        </$list>
+        <$list filter="[all[current]!has[ch-prochaine-reunion]]" variable="ignore">
+          <span class="ch-reunion-prochaine-add">
+            <$button class="ch-btn tc-btn-invisible" tooltip="Définir la prochaine réunion">
+              <$action-setfield field="ch-prochaine-reunion" value=""/>
+              + Prochaine réunion
+            </$button>
+          </span>
+        </$list>
         <$checkbox tag="diffusé">
           <span class="ch-diffuse-label">CR diffusé</span>
         </$checkbox>

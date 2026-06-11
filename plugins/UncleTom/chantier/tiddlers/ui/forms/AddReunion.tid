@@ -13,8 +13,9 @@ type: text/vnd.tiddlywiki
     ch-numero={{{ [<stateTiddler>get[numero]] }}}
     ch-date={{{ [<stateTiddler>get[date]] }}}
     ch-lieu={{{ [<stateTiddler>get[lieu]] }}}
+    ch-prochaine-reunion={{{ [<stateTiddler>get[prochaine-reunion]] }}}
   />
-  <$action-setfield $tiddler=<<stateTiddler>> titre="" numero="" date="" lieu=""/>
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" numero="" date="" lieu="" prochaine-reunion=""/>
 \end
 
 <$vars stateTiddler=<<qualify "$:/temp/chantier/reunion-form">>>
@@ -35,6 +36,11 @@ type: text/vnd.tiddlywiki
     />
     <$edit-text tiddler=<<stateTiddler>> field="lieu"
       placeholder={{$:/language/chantier/Lieu/Placeholder}}
+      class="ch-input"
+    />
+    <label class="ch-form-label">Prochaine réunion</label>
+    <$edit-text tiddler=<<stateTiddler>> field="prochaine-reunion"
+      type="date"
       class="ch-input"
     />
     <$button actions=<<add-reunion-actions>> class="ch-btn-primary">
