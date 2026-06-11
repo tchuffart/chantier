@@ -87,21 +87,6 @@ type: text/vnd.tiddlywiki
   font-size: .88em;
 }
 
-.ch-select {
-  padding: 4px 8px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  font-size: .88em;
-  background: transparent;
-}
-
-.ch-select-inline {
-  margin-right: 8px;
-  font-size: .82em;
-  color: <<colour primary>>;
-  border-color: <<colour primary>>;
-}
-
 .ch-textarea {
   min-height: 70px;
   resize: vertical;
@@ -173,11 +158,6 @@ type: text/vnd.tiddlywiki
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.ch-point {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8px 0;
-}
-
 .ch-point:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -228,86 +208,6 @@ type: text/vnd.tiddlywiki
   color: #2da562;
 }
 
-/* En-tête projet */
-.ch-projet-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 16px 24px;
-  margin-bottom: 1.5em;
-  border-radius: 8px;
-  background: <<colour primary>>;
-  color: #fff;
-}
-
-.ch-projet-header-left {
-  text-align: left;
-}
-
-.ch-projet-header-right {
-  text-align: right;
-}
-
-.ch-projet-header-nom {
-  font-size: 1.3em;
-  font-weight: bold;
-  line-height: 1.3;
-}
-
-.ch-projet-header-adresse {
-  font-size: .88em;
-  opacity: 0.85;
-  margin-top: 3px;
-  white-space: pre-line;
-}
-
-.ch-projet-header-moa-label {
-  font-size: .75em;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  opacity: 0.75;
-}
-
-.ch-projet-header-moa-nom {
-  font-size: 1em;
-  font-weight: 600;
-  margin-top: 2px;
-}
-
-.ch-projet-header-moa-adresse {
-  font-size: .88em;
-  opacity: 0.85;
-  margin-top: 3px;
-  white-space: pre-line;
-}
-
-/* Config form */
-.ch-config-form h3 {
-  margin: 1.2em 0 .5em;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding-bottom: 4px;
-}
-
-.ch-config-hint {
-  font-size: .82em;
-  opacity: 0.6;
-  margin: 4px 0 0;
-}
-
-.ch-config-logo-preview {
-  margin-top: 8px;
-  padding: 8px;
-  border: 1px dashed rgba(0,0,0,0.15);
-  border-radius: 4px;
-  display: inline-block;
-}
-
-.ch-cr-moa-info {
-  font-size: .88em;
-  margin-bottom: 12px;
-  opacity: 0.8;
-}
-
 /* Dashboard */
 .ch-dashboard-grid {
   display: grid;
@@ -318,20 +218,16 @@ type: text/vnd.tiddlywiki
 
 .ch-dashboard-card {
   display: block;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 10px;
-  padding: 20px 16px;
-  text-align: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
   text-decoration: none !important;
   color: inherit !important;
-  background: rgba(100,120,220,0.06);
-  transition: background .15s, box-shadow .15s;
+  transition: border-color .15s, box-shadow .15s;
 }
 
 .ch-dashboard-card:hover {
-  background: rgba(100,120,220,0.13);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  text-decoration: none !important;
+  border-color: <<colour primary>>;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
   padding: 1em;
@@ -340,7 +236,7 @@ type: text/vnd.tiddlywiki
 }
 
 .ch-dashboard-card-count {
-  font-size: 3.2em;
+  font-size: 2.4em;
   font-weight: bold;
   color: <<colour primary>>;
   line-height: 1.1;
@@ -348,9 +244,8 @@ type: text/vnd.tiddlywiki
 
 .ch-dashboard-card-label {
   font-size: .85em;
-  color: <<colour primary>>;
-  opacity: 0.7;
-  margin: 4px 0 0;
+  color: #888;
+  margin: 4px 0 8px;
 }
 
 
@@ -397,57 +292,13 @@ type: text/vnd.tiddlywiki
   border-color: <<colour primary>>;
 }
 
-/* Modal A4 */
-.ch-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 9000;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow-y: auto;
-  padding: 24px 0 40px;
-}
-
-.ch-modal-a4 {
-  width: 210mm;
-  min-height: 297mm;
-  background: #fff;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-}
-
-.ch-modal-toolbar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  padding: 8px 12px;
-  background: #f5f5f5;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
 /* CR — aperçu écran */
 .ch-cr-preview {
-  padding: 15mm;
-  flex: 1;
-  font-size: 9pt;
-  line-height: 1.35;
-}
-
-.ch-cr-preview p,
-.ch-cr-preview .ch-point-texte {
-  margin: 2px 0;
-  line-height: 1.35;
-}
-
-.ch-cr-preview .lignesmini {
-  font-size: 8pt;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  background: #fff;
 }
 
 .ch-cr-header {
@@ -493,28 +344,6 @@ type: text/vnd.tiddlywiki
   color: #666;
 }
 
-.ch-cr-type-header {
-  font-size: 8pt;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  color: <<colour primary>>;
-  margin: 10px 0 2px;
-}
-
-.ch-cr-contact-detail {
-  font-size: 7pt;
-  color: #555;
-  font-style: italic;
-}
-
-.ch-cr-legende {
-  font-size: 7pt;
-  color: #666;
-  margin: 3px 0 0;
-  font-style: italic;
-}
-
 .ch-cr-section {
   font-size: 1em;
   font-weight: bold;
@@ -546,137 +375,26 @@ type: text/vnd.tiddlywiki
   text-align: center;
 }
 
-/* Fiche de rappel */
-.ch-fiche-screen h3 {
-  margin: 0 0 2px;
-}
-
-/* Tableaux */
-.lignes {
-  background: white;
-  border-collapse: collapse;
-  border-color: white;
-}
-.lignes th {
-  background-color: white;
-  border-color: white;
-  border-bottom: 2px solid #346790;
-  color: #346790;
-  padding: 10px;
-}
-.lignes td {
-  background: white;
-  border-color: white;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-  padding: 6px 8px;
-  min-width: 150px;
-}
-
-.lignesmini {
-  background: white;
-  border-collapse: collapse;
-  border-color: white;
-  font-size: 9pt;
-  padding: 0px;
-}
-.lignesmini th {
-  background-color: white;
-  border-color: white;
-  border-bottom: 2px solid #346790;
-  color: #346790;
-  padding: 3px;
-}
-.lignesmini td {
-  background: white;
-  border-color: white;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-  padding: 1px 4px;
-}
-
-.ch-cr-intervenants {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.ch-cr-intervenants th,
-.ch-cr-intervenants td {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: unset;
-}
-
-/* Lot, Entreprise, Contact, Rôle, P, E, A, C */
-.ch-cr-intervenants th:nth-child(1),
-.ch-cr-intervenants td:nth-child(1) { width: 12%; }
-.ch-cr-intervenants th:nth-child(2),
-.ch-cr-intervenants td:nth-child(2) { width: 22%; }
-.ch-cr-intervenants th:nth-child(3),
-.ch-cr-intervenants td:nth-child(3) { width: 22%; }
-.ch-cr-intervenants th:nth-child(4),
-.ch-cr-intervenants td:nth-child(4) { width: 18%; }
-.ch-cr-intervenants th:nth-child(5),
-.ch-cr-intervenants td:nth-child(5),
-.ch-cr-intervenants th:nth-child(6),
-.ch-cr-intervenants td:nth-child(6),
-.ch-cr-intervenants th:nth-child(7),
-.ch-cr-intervenants td:nth-child(7),
-.ch-cr-intervenants th:nth-child(8),
-.ch-cr-intervenants td:nth-child(8) { width: 6.5%; }
-
-.invisible {
-  border-collapse: collapse !important;
-  border: 0 !important;
-  background: white;
-}
-.invisible th,
-.invisible td,
-.invisible tr,
-.invisible thead td,
-.invisible thead th {
-  background: white !important;
-  color: #000;
-  padding: 4px 8px;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Tableaux d'en-tête réunion / point */
-.ch-header-table th {
-  color: <<colour primary>>;
-  font-size: .82em;
-  font-weight: bold;
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding-right: 6px !important;
-  padding-left: 0 !important;
-  opacity: 0.75;
-}
-.ch-header-table td {
-  padding-right: 20px !important;
-}
-
 /* Impression */
 @media print {
   .ch-no-print { display: none !important; }
 
-  /* Masquer tout le corps, puis révéler uniquement la chaîne vers ch-print-target */
-  body * { visibility: hidden; }
+  /* Masquer tout le chrome TW, ne garder que le contenu */
+  .tc-sidebar-header,
+  .tc-topbar,
+  .tc-story-river > .tc-tiddler-frame:not(:has(.ch-cr-preview)),
+  .tc-tiddler-controls,
+  .tc-tiddler-title,
+  .ch-toolbar,
+  .ch-reunion-table,
+  .ch-presences-table {
+    display: none !important;
+  }
 
-  .ch-print-target,
-  .ch-print-target * { visibility: visible; }
-
-  .ch-no-print { display: none !important; }
-
-  .ch-print-target {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    padding: 15mm !important;
-    box-sizing: border-box !important;
+  .ch-cr-preview {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .ch-cr-logo {
