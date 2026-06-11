@@ -1,35 +1,32 @@
 created: 20210601000000000
-modified: 20260609000000000
+modified: 20210601000000000
 title: $:/plugins/UncleTom/chantier/ui/presence/PresencesReunion
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 \define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
-\define presences-group(typeFilter, typeLabel)
-<$set name="count" value={{{ [all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$count[]] }}}>
-<$list filter="[<count>compare:number:gt[0]]" variable="ignore">
-  <p class="ch-cr-type-header">$typeLabel$</p>
+
+<$vars reunionTitle=<<currentTiddler>>>
+  <h3><<lingo Intervenants/Caption>></h3>
   <table class="lignes">
     <thead>
       <tr>
-        <th>Lot</th>
-        <th>Entreprise</th>
-        <th>Contact</th>
-        <th>Rôle</th>
-        <th>P</th>
-        <th>E</th>
-        <th>A</th>
-        <th>Conv.</th>
+        <th><<lingo Intervenant/Caption>></th>
+        <th><<lingo Entreprise/Caption>></th>
+        <th><<lingo Lot/Caption>></th>
+        <th><<lingo Present/Caption>></th>
+        <th><<lingo Excuse/Caption>></th>
+        <th><<lingo Absent/Caption>></th>
+        <th><<lingo Convoque/Caption>></th>
       </tr>
     </thead>
     <tbody>
-      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[entreprise]]" variable="intervenantTitle">
+      <$list filter=<<ch-all-intervenants>> variable="intervenantTitle">
         <$vars presenceTiddler=<<presenceTid>>>
           <tr>
-            <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
-            <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
             <td><$link to=<<intervenantTitle>>><$text text=<<intervenantTitle>>/></$link></td>
-            <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
             <td class="ch-presence-cell">
               <$button class={{{ [<presenceTiddler>get[ch-statut]match[present]then[ch-btn-presence ch-btn-active]else[ch-btn-presence tc-btn-invisible]] }}}>
                 <$action-setfield $tiddler=<<presenceTiddler>> tags="presence" ch-reunion=<<reunionTitle>> ch-intervenant=<<intervenantTitle>> ch-statut="present"/>
@@ -56,14 +53,4 @@ type: text/vnd.tiddlywiki
       </$list>
     </tbody>
   </table>
-</$list>
-</$set>
-\end
-
-<$vars reunionTitle=<<currentTiddler>>>
-  <h3><<lingo Intervenants/Caption>></h3>
-  <<presences-group "field:ch-type[moa]" "Maîtrise d'ouvrage">>
-  <<presences-group "field:ch-type[moe]" "Maîtrise d'œuvre">>
-  <<presences-group "field:ch-type[entreprise]" "Entreprises">>
-  <<presences-group "!has[ch-type]" "Non classé">>
 </$vars>

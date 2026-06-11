@@ -31,7 +31,7 @@ type: text/vnd.tiddlywiki
     <$set name="refsInCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>count[]] }}}>
       <$list filter="[<refsInCat>compare:number:gt[0]]" variable="ignore">
         <h2 class="ch-cr-section"><$view tiddler=<<catTid>> field="ch-label"/></h2>
-        <table class="ch-cr-table">
+        <table class="lignes">
           <thead>
             <tr><th style="width:6em">N°</th><th>Référence</th><th style="width:10em">Réunion</th></tr>
           </thead>
@@ -53,7 +53,7 @@ type: text/vnd.tiddlywiki
   <$set name="refsNoCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]!has[ch-categorie]count[]] }}}>
     <$list filter="[<refsNoCat>compare:number:gt[0]]" variable="ignore">
       <h2 class="ch-cr-section">Sans catégorie</h2>
-      <table class="ch-cr-table">
+      <table class="lignes">
         <thead>
           <tr><th style="width:6em">N°</th><th>Référence</th><th style="width:10em">Réunion</th></tr>
         </thead>

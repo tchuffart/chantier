@@ -50,7 +50,7 @@ type: text/vnd.tiddlywiki
   <!-- Tableau intervenants -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
-    <table class="ch-cr-table ch-cr-intervenants">
+    <table class="lignesmini ch-cr-intervenants">
       <thead>
         <tr>
           <th>Nom</th>
@@ -86,7 +86,7 @@ type: text/vnd.tiddlywiki
   <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
   <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <table class="ch-cr-table">
+    <table class="lignesmini">
       <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
       <tbody>
         <$list filter=<<ch-references>>>
