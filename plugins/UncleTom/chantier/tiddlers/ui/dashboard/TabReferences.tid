@@ -3,7 +3,6 @@ modified: 20260605000000000
 tags: $:/plugins/UncleTom/chantier/DashboardTab
 title: $:/plugins/UncleTom/chantier/ui/dashboard/TabReferences
 caption: Références
-order: 5
 type: text/vnd.tiddlywiki
 
 \define printReferencesState() $:/state/chantier/print-references

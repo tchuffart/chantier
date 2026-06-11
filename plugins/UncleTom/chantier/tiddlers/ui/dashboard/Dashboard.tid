@@ -5,4 +5,4 @@ type: text/vnd.tiddlywiki
 
 {{$:/plugins/UncleTom/chantier/ui/dashboard/ProjetHeader}}
 
-<<tabs "[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/DashboardTab]!has[draft.of]nsort[order]]" "$:/plugins/UncleTom/chantier/ui/dashboard/TabVue">>
+<<tabs "[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/DashboardTab]!has[draft.of]]" "$:/plugins/UncleTom/chantier/ui/dashboard/TabVue">>
