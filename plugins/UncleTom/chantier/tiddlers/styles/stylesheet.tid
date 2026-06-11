@@ -507,6 +507,20 @@ type: text/vnd.tiddlywiki
   margin: 10px 0 2px;
 }
 
+.ch-cr-subsection {
+  font-size: 9pt;
+  font-weight: bold;
+  color: #444;
+  margin: 8px 0 2px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2px;
+}
+
+/* Masquer les actions dans la prévisualisation modale */
+.ch-modal-a4 .ch-item-actions {
+  display: none !important;
+}
+
 .ch-cr-contact-detail {
   font-size: 7pt;
   color: #555;

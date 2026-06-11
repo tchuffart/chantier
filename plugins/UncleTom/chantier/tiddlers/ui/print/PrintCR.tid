@@ -83,12 +83,14 @@ type: text/vnd.tiddlywiki
   </$list>
 
   <!-- Références permanentes -->
-  <$set name="refFilter" value="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]">
   <$list filter="[all[tiddlers]tag[reference]!has[draft.of]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <$list filter=<<refFilter>> template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+    <$list filter="[all[tiddlers]tag[reference]!has[draft.of]pluck[ch-categorie]sort[]]" variable="catTid">
+      <h3 class="ch-cr-subsection"><$view tiddler=<<catTid>> field="ch-label"/></h3>
+      <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>sort[title]]"
+        template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+    </$list>
   </$list>
-  </$set>
 
 </div>
 
