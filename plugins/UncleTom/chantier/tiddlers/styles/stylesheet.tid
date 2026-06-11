@@ -434,9 +434,16 @@ type: text/vnd.tiddlywiki
 
 /* CR — aperçu écran */
 .ch-cr-preview {
-  padding: 20mm;
+  padding: 15mm;
   flex: 1;
   font-size: 9pt;
+  line-height: 1.35;
+}
+
+.ch-cr-preview p,
+.ch-cr-preview .ch-point-texte {
+  margin: 2px 0;
+  line-height: 1.35;
 }
 
 .ch-cr-preview .lignesmini {
