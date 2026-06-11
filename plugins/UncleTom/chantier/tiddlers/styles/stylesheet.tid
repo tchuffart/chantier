@@ -220,6 +220,7 @@ type: text/vnd.tiddlywiki
   display: block;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 8px;
+  padding: 16px;
   text-decoration: none !important;
   color: inherit !important;
   transition: border-color .15s, box-shadow .15s;
