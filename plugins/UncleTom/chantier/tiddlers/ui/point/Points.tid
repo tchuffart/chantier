@@ -9,6 +9,7 @@ type: text/vnd.tiddlywiki
 \define addRefReunionState() $:/state/chantier/add-reference-reunion/$(currentTiddler)$
 
 <$set name="thisNumero" value={{!!ch-numero}}>
+<$vars reunionTitle=<<currentTiddler>>>
 
 <h3><<lingo PointsReportes/Caption>></h3>
 <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
@@ -56,4 +57,5 @@ type: text/vnd.tiddlywiki
   </div>
 </$reveal>
 
+</$vars>
 </$set>

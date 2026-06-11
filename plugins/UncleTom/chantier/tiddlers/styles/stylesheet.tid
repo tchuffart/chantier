@@ -279,6 +279,36 @@ type: text/vnd.tiddlywiki
   white-space: nowrap;
 }
 
+.ch-btn-valider {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #27ae60;
+  background: transparent;
+  border: 1.5px solid #27ae60;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.ch-btn-valider:hover {
+  background: #27ae60;
+  color: white;
+}
+
+.ch-point-date-validation {
+  font-size: .82em;
+  color: #27ae60;
+  font-style: italic;
+}
+
 .ch-point-texte {
   margin: 4px 0 2px 0;
   font-size: .92em;

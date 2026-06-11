@@ -10,6 +10,12 @@ type: text/vnd.tiddlywiki
     {{||$:/plugins/UncleTom/chantier/ui/buttons/PointActions}}
   </div>
   <div class="ch-point-header">
+    <$list filter="[all[current]field:ch-statut[ouvert]] [all[current]field:ch-statut[pour-rappel]] +[limit[1]]" variable="ignore">
+      <$button class="ch-btn-valider ch-no-print" tooltip="Valider ce point">
+        <$action-setfield ch-statut="resolu" ch-date-validation={{{ [<reunionTitle>get[ch-date]] }}}/>
+        ✓
+      </$button>
+    </$list>
     <span class="ch-point-numero"><$view field="ch-numero"/></span>
     <span class="ch-point-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
     <$list filter="[all[current]has[ch-echeance]]">
@@ -17,6 +23,9 @@ type: text/vnd.tiddlywiki
     </$list>
     <$list filter="[all[current]has[ch-responsables]]">
       <span class="ch-point-responsables"> (<$view field="ch-responsables"/>)</span>
+    </$list>
+    <$list filter="[all[current]field:ch-statut[resolu]has[ch-date-validation]]" variable="ignore">
+      <span class="ch-point-date-validation"> — validé le <$view field="ch-date-validation"/></span>
     </$list>
   </div>
   <$list filter="[all[current]!field:text[]]" variable="ignore" emptyMessage="">
