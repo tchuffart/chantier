@@ -373,6 +373,11 @@ type: text/vnd.tiddlywiki
   font-weight: bold;
 }
 
+.ch-presence-cell {
+  text-align: center;
+  width: 40px;
+}
+
 .ch-presences-table td:first-child {
   text-align: left;
 }

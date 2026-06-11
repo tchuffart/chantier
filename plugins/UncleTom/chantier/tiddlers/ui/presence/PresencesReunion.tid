@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 <$set name="count" value={{{ [all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$count[]] }}}>
 <$list filter="[<count>compare:number:gt[0]]" variable="ignore">
   <p class="ch-cr-type-header">$typeLabel$</p>
-  <table class="lignes">
+  <table class="lignes ch-presences-table">
     <thead>
       <tr>
         <th>Lot</th>
