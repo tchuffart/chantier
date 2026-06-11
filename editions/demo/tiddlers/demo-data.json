@@ -6,8 +6,7 @@
     "ch-lot": "Maîtrise d'œuvre",
     "ch-role": "Architecte",
     "ch-email": "j.dupont@dupont-archi.fr",
-    "ch-tel": "06 01 02 03 04",
-    "ch-type": "moe"
+    "ch-tel": "06 01 02 03 04"
   },
   {
     "title": "Martin Sophie",
@@ -16,8 +15,7 @@
     "ch-lot": "Structure",
     "ch-role": "Ingénieur structure",
     "ch-email": "s.martin@structure-plus.fr",
-    "ch-tel": "06 05 06 07 08",
-    "ch-type": "entreprise"
+    "ch-tel": "06 05 06 07 08"
   },
   {
     "title": "Leroy Michel",
@@ -26,8 +24,7 @@
     "ch-lot": "Gros-œuvre",
     "ch-role": "Conducteur de travaux",
     "ch-email": "m.leroy@leroy-go.fr",
-    "ch-tel": "06 09 10 11 12",
-    "ch-type": "entreprise"
+    "ch-tel": "06 09 10 11 12"
   },
   {
     "title": "Petit Isabelle",
@@ -36,8 +33,7 @@
     "ch-lot": "",
     "ch-role": "Maître d'ouvrage",
     "ch-email": "i.petit@mairie-somewhere.fr",
-    "ch-tel": "04 13 14 15 16",
-    "ch-type": "moa"
+    "ch-tel": "04 13 14 15 16"
   },
   {
     "title": "Gros-œuvre",
@@ -123,21 +119,18 @@
     "title": "DTU 20.1 — Ouvrages en maçonnerie",
     "tags": "reference",
     "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Réglementation",
-    "ch-statut": "reference",
-    "text": "Document Technique Unifié relatif aux ouvrages en maçonnerie de petits éléments — parois et murs. Applicable à l'ensemble des ouvrages en blocs béton du projet. Version en vigueur : DTU 20.1 P1-1 (mars 2008)."
+    "ch-statut": "reference"
   },
   {
     "title": "Décret n°2004-924 — Travail en hauteur",
     "tags": "reference",
     "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Sécurité",
-    "ch-statut": "reference",
-    "text": "Décret relatif à l'utilisation des équipements de travail mis à disposition pour des travaux temporaires en hauteur. Rappel : tout travail à plus de 3 m nécessite un équipement collectif de protection (échafaudage, garde-corps) sauf impossibilité technique justifiée."
+    "ch-statut": "reference"
   },
   {
     "title": "Fiche technique béton C25/30",
     "tags": "reference",
     "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Matériau",
-    "ch-statut": "reference",
-    "text": "Béton structurel de résistance caractéristique fck = 25 MPa, classe d'exposition XC2/XC3. Dosage ciment CEM II/A 42,5 : 350 kg/m³. Rapport E/C ≤ 0,55. Affaissement cône d'Abrams : S3 (100–150 mm). Granulats 0/20 mm. Fournisseur : Bétons du Midi — centrale de Montpellier-Est."
+    "ch-statut": "reference"
   }
 ]
