@@ -502,6 +502,12 @@ type: text/vnd.tiddlywiki
   margin: 10px 0 2px;
 }
 
+.ch-cr-contact-detail {
+  font-size: 7pt;
+  color: #555;
+  font-style: italic;
+}
+
 .ch-cr-legende {
   font-size: 7pt;
   color: #666;
@@ -661,6 +667,8 @@ type: text/vnd.tiddlywiki
 
   .ch-print-target,
   .ch-print-target * { visibility: visible; }
+
+  .ch-no-print { display: none !important; }
 
   .ch-print-target {
     position: absolute !important;
