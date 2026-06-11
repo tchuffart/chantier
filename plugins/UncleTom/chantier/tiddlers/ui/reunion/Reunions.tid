@@ -6,10 +6,6 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define addReunionState() $:/state/chantier/add-reunion
 
-<div class="ch-heading">
-  <h2><<lingo Reunions/Caption>></h2>
-</div>
-
 <$list filter=<<ch-all-reunions>>
   template="$:/plugins/UncleTom/chantier/ui/reunion/ReunionItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyReunionsTitle>></p><p><<lingo EmptyReunionsDescription>></p></div>"""

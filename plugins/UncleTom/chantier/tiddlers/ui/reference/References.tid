@@ -6,10 +6,6 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 \define addReferenceState() $:/state/chantier/add-reference
 
-<div class="ch-heading">
-  <h2><<lingo References/Caption>></h2>
-</div>
-
 <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[reglementation]]" variable="ignore" emptyMessage="">
   <h3><<lingo Categorie/Reglementation>></h3>
   <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie[reglementation]sort[title]]"
