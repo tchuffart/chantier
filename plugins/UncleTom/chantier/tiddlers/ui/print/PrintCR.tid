@@ -59,6 +59,7 @@ type: text/vnd.tiddlywiki
           <th><<lingo Role/Caption>></th>
           <th><<lingo Present/Caption>></th>
           <th><<lingo Excuse/Caption>></th>
+          <th><<lingo Absent/Caption>></th>
           <th><<lingo Convoque/Caption>></th>
         </tr>
       </thead>
@@ -72,6 +73,7 @@ type: text/vnd.tiddlywiki
               <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
               <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
               <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
+              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[absent]]" variable="ignore">✗</$list></td>
               <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
             </tr>
           </$vars>
@@ -81,20 +83,22 @@ type: text/vnd.tiddlywiki
   </$vars>
 
   <!-- Références permanentes -->
-  <$list filter=<<ch-references>> variable="ignore" emptyMessage="">
+  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
+  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
     <table class="ch-cr-table">
       <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
       <tbody>
         <$list filter=<<ch-references>>>
           <tr>
-            <td><$view field="ch-categorie"/></td>
+            <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
             <td><$view field="title"/></td>
           </tr>
         </$list>
       </tbody>
     </table>
   </$list>
+  </$set>
 
   <!-- Points reportés (uniquement des réunions précédentes) -->
   <h2 class="ch-cr-section"><<lingo PointsReportes/Caption>></h2>
