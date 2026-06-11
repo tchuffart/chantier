@@ -1,5 +1,5 @@
 created: 20210601000000000
-modified: 20260606000000000
+modified: 20210601000000000
 tags: $:/tags/ViewTemplate
 title: $:/plugins/UncleTom/chantier/ui/reunion/Reunion
 type: text/vnd.tiddlywiki
@@ -8,16 +8,18 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]tag[reunion]]" variable="ignore">
   <div class="ch-reunion-view">
-    <table class="invisible ch-header-table">
+    <table class="invisible">
       <tr>
         <th>N°</th>
         <td><$view field="ch-numero"/></td>
+      </tr>
+      <tr>
         <th><<lingo Date/Caption>></th>
         <td><$view field="ch-date"/></td>
       </tr>
       <tr>
         <th><<lingo Lieu/Caption>></th>
-        <td colspan="3"><$view field="ch-lieu"/></td>
+        <td><$view field="ch-lieu"/></td>
       </tr>
     </table>
 
