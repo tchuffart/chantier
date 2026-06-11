@@ -1,5 +1,5 @@
 created: 20260605000000000
-modified: 20260605000000000
+modified: 20260611000000000
 tags: $:/plugins/UncleTom/chantier/DashboardTab
 title: $:/plugins/UncleTom/chantier/ui/dashboard/TabVue
 caption: Vue d'ensemble
@@ -15,15 +15,15 @@ type: text/vnd.tiddlywiki
     <div class="ch-dashboard-card-label"><<lingo Reunions/Caption>></div>
   </$link>
 
-  <$link to="Intervenants" class="ch-dashboard-card">
-    <div class="ch-dashboard-card-count"><$count filter=<<ch-all-intervenants>>/></div>
-    <div class="ch-dashboard-card-label"><<lingo Intervenants/Caption>></div>
-  </$link>
+  <div class="ch-dashboard-card ch-dashboard-card-warning">
+    <div class="ch-dashboard-card-count"><$count filter=<<ch-points-ouverts>>/></div>
+    <div class="ch-dashboard-card-label">Points ouverts</div>
+  </div>
 
-  <$link to="Lots" class="ch-dashboard-card">
-    <div class="ch-dashboard-card-count"><$count filter=<<ch-all-lots>>/></div>
-    <div class="ch-dashboard-card-label"><<lingo Lots/Caption>></div>
-  </$link>
+  <div class="ch-dashboard-card ch-dashboard-card-rappel">
+    <div class="ch-dashboard-card-count"><$count filter=<<ch-points-pour-rappel>>/></div>
+    <div class="ch-dashboard-card-label">Pour rappel</div>
+  </div>
 
   <$link to="Références" class="ch-dashboard-card">
     <div class="ch-dashboard-card-count"><$count filter=<<ch-references>>/></div>
@@ -32,14 +32,31 @@ type: text/vnd.tiddlywiki
 
 </div>
 
-<h3><<lingo PointsOuverts/Caption>></h3>
-<$list filter=<<ch-points-ouverts>>
-  template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
-  emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
-/>
+<!-- Points ouverts et pour rappel groupés par réunion -->
+<$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[get[ch-reunion-creation]sort[ch-numero]unique[]]" variable="reunionTitle">
+  <$set name="countOuvert" value={{{ [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation<reunionTitle>field:ch-statut[ouvert]count[]] }}}>
+  <$set name="countRappel" value={{{ [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation<reunionTitle>field:ch-statut[pour-rappel]count[]] }}}>
+    <div class="ch-vue-reunion-header">
+      <$link to=<<reunionTitle>> class="ch-vue-reunion-title">
+        <$view tiddler=<<reunionTitle>> field="ch-numero" format="text"/> — <$view tiddler=<<reunionTitle>> field="title"/>
+      </$link>
+      <span class="ch-vue-reunion-date"><$view tiddler=<<reunionTitle>> field="ch-date"/></span>
+      <div class="ch-vue-reunion-badges">
+        <$list filter="[<countOuvert>compare:number:gt[0]]" variable="ignore">
+          <span class="ch-point-statut-badge ch-point-statut-ouvert"><$text text=<<countOuvert>>/> ouvert<$list filter="[<countOuvert>compare:number:gt[1]]" variable="ignore">s</$list></span>
+        </$list>
+        <$list filter="[<countRappel>compare:number:gt[0]]" variable="ignore">
+          <span class="ch-point-statut-badge ch-point-statut-pour-rappel"><$text text=<<countRappel>>/> rappel</span>
+        </$list>
+      </div>
+    </div>
+    <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation<reunionTitle>field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation<reunionTitle>field:ch-statut[pour-rappel]] +[sort[ch-numero]]"
+      template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
+  </$set>
+  </$set>
+</$list>
 
-<h3><<lingo PointsPourRappel/Caption>></h3>
-<$list filter=<<ch-points-pour-rappel>>
-  template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
-  emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
-/>
+<$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[limit[1]]" variable="ignore"
+  emptyMessage="""<div class="ch-empty"><em>Aucun point ouvert ou pour rappel.</em></div>""">
+</$list>
+

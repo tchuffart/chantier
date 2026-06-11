@@ -594,6 +594,53 @@ type: text/vnd.tiddlywiki
 }
 
 
+.ch-dashboard-card-warning .ch-dashboard-card-count,
+.ch-dashboard-card-warning .ch-dashboard-card-label {
+  color: #2980b9;
+}
+
+.ch-dashboard-card-rappel .ch-dashboard-card-count,
+.ch-dashboard-card-rappel .ch-dashboard-card-label {
+  color: #e73939;
+}
+
+.ch-dashboard-card-rappel {
+  background: rgba(231, 57, 57, 0.06);
+}
+
+/* Tableau de bord — vue transversale points par réunion */
+.ch-vue-reunion-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 0 4px;
+  border-top: 2px solid <<colour primary>>;
+  margin-top: 16px;
+}
+
+.ch-vue-reunion-title {
+  font-weight: bold;
+  font-size: 1em;
+  color: <<colour primary>> !important;
+  text-decoration: none !important;
+}
+
+.ch-vue-reunion-title:hover {
+  text-decoration: underline !important;
+}
+
+.ch-vue-reunion-date {
+  font-size: .82em;
+  opacity: 0.6;
+}
+
+.ch-vue-reunion-badges {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
 /* Tableau des présences */
 .ch-presences-table {
   width: 100%;
