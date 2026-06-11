@@ -223,6 +223,10 @@ type: text/vnd.tiddlywiki
   color: #fff;
 }
 
+.ch-reunion-diffuse-view .ch-reunion-header {
+  background: #27ae60;
+}
+
 .ch-item-actions {
   float: right;
 }

@@ -7,7 +7,7 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/chantier/
 
 <$list filter="[all[current]tag[reunion]]" variable="ignore">
-  <div class="ch-reunion-view">
+  <div class={{{ [all[current]tags[]match[diffusé]then[ch-reunion-view ch-reunion-diffuse-view]else[ch-reunion-view]] }}}>
     <div class="ch-reunion-header">
       <div class="ch-reunion-header-info">
         <span class="ch-reunion-header-numero">Réunion N°<$view field="ch-numero"/></span>
