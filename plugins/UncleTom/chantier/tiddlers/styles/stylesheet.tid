@@ -607,10 +607,22 @@ type: text/vnd.tiddlywiki
 
 .ch-cr-intervenants th,
 .ch-cr-intervenants td {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   min-width: unset;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Colonnes P E A C : pas de retour à la ligne */
+.ch-cr-intervenants th:nth-child(5),
+.ch-cr-intervenants td:nth-child(5),
+.ch-cr-intervenants th:nth-child(6),
+.ch-cr-intervenants td:nth-child(6),
+.ch-cr-intervenants th:nth-child(7),
+.ch-cr-intervenants td:nth-child(7),
+.ch-cr-intervenants th:nth-child(8),
+.ch-cr-intervenants td:nth-child(8) {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Lot, Entreprise, Contact, Rôle, P, E, A, C */
