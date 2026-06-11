@@ -54,10 +54,10 @@ type: text/vnd.tiddlywiki
     <div class="ch-fiche-screen">
       <h3><$view tiddler=<<selectedIntervenant>> field="title"/> — <$view tiddler=<<selectedIntervenant>> field="ch-societe"/></h3>
       <p style="font-size:.88em;opacity:.6"><$view tiddler=<<selectedIntervenant>> field="ch-role"/></p>
-      <$set name="fichePoints" value={{{ [all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[resolu]sort[ch-numero]count[]] }}}>
+      <$set name="fichePoints" value={{{ [all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]count[]] }}}>
         <$list filter="[<fichePoints>compare:number:gt[0]]" variable="ignore"
           emptyMessage="""<em>Aucun point ouvert pour cet intervenant.</em>""">
-          <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[resolu]sort[ch-numero]]"
+          <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]]"
             template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
         </$list>
       </$set>

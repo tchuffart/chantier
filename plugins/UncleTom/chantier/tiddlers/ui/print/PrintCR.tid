@@ -4,8 +4,8 @@ title: $:/plugins/UncleTom/chantier/ui/print/PrintCR
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
-\define ch-points-cr-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}!field:ch-statut[resolu]sort[ch-numero]]
-\define ch-points-cr-resolus() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-validation{!!title}field:ch-statut[resolu]sort[ch-numero]]
+\define ch-points-cr-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}!field:ch-statut[leve]sort[ch-numero]]
+\define ch-points-cr-leves() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-validation{!!title}field:ch-statut[leve]sort[ch-numero]]
 \define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
 
 <$set name="thisNumero" value={{!!ch-numero}}>
@@ -74,10 +74,10 @@ type: text/vnd.tiddlywiki
     emptyMessage="""<p><em><<lingo EmptyPointsTitle>></em></p>"""
   />
 
-  <!-- Points résolus -->
-  <$list filter=<<ch-points-cr-resolus>> variable="ignore" emptyMessage="">
+  <!-- Points levés -->
+  <$list filter=<<ch-points-cr-leves>> variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo PointsResolus/Caption>></h2>
-    <$list filter=<<ch-points-cr-resolus>>
+    <$list filter=<<ch-points-cr-leves>>
       template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
     />
   </$list>

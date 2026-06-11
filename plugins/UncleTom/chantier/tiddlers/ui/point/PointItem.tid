@@ -15,7 +15,7 @@ type: text/vnd.tiddlywiki
       <span class={{{ [<statut>addprefix[ch-point-statut-badge ch-point-statut-]] }}}>
         <$list filter="[<statut>match[ouvert]]" variable="ignore">Ouvert</$list>
         <$list filter="[<statut>match[pour-rappel]]" variable="ignore">Pour rappel</$list>
-        <$list filter="[<statut>match[resolu]]" variable="ignore">Résolu</$list>
+        <$list filter="[<statut>match[leve]]" variable="ignore">Levé</$list>
       </span>
     </$set>
     <span class="ch-point-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
@@ -30,8 +30,8 @@ type: text/vnd.tiddlywiki
     <$list filter="[all[current]has[ch-echeance]]" variable="ignore">
       <span class="ch-point-meta-item"><span class="ch-point-meta-label">Éch.</span> <$view field="ch-echeance"/></span>
     </$list>
-    <$list filter="[all[current]field:ch-statut[resolu]has[ch-date-validation]]" variable="ignore">
-      <span class="ch-point-meta-item"><span class="ch-point-meta-label">Résolu le</span> <$view field="ch-date-validation"/></span>
+    <$list filter="[all[current]field:ch-statut[leve]has[ch-date-validation]]" variable="ignore">
+      <span class="ch-point-meta-item"><span class="ch-point-meta-label">Levé le</span> <$view field="ch-date-validation"/></span>
     </$list>
   </div>
 </div>

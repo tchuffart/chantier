@@ -238,12 +238,12 @@ type: text/vnd.tiddlywiki
   color: #e73939;
 }
 
-.ch-point-view-resolu {
+.ch-point-view-leve {
   border-left: 4px solid #27ae60;
   padding-left: 12px;
 }
 
-.ch-point-view-resolu .lignes th {
+.ch-point-view-leve .lignes th {
   border-bottom-color: #27ae60;
   color: #27ae60;
 }
@@ -329,7 +329,7 @@ type: text/vnd.tiddlywiki
   color: #e73939;
 }
 
-.ch-point-statut-resolu {
+.ch-point-statut-leve {
   background: rgba(39, 174, 96, 0.12);
   color: #27ae60;
 }
@@ -395,12 +395,12 @@ type: text/vnd.tiddlywiki
   border-left: 3px solid #2da562;
 }
 
-.ch-point-resolu {
+.ch-point-leve {
   border-left: 3px solid #27ae60;
   padding-left: 8px;
 }
 
-.ch-point-resolu .ch-point-numero {
+.ch-point-leve .ch-point-numero {
   color: #27ae60;
 }
 

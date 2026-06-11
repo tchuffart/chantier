@@ -35,7 +35,7 @@ Echeance/Placeholder: Échéance (ex: 01/07/2024)
 EmptyPointsReportesTitle: Aucun point reporté
 PointsNouveaux/Caption: Décisions du jour
 PointsReportes/Caption: Points reportés des réunions précédentes
-PointsResolus/Caption: Points résolus cette séance
+PointsResolus/Caption: Points levés cette séance
 PrintCR/Caption: Imprimer CR
 PrintCR/Hint: Aperçu et impression du compte-rendu
 Responsables/Placeholder: Responsables
@@ -85,5 +85,5 @@ Statut/Caption: Statut
 Texte/Placeholder: Contenu du point (détails, décisions...)
 Statut/PourRappel: Pour rappel
 Statut/Reference: Référence permanente
-Statut/Resolu: Résolu
+Statut/Resolu: Levé
 TableauPresences/Caption: Tableau des présences

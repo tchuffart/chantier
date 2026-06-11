@@ -44,7 +44,7 @@ type: text/vnd.tiddlywiki
 
   <!-- Points en cours -->
   <h2 class="ch-cr-section">Points en attente de votre intervention</h2>
-  <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[resolu]sort[ch-numero]]"
+  <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]]"
     template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
     emptyMessage="<p><em>Aucun point en cours.</em></p>"
   />
