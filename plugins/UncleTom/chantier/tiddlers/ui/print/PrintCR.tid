@@ -47,22 +47,61 @@ type: text/vnd.tiddlywiki
     </div>
   </$list>
 
-  <!-- Tableau intervenants groupés par type -->
+  <!-- Tableau intervenants -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
-    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage">>
-    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre">>
-    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises">>
-    <<ch-intervenants-table "!has[ch-type]" "Non classé">>
-    <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
+    <table class="ch-cr-table ch-cr-intervenants">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th><<lingo Entreprise/Caption>></th>
+          <th><<lingo Lot/Caption>></th>
+          <th><<lingo Role/Caption>></th>
+          <th><<lingo Present/Caption>></th>
+          <th><<lingo Excuse/Caption>></th>
+          <th><<lingo Convoque/Caption>></th>
+        </tr>
+      </thead>
+      <tbody>
+        <$list filter=<<ch-all-intervenants>> variable="intervenantTitle">
+          <$vars presenceTiddler=<<presenceTid>>>
+            <tr>
+              <td><$text text=<<intervenantTitle>>/></td>
+              <td><$view tiddler=<<intervenantTitle>> field="ch-entreprise"/></td>
+              <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
+              <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
+              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
+              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
+              <td class="ch-cr-cell-center"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
+            </tr>
+          </$vars>
+        </$list>
+      </tbody>
+    </table>
   </$vars>
+
+  <!-- Références permanentes -->
+  <$list filter=<<ch-references>> variable="ignore" emptyMessage="">
+    <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
+    <table class="ch-cr-table">
+      <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
+      <tbody>
+        <$list filter=<<ch-references>>>
+          <tr>
+            <td><$view field="ch-categorie"/></td>
+            <td><$view field="title"/></td>
+          </tr>
+        </$list>
+      </tbody>
+    </table>
+  </$list>
 
   <!-- Points reportés (uniquement des réunions précédentes) -->
   <h2 class="ch-cr-section"><<lingo PointsReportes/Caption>></h2>
   <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
     <$set name="ptReunionNumero" value={{{ [<pt>get[ch-reunion-creation]get[ch-numero]] }}}>
       <$list filter="[<ptReunionNumero>compare:number:lt<thisNumero>]" variable="ignore" emptyMessage="">
-        <$list filter="[<pt>]" template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
+        <$transclude tiddler=<<pt>> template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
       </$list>
     </$set>
   </$list>
@@ -81,14 +120,6 @@ type: text/vnd.tiddlywiki
       template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
     />
   </$list>
-
-  <!-- Références permanentes -->
-  <$set name="refFilter" value="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]">
-  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]limit[1]]" variable="ignore" emptyMessage="">
-    <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <$list filter=<<refFilter>> template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
-  </$list>
-  </$set>
 
 </div>
 

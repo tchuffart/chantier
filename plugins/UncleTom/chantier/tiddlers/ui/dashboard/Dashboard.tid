@@ -1,46 +1,10 @@
 created: 20210601000000000
-modified: 20210601000000000
+modified: 20260605000000000
 title: $:/plugins/UncleTom/chantier/ui/dashboard/Dashboard
 type: text/vnd.tiddlywiki
 
-\define lingo-base() $:/language/chantier/
-
-<div class="ch-dashboard">
-
-  <div class="ch-dashboard-grid">
-
-    <$link to="Réunions" class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-reunions>>/></div>
-      <div class="ch-dashboard-card-label"><<lingo Reunions/Caption>></div>
-    </$link>
-
-    <$link to="Intervenants" class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-intervenants>>/></div>
-      <div class="ch-dashboard-card-label"><<lingo Intervenants/Caption>></div>
-    </$link>
-
-    <$link to="Lots" class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count"><$count filter=<<ch-all-lots>>/></div>
-      <div class="ch-dashboard-card-label"><<lingo Lots/Caption>></div>
-    </$link>
-
-    <$link to="Références" class="ch-dashboard-card">
-      <div class="ch-dashboard-card-count"><$count filter=<<ch-references>>/></div>
-      <div class="ch-dashboard-card-label"><<lingo References/Caption>></div>
-    </$link>
-
-  </div>
-
-  <h3><<lingo PointsOuverts/Caption>></h3>
-  <$list filter=<<ch-points-ouverts>>
-    template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
-    emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
-  />
-
-  <h3><<lingo PointsPourRappel/Caption>></h3>
-  <$list filter=<<ch-points-pour-rappel>>
-    template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
-    emptyMessage="""<em><<lingo EmptyPointsTitle>></em>"""
-  />
-
-</div>
+<$tabs
+  tabsList="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/DashboardTab]!has[draft.of]nsort[order]]"
+  default="$:/plugins/UncleTom/chantier/ui/dashboard/TabVue"
+  class="ch-dashboard-tabs"
+/>

@@ -223,6 +223,64 @@ type: text/vnd.tiddlywiki
   color: #2da562;
 }
 
+/* Bandeau projet */
+.ch-projet-bandeau {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  margin-bottom: 1.5em;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.02);
+}
+
+.ch-projet-info { flex: 1; }
+
+.ch-projet-nom {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.ch-projet-adresse,
+.ch-projet-moa {
+  font-size: .88em;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.ch-projet-logos {
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Config form */
+.ch-config-form h3 {
+  margin: 1.2em 0 .5em;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: 4px;
+}
+
+.ch-config-hint {
+  font-size: .82em;
+  opacity: 0.6;
+  margin: 4px 0 0;
+}
+
+.ch-config-logo-preview {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px dashed rgba(0,0,0,0.15);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.ch-cr-moa-info {
+  font-size: .88em;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
 /* Dashboard */
 .ch-dashboard-grid {
   display: grid;

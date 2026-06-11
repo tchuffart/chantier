@@ -3,9 +3,35 @@ modified: 20260605000000000
 tags: $:/plugins/UncleTom/chantier/DashboardTab
 title: $:/plugins/UncleTom/chantier/ui/dashboard/TabVue
 caption: Vue d'ensemble
+order: 1
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
+
+<!-- Bandeau projet -->
+<$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-nom]!field:ch-nom[]]" variable="ignore">
+<div class="ch-projet-bandeau">
+  <div class="ch-projet-logos">
+    <$list filter="[[$:/plugins/UncleTom/chantier/config/logo-architecte]has[text]]" variable="ignore">
+      <$image source="$:/plugins/UncleTom/chantier/config/logo-architecte" height="60"/>
+    </$list>
+  </div>
+  <div class="ch-projet-info">
+    <div class="ch-projet-nom">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-adresse]!field:ch-adresse[]]" variable="ignore">
+      <div class="ch-projet-adresse">{{$:/config/UncleTom/chantier/projet!!ch-adresse}}</div>
+    </$list>
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-nom]!field:ch-moa-nom[]]" variable="ignore">
+      <div class="ch-projet-moa">MOA : {{$:/config/UncleTom/chantier/projet!!ch-moa-nom}}</div>
+    </$list>
+  </div>
+  <div class="ch-projet-logos">
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore">
+      <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} height="60"/>
+    </$list>
+  </div>
+</div>
+</$list>
 
 <!-- Cartes stats -->
 <div class="ch-dashboard-grid">
