@@ -221,6 +221,7 @@ type: text/vnd.tiddlywiki
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 8px;
   padding: 16px;
+  text-align: center;
   text-decoration: none !important;
   color: inherit !important;
   transition: border-color .15s, box-shadow .15s;
@@ -229,6 +230,7 @@ type: text/vnd.tiddlywiki
 .ch-dashboard-card:hover {
   border-color: <<colour primary>>;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none !important;
 }
 
   padding: 1em;
@@ -240,13 +242,13 @@ type: text/vnd.tiddlywiki
   font-size: 2.4em;
   font-weight: bold;
   color: <<colour primary>>;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .ch-dashboard-card-label {
   font-size: .85em;
   color: #888;
-  margin: 4px 0 8px;
+  margin: 4px 0 0;
 }
 
 
