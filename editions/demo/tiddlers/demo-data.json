@@ -2,7 +2,7 @@
   {
     "title": "Dupont Jean",
     "tags": "intervenant",
-    "ch-entreprise": "Cabinet Dupont Architecture",
+    "ch-societe": "Cabinet Dupont Architecture",
     "ch-lot": "",
     "ch-role": "Architecte",
     "ch-email": "j.dupont@dupont-archi.fr",
@@ -12,7 +12,7 @@
   {
     "title": "Martin Sophie",
     "tags": "intervenant",
-    "ch-entreprise": "BET Structure Plus",
+    "ch-societe": "BET Structure Plus",
     "ch-lot": "12 - Structure",
     "ch-role": "Ingénieur structure",
     "ch-email": "s.martin@structure-plus.fr",
@@ -22,7 +22,7 @@
   {
     "title": "Leroy Michel",
     "tags": "intervenant",
-    "ch-entreprise": "Leroy Gros Œuvre SARL",
+    "ch-societe": "Leroy Gros Œuvre SARL",
     "ch-lot": "01 - Gros œuvre",
     "ch-role": "Conducteur de travaux",
     "ch-email": "m.leroy@leroy-go.fr",
@@ -32,7 +32,7 @@
   {
     "title": "Petit Isabelle",
     "tags": "intervenant",
-    "ch-entreprise": "Mairie de Somewhere",
+    "ch-societe": "Mairie de Somewhere",
     "ch-lot": "",
     "ch-role": "Maître d'ouvrage",
     "ch-email": "i.petit@mairie-somewhere.fr",
@@ -42,62 +42,62 @@
   {
     "title": "01 - Gros œuvre",
     "tags": "lot",
-    "ch-entreprise": "Leroy Gros Œuvre SARL"
+    "ch-societe": "Leroy Gros Œuvre SARL"
   },
   {
     "title": "02 - Charpente - Couverture",
     "tags": "lot",
-    "ch-entreprise": "Bois & Toit SAS"
+    "ch-societe": "Bois & Toit SAS"
   },
   {
     "title": "03 - Façades - Isolation",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "04 - Menuiseries extérieures",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "05 - Cloisons - Doublages",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "06 - Menuiseries intérieures",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "07 - Revêtements de sols",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "08 - Peinture",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "09 - Plomberie - Sanitaires",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "10 - CVC",
     "tags": "lot",
-    "ch-entreprise": ""
+    "ch-societe": ""
   },
   {
     "title": "11 - Électricité",
     "tags": "lot",
-    "ch-entreprise": "Elec Pro 34"
+    "ch-societe": "Elec Pro 34"
   },
   {
     "title": "12 - Structure",
     "tags": "lot",
-    "ch-entreprise": "BET Structure Plus"
+    "ch-societe": "BET Structure Plus"
   },
   {
     "title": "Réunion de chantier n°1",
