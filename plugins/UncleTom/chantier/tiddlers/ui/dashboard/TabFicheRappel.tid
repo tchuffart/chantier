@@ -34,8 +34,19 @@ type: text/vnd.tiddlywiki
 <$list filter="[<selectedIntervenant>!match[]]" variable="ignore">
 
   <$reveal type="match" state=<<printFicheState>> text="open">
-    <div class="ch-cr-preview ch-print-target">
-      {{||$:/plugins/UncleTom/chantier/ui/print/PrintFicheRappel}}
+    <div class="ch-modal-overlay">
+      <div class="ch-modal-a4">
+        <div class="ch-modal-toolbar ch-no-print">
+          <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>
+          <$button class="ch-btn">
+            <$action-setfield $tiddler=<<printFicheState>> text="closed"/>
+            {{$:/core/images/close-button}}
+          </$button>
+        </div>
+        <div class="ch-cr-preview ch-print-target">
+          {{||$:/plugins/UncleTom/chantier/ui/print/PrintFicheRappel}}
+        </div>
+      </div>
     </div>
   </$reveal>
 
