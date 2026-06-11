@@ -144,7 +144,13 @@ type: text/vnd.tiddlywiki
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Réunion diffusée */
+/* Réunion diffusée — data-tags sur le tiddler ouvert dans la story river */
+[data-tags*=" diffusé "] .tc-tiddler-body {
+  border-left: 3px solid #2980b9;
+  padding-left: 10px;
+}
+
+/* Badge et bordure dans la liste des réunions */
 .ch-reunion-diffuse {
   border-left: 3px solid #2980b9;
   padding-left: 8px;

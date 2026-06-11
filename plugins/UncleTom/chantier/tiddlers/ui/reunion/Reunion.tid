@@ -15,7 +15,7 @@ type: text/vnd.tiddlywiki
         <th><<lingo Date/Caption>></th>
         <td><$view field="ch-date"/></td>
         <td class="ch-diffuse-cell">
-          <$checkbox field="ch-diffuse" checked="oui" unchecked="" default="">
+          <$checkbox tag="diffusé">
             <span class="ch-diffuse-label">CR diffusé</span>
           </$checkbox>
         </td>
