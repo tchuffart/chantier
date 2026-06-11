@@ -84,7 +84,7 @@ type: text/vnd.tiddlywiki
 
   <!-- Références permanentes -->
   <$set name="refFilter" value="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]">
-  <$list filter=<<refFilter>> variable="ignore" emptyMessage="">
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
     <$list filter=<<refFilter>> template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
   </$list>
