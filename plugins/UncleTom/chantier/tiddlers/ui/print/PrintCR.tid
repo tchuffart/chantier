@@ -53,7 +53,7 @@ type: text/vnd.tiddlywiki
     <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage">>
     <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre">>
     <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises">>
-    <<ch-intervenants-table "!field:ch-type[moa]!field:ch-type[moe]!field:ch-type[entreprise]" "Non classé">>
+    <<ch-intervenants-table "!has[ch-type]" "Non classé">>
     <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
   </$vars>
 

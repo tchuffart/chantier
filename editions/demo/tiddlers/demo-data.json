@@ -6,7 +6,8 @@
     "ch-lot": "Maîtrise d'œuvre",
     "ch-role": "Architecte",
     "ch-email": "j.dupont@dupont-archi.fr",
-    "ch-tel": "06 01 02 03 04"
+    "ch-tel": "06 01 02 03 04",
+    "ch-type": "moe"
   },
   {
     "title": "Martin Sophie",
@@ -15,7 +16,8 @@
     "ch-lot": "Structure",
     "ch-role": "Ingénieur structure",
     "ch-email": "s.martin@structure-plus.fr",
-    "ch-tel": "06 05 06 07 08"
+    "ch-tel": "06 05 06 07 08",
+    "ch-type": "entreprise"
   },
   {
     "title": "Leroy Michel",
@@ -24,7 +26,8 @@
     "ch-lot": "Gros-œuvre",
     "ch-role": "Conducteur de travaux",
     "ch-email": "m.leroy@leroy-go.fr",
-    "ch-tel": "06 09 10 11 12"
+    "ch-tel": "06 09 10 11 12",
+    "ch-type": "entreprise"
   },
   {
     "title": "Petit Isabelle",
@@ -33,7 +36,8 @@
     "ch-lot": "",
     "ch-role": "Maître d'ouvrage",
     "ch-email": "i.petit@mairie-somewhere.fr",
-    "ch-tel": "04 13 14 15 16"
+    "ch-tel": "04 13 14 15 16",
+    "ch-type": "moa"
   },
   {
     "title": "Gros-œuvre",
