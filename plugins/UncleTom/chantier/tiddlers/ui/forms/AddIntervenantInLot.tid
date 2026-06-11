@@ -32,12 +32,6 @@ type: text/vnd.tiddlywiki
     </$keyboard>
     <div class="ch-form-row">
       <div class="ch-form-group">
-        <$edit-text tiddler=<<stateTiddler>> field="entreprise"
-          placeholder={{$:/language/chantier/Entreprise/Placeholder}}
-          class="ch-input"
-        />
-      </div>
-      <div class="ch-form-group">
         <$select tiddler=<<stateTiddler>> field="type" class="ch-select">
           <option value="">— Type —</option>
           <option value="entreprise">Entreprise</option>
