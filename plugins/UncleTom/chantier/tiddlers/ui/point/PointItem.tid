@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 
-<div class={{{ [all[current]get[ch-statut]addprefix[ch-point ch-point-]] }}}>
+<div class={{{ [all[current]get[ch-statut]addprefix[ch-item ch-point ch-point-]] }}}>
   <div class="ch-item-actions ch-no-print">
     {{||$:/plugins/UncleTom/chantier/ui/buttons/PointActions}}
   </div>
