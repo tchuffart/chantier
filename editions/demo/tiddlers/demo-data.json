@@ -3,7 +3,7 @@
     "title": "Dupont Jean",
     "tags": "intervenant",
     "ch-entreprise": "Cabinet Dupont Architecture",
-    "ch-lot": "Maîtrise d'œuvre",
+    "ch-lot": "",
     "ch-role": "Architecte",
     "ch-email": "j.dupont@dupont-archi.fr",
     "ch-tel": "06 01 02 03 04",
@@ -13,7 +13,7 @@
     "title": "Martin Sophie",
     "tags": "intervenant",
     "ch-entreprise": "BET Structure Plus",
-    "ch-lot": "Structure",
+    "ch-lot": "12 - Structure",
     "ch-role": "Ingénieur structure",
     "ch-email": "s.martin@structure-plus.fr",
     "ch-tel": "06 05 06 07 08",
@@ -23,7 +23,7 @@
     "title": "Leroy Michel",
     "tags": "intervenant",
     "ch-entreprise": "Leroy Gros Œuvre SARL",
-    "ch-lot": "Gros-œuvre",
+    "ch-lot": "01 - Gros œuvre",
     "ch-role": "Conducteur de travaux",
     "ch-email": "m.leroy@leroy-go.fr",
     "ch-tel": "06 09 10 11 12",
@@ -40,19 +40,64 @@
     "ch-type": "moa"
   },
   {
-    "title": "Gros-œuvre",
+    "title": "01 - Gros œuvre",
     "tags": "lot",
     "ch-entreprise": "Leroy Gros Œuvre SARL"
   },
   {
-    "title": "Charpente - Couverture",
+    "title": "02 - Charpente - Couverture",
     "tags": "lot",
     "ch-entreprise": "Bois & Toit SAS"
   },
   {
-    "title": "Électricité",
+    "title": "03 - Façades - Isolation",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "04 - Menuiseries extérieures",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "05 - Cloisons - Doublages",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "06 - Menuiseries intérieures",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "07 - Revêtements de sols",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "08 - Peinture",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "09 - Plomberie - Sanitaires",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "10 - CVC",
+    "tags": "lot",
+    "ch-entreprise": ""
+  },
+  {
+    "title": "11 - Électricité",
     "tags": "lot",
     "ch-entreprise": "Elec Pro 34"
+  },
+  {
+    "title": "12 - Structure",
+    "tags": "lot",
+    "ch-entreprise": "BET Structure Plus"
   },
   {
     "title": "Réunion de chantier n°1",
@@ -91,7 +136,7 @@
     "tags": "point",
     "ch-numero": "2.1",
     "ch-reunion-creation": "Réunion de chantier n°2",
-    "ch-lots": "Charpente - Couverture",
+    "ch-lots": "04 - Menuiseries extérieures",
     "ch-responsables": "Dupont Jean",
     "ch-echeance": "17/06/2026",
     "ch-statut": "resolu",
@@ -102,7 +147,7 @@
     "tags": "point",
     "ch-numero": "2.2",
     "ch-reunion-creation": "Réunion de chantier n°2",
-    "ch-lots": "Électricité",
+    "ch-lots": "11 - Électricité",
     "ch-responsables": "Leroy Michel",
     "ch-echeance": "24/06/2026",
     "ch-statut": "pour-rappel",
@@ -113,7 +158,7 @@
     "tags": "point",
     "ch-numero": "1.2",
     "ch-reunion-creation": "Réunion de chantier n°1",
-    "ch-lots": "Gros-œuvre Structure",
+    "ch-lots": "01 - Gros œuvre",
     "ch-responsables": "Martin Sophie",
     "ch-echeance": "17/06/2026",
     "ch-statut": "ouvert",

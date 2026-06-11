@@ -14,8 +14,6 @@ type: text/vnd.tiddlywiki
       <label class="ch-form-label">Nom du chantier</label>
       <$edit-text tiddler=<<configTiddler>> field="ch-nom" class="ch-input" placeholder="Ex : Construction mairie de Somewhere"/>
     </div>
-  </div>
-  <div class="ch-form-row">
     <div class="ch-form-group">
       <label class="ch-form-label">Adresse</label>
       <$edit-text tiddler=<<configTiddler>> field="ch-adresse" class="ch-input" placeholder="Ex : 1 place de la Mairie, 34000 Montpellier"/>
@@ -32,8 +30,6 @@ type: text/vnd.tiddlywiki
       <label class="ch-form-label">Adresse</label>
       <$edit-text tiddler=<<configTiddler>> field="ch-moa-adresse" class="ch-input" placeholder="Ex : 1 place de la Mairie"/>
     </div>
-  </div>
-  <div class="ch-form-row">
     <div class="ch-form-group">
       <label class="ch-form-label">Logo MOA — titre du tiddler image</label>
       <$edit-text tiddler=<<configTiddler>> field="ch-logo-moa" class="ch-input" placeholder="Ex : logo-moa.png"/>
