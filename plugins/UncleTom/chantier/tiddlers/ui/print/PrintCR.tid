@@ -83,13 +83,12 @@ type: text/vnd.tiddlywiki
   </$list>
 
   <!-- Références permanentes -->
-  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
-  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
     <table class="lignesmini">
       <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
       <tbody>
-        <$list filter=<<ch-references>>>
+        <$list filter="[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]">
           <tr>
             <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
             <td><$view field="title"/></td>
@@ -98,7 +97,6 @@ type: text/vnd.tiddlywiki
       </tbody>
     </table>
   </$list>
-  </$set>
 
 </div>
 
