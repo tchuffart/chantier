@@ -436,6 +436,11 @@ type: text/vnd.tiddlywiki
 .ch-cr-preview {
   padding: 20mm;
   flex: 1;
+  font-size: 9pt;
+}
+
+.ch-cr-preview .lignesmini {
+  font-size: 8pt;
 }
 
 .ch-cr-header {
@@ -479,6 +484,13 @@ type: text/vnd.tiddlywiki
 .ch-cr-lieu {
   font-size: .9em;
   color: #666;
+}
+
+.ch-cr-legende {
+  font-size: 7pt;
+  color: #666;
+  margin: 3px 0 0;
+  font-style: italic;
 }
 
 .ch-cr-section {
