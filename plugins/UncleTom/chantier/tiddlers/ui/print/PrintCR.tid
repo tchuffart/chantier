@@ -57,24 +57,6 @@ type: text/vnd.tiddlywiki
     <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
   </$vars>
 
-  <!-- Références permanentes -->
-  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
-  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
-    <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
-    <table class="lignesmini">
-      <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
-      <tbody>
-        <$list filter=<<ch-references>>>
-          <tr>
-            <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
-            <td><$view field="title"/></td>
-          </tr>
-        </$list>
-      </tbody>
-    </table>
-  </$list>
-  </$set>
-
   <!-- Points reportés (uniquement des réunions précédentes) -->
   <h2 class="ch-cr-section"><<lingo PointsReportes/Caption>></h2>
   <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
@@ -99,6 +81,24 @@ type: text/vnd.tiddlywiki
       template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
     />
   </$list>
+
+  <!-- Références permanentes -->
+  <$set name="refCount" value={{{ [<<ch-references>>count[]] }}}>
+  <$list filter="[<refCount>compare:number:gt[0]]" variable="ignore">
+    <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
+    <table class="lignesmini">
+      <thead><tr><th><<lingo Categorie/Caption>></th><th>Référence</th></tr></thead>
+      <tbody>
+        <$list filter=<<ch-references>>>
+          <tr>
+            <td><$view tiddler={{!!ch-categorie}} field="ch-label"/></td>
+            <td><$view field="title"/></td>
+          </tr>
+        </$list>
+      </tbody>
+    </table>
+  </$list>
+  </$set>
 
 </div>
 
