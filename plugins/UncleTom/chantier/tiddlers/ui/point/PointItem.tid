@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
   <div class="ch-point-header">
     <$list filter="[all[current]field:ch-statut[ouvert]] [all[current]field:ch-statut[pour-rappel]] +[limit[1]]" variable="ignore">
       <$button class="ch-btn-valider ch-no-print" tooltip="Valider ce point">
-        <$action-setfield ch-statut="resolu" ch-date-validation={{{ [<reunionTitle>get[ch-date]] }}}/>
+        <$action-setfield ch-statut="resolu" ch-reunion-validation=<<reunionTitle>> ch-date-validation={{{ [<reunionTitle>get[ch-date]] }}}/>
         ✓
       </$button>
     </$list>

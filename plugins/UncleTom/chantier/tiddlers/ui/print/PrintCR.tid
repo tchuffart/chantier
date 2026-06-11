@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
 \define ch-points-cr-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}!field:ch-statut[resolu]sort[ch-numero]]
-\define ch-points-cr-resolus() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}field:ch-statut[resolu]sort[ch-numero]]
+\define ch-points-cr-resolus() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-validation{!!title}field:ch-statut[resolu]sort[ch-numero]]
 \define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
 
 <$set name="thisNumero" value={{!!ch-numero}}>

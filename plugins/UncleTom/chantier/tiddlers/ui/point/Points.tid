@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 <$vars reunionTitle=<<currentTiddler>>>
 
 <h3><<lingo PointsReportes/Caption>></h3>
-<$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
+<$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[resolu]field:ch-reunion-validation{!!title}] +[sort[ch-numero]]" variable="pt" emptyMessage="">
   <$set name="ptReunionNumero" value={{{ [<pt>get[ch-reunion-creation]get[ch-numero]] }}}>
     <$list filter="[<ptReunionNumero>compare:number:lt<thisNumero>]" variable="ignore" emptyMessage="">
       <$list filter="[<pt>]" template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
