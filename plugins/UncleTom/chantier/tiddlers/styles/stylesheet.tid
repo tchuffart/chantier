@@ -227,6 +227,17 @@ type: text/vnd.tiddlywiki
   background: #27ae60;
 }
 
+/* Vue tiddler point selon statut */
+.ch-point-view-pour-rappel {
+  border-left: 4px solid #e73939;
+  padding-left: 12px;
+}
+
+.ch-point-view-pour-rappel .lignes th {
+  border-bottom-color: #e73939;
+  color: #e73939;
+}
+
 .ch-item-actions {
   float: right;
 }
@@ -317,7 +328,8 @@ type: text/vnd.tiddlywiki
   white-space: pre-wrap;
 }
 
-.ch-point-pour-rappel .ch-point-numero {
+.ch-point-pour-rappel .ch-point-numero,
+.ch-point-view-pour-rappel .ch-point-numero {
   color: #e73939;
 }
 
