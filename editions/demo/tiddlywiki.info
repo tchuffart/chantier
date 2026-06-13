@@ -1,0 +1,20 @@
+{
+  "description": "Chantier demo edition",
+  "plugins": [
+    "UncleTom/chantier",
+    "UncleTom/chantier-fr-FR"
+  ],
+  "themes": [
+    "tiddlywiki/vanilla",
+    "tiddlywiki/snowwhite"
+  ],
+  "languages": [],
+  "build": {
+    "index": [
+      "--rendertiddler",
+      "$:/core/save/all",
+      "demo.html",
+      "text/plain"
+    ]
+  }
+}

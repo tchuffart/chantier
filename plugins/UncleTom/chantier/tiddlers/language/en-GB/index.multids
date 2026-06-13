@@ -1,0 +1,89 @@
+title: $:/language/chantier/
+
+AddIntervenant/Caption: Add participant
+AddIntervenant/Hint: Add a new participant to this project
+AddLot/Caption: Add trade
+AddLot/Hint: Add a new trade
+Lot/Placeholder: Trade name (e.g. Masonry, Painting...)
+AddPoint/Caption: Add item
+AddPoint/Hint: Add a new meeting item
+AddPointToReunion/Placeholder: Describe this item...
+AddReference/Caption: Add reference
+AddReference/Hint: Add a permanent reference
+AddReferenceToChantier/Placeholder: Name this reference...
+AddReunion/Caption: New meeting
+AddReunion/Hint: Create a new site meeting
+Date/Caption: Date
+Date/Placeholder: Meeting date (e.g. 2024-06-03)
+Lieu/Caption: Location
+Lieu/Placeholder: Meeting location
+Numero/Caption: Number
+Numero/Placeholder: Meeting number (e.g. 1)
+Reunion/Placeholder: Meeting title
+Absent/Caption: Absent
+Email/Caption: Email
+Email/Placeholder: Email address
+Entreprise/Caption: Company
+Entreprise/Placeholder: Company name
+Intervenant/Placeholder: Full name
+Role/Caption: Role
+Role/Placeholder: Role (e.g. Project manager)
+Tel/Caption: Phone
+Tel/Placeholder: Phone number
+Echeance/Caption: Deadline
+Echeance/Placeholder: Deadline (e.g. 2024-07-01)
+EmptyPointsReportesTitle: No carried-over items
+PointsNouveaux/Caption: Decisions of the day
+PointsReportes/Caption: Carried-over items
+PointsResolus/Caption: Items resolved this meeting
+PrintCR/Caption: Print minutes
+PrintCR/Hint: Preview and print the meeting minutes
+Responsables/Placeholder: Responsible parties
+Cancel/Caption: Cancel
+Categorie/Acces: Access
+Categorie/Altimetrie: Altimetry
+Categorie/Caption: Category
+Categorie/ChoixProduit: Product choice
+Categorie/Materiau: Materials
+Categorie/Reglementation: Regulations
+Categorie/Securite: Safety
+Intervenant/Caption: Participant
+Chantier/Caption: Site
+Close/Caption: Close
+Convoque/Caption: Invited to next meeting
+Dashboard: Dashboard
+Delete/Caption: Delete
+Edit/Caption: Edit
+EmptyIntervenantsDescription: Add your first participant.
+EmptyIntervenantsTitle: No participants yet
+EmptyLotsDescription: Add your first trade.
+EmptyLotsTitle: No trades yet
+EmptyPointsDescription: Add your first item to this meeting.
+EmptyPointsTitle: No items yet
+EmptyReferencesDescription: Add your first permanent reference.
+EmptyReferencesTitle: No references yet
+EmptyReunionsDescription: Create the first site meeting.
+EmptyReunionsTitle: No meetings yet
+Excuse/Caption: Excused
+Intervenants/Caption: Participants
+Lot/Caption: Trade
+LotsConCernes/Caption: Trades concerned
+Lots/Caption: Trades
+NewChantier: New site
+Point/Caption: Item
+Points/Caption: Items
+PointsOuverts/Caption: Open items
+PointsPourRappel/Caption: Reminder items
+PourRappel/Caption: Reminder
+Present/Caption: Present
+Reference/Caption: Reference
+References/Caption: References
+Reunion/Caption: Meeting
+Reunions/Caption: Meetings
+Save/Caption: Save
+Statut/Caption: Status
+Texte/Placeholder: Point content (details, decisions...)
+Statut/PourRappel: Reminder
+Statut/Reference: Reference
+Statut/Resolu: Resolved
+TableauPresences/Caption: Attendance table

@@ -1,0 +1,37 @@
+created: 20260601000000000
+modified: 20260601000000000
+tags: $:/tags/Macro
+title: $:/plugins/UncleTom/chantier/macros/filters
+type: text/vnd.tiddlywiki
+
+\define ch-all-intervenants()
+[all[tiddlers]tag[intervenant]!has[draft.of]sort[entreprise]]
+\end
+
+\define ch-all-lots()
+[all[tiddlers]tag[lot]!has[draft.of]sort[title]]
+\end
+
+\define ch-all-reunions()
+[all[tiddlers]tag[reunion]!has[draft.of]sort[ch-numero]]
+\end
+
+\define ch-points-of-reunion(reunion)
+[all[tiddlers]tag[point]field:ch-reunion[$reunion$]!has[draft.of]sort[ch-numero]]
+\end
+
+\define ch-points-ouverts()
+[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]sort[ch-numero]]
+\end
+
+\define ch-points-pour-rappel()
+[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
+\end
+
+\define ch-references()
+[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]
+\end
+
+\define ch-presences-of-reunion(reunion)
+[all[tiddlers]tag[presence]field:ch-reunion[$reunion$]!has[draft.of]]
+\end

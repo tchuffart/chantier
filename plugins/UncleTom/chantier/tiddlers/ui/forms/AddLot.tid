@@ -1,0 +1,34 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddLot
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+\define add-lot-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[titre]] }}}
+    $savetitle="$:/state/chantier/new-lot"
+    tags="lot"
+    ch-entreprise={{{ [<stateTiddler>get[entreprise]] }}}
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" entreprise=""/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/lot-form">>>
+  <div class="ch-form">
+    <$keyboard key="Enter" actions=<<add-lot-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="titre"
+        placeholder={{$:/language/chantier/Lot/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <$edit-text tiddler=<<stateTiddler>> field="entreprise"
+      placeholder={{$:/language/chantier/Entreprise/Placeholder}}
+      class="ch-input"
+    />
+    <$button actions=<<add-lot-actions>> class="ch-btn-primary">
+      <<lingo AddLot/Caption>>
+    </$button>
+  </div>
+</$vars>

@@ -1,0 +1,37 @@
+created: 20210601000000000
+modified: 20260606000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/lot/Lot
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addIntervenantInLotState() $:/state/chantier/add-intervenant-lot/$(currentTiddler)$
+
+<$list filter="[all[current]tag[lot]]" variable="ignore">
+  <div class="ch-lot-view">
+    <table class="invisible ch-header-table">
+      <tr>
+        <th><<lingo Entreprise/Caption>></th>
+        <td><$view field="ch-entreprise"/></td>
+      </tr>
+    </table>
+
+    <h3><<lingo Intervenants/Caption>></h3>
+    <$list filter="[all[tiddlers]tag[intervenant]field:ch-lot{!!title}!has[draft.of]sort[title]]"
+      template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
+      emptyMessage="""<em><<lingo EmptyIntervenantsTitle>></em>"""
+    />
+
+    <div class="ch-toolbar ch-no-print">
+      <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddIntervenant/Hint}}>
+        <$action-setfield $tiddler=<<addIntervenantInLotState>> text={{{ [<addIntervenantInLotState>get[text]match[open]then[closed]else[open]] }}}/>
+        {{$:/core/images/new-button}}
+        <<lingo AddIntervenant/Caption>>
+      </$button>
+    </div>
+
+    <$reveal type="match" state=<<addIntervenantInLotState>> text="open">
+      {{||$:/plugins/UncleTom/chantier/ui/forms/AddIntervenantInLot}}
+    </$reveal>
+  </div>
+</$list>

@@ -1,0 +1,73 @@
+created: 20260605000000000
+modified: 20260605000000000
+title: $:/plugins/UncleTom/chantier/ui/print/PrintReferences
+type: text/vnd.tiddlywiki
+
+<div class="ch-cr">
+
+  <!-- En-tête -->
+  <div class="ch-cr-header">
+    <div class="ch-cr-logo ch-cr-logo-left">
+      <$list filter="[[$:/plugins/UncleTom/chantier/config/logo-architecte]has[text]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo architecte</em>""">
+        <$image source="$:/plugins/UncleTom/chantier/config/logo-architecte" width="120"/>
+      </$list>
+    </div>
+    <div class="ch-cr-title">
+      <div class="ch-cr-chantier">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
+      <div class="ch-cr-reunion-info">Références permanentes</div>
+      <div class="ch-cr-lieu">Édité le <<now "DD/0MM/YYYY">></div>
+    </div>
+    <div class="ch-cr-logo ch-cr-logo-right">
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo MOA</em>""">
+        <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} width="120"/>
+      </$list>
+    </div>
+  </div>
+
+  <!-- Liste par catégorie -->
+  <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+    <$set name="refsInCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>count[]] }}}>
+      <$list filter="[<refsInCat>compare:number:gt[0]]" variable="ignore">
+        <h2 class="ch-cr-section"><$view tiddler=<<catTid>> field="ch-label"/></h2>
+        <table class="lignes">
+          <thead>
+            <tr><th style="width:6em">N°</th><th>Référence</th><th style="width:10em">Réunion</th></tr>
+          </thead>
+          <tbody>
+            <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>nsort[ch-numero]sort[title]]">
+              <tr>
+                <td><$view field="ch-numero"/></td>
+                <td><$view field="title"/></td>
+                <td><$view field="ch-reunion-creation"/></td>
+              </tr>
+            </$list>
+          </tbody>
+        </table>
+      </$list>
+    </$set>
+  </$list>
+
+  <!-- Sans catégorie -->
+  <$set name="refsNoCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]!has[ch-categorie]count[]] }}}>
+    <$list filter="[<refsNoCat>compare:number:gt[0]]" variable="ignore">
+      <h2 class="ch-cr-section">Sans catégorie</h2>
+      <table class="lignes">
+        <thead>
+          <tr><th style="width:6em">N°</th><th>Référence</th><th style="width:10em">Réunion</th></tr>
+        </thead>
+        <tbody>
+          <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!has[ch-categorie]sort[title]]">
+            <tr>
+              <td><$view field="ch-numero"/></td>
+              <td><$view field="title"/></td>
+              <td><$view field="ch-reunion-creation"/></td>
+            </tr>
+          </$list>
+        </tbody>
+      </table>
+    </$list>
+  </$set>
+
+</div>

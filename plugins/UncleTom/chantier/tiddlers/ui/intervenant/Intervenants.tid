@@ -1,0 +1,24 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/intervenant/Intervenants
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addIntervenantState() $:/state/chantier/add-intervenant
+
+<$list filter=<<ch-all-intervenants>>
+  template="$:/plugins/UncleTom/chantier/ui/intervenant/IntervenantItem"
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyIntervenantsTitle>></p><p><<lingo EmptyIntervenantsDescription>></p></div>"""
+/>
+
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddIntervenant/Hint}}>
+    <$action-setfield $tiddler=<<addIntervenantState>> text={{{ [<addIntervenantState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddIntervenant/Caption>>
+  </$button>
+</div>
+
+<$reveal type="match" state=<<addIntervenantState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddIntervenant}}
+</$reveal>

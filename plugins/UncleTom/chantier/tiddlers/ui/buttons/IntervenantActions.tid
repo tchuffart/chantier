@@ -1,0 +1,16 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/buttons/IntervenantActions
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$button class="ch-btn tc-btn-invisible" tooltip={{$:/language/chantier/Edit/Caption}}>
+  <$action-sendmessage $message="tm-edit-tiddler" $param=<<currentTiddler>>/>
+  {{$:/core/images/edit-button}}
+</$button>
+
+<$button class="ch-btn tc-btn-invisible" tooltip={{$:/language/chantier/Delete/Caption}}>
+  <$action-deletetiddler $tiddler=<<currentTiddler>>/>
+  {{$:/core/images/delete-button}}
+</$button>

@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Dupont Jean",
+    "tags": "intervenant",
+    "ch-entreprise": "Cabinet Dupont Architecture",
+    "ch-lot": "Maîtrise d'œuvre",
+    "ch-role": "Architecte",
+    "ch-email": "j.dupont@dupont-archi.fr",
+    "ch-tel": "06 01 02 03 04",
+    "ch-type": "moe"
+  },
+  {
+    "title": "Martin Sophie",
+    "tags": "intervenant",
+    "ch-entreprise": "BET Structure Plus",
+    "ch-lot": "Structure",
+    "ch-role": "Ingénieur structure",
+    "ch-email": "s.martin@structure-plus.fr",
+    "ch-tel": "06 05 06 07 08",
+    "ch-type": "entreprise"
+  },
+  {
+    "title": "Leroy Michel",
+    "tags": "intervenant",
+    "ch-entreprise": "Leroy Gros Œuvre SARL",
+    "ch-lot": "Gros-œuvre",
+    "ch-role": "Conducteur de travaux",
+    "ch-email": "m.leroy@leroy-go.fr",
+    "ch-tel": "06 09 10 11 12",
+    "ch-type": "entreprise"
+  },
+  {
+    "title": "Petit Isabelle",
+    "tags": "intervenant",
+    "ch-entreprise": "Mairie de Somewhere",
+    "ch-lot": "",
+    "ch-role": "Maître d'ouvrage",
+    "ch-email": "i.petit@mairie-somewhere.fr",
+    "ch-tel": "04 13 14 15 16",
+    "ch-type": "moa"
+  },
+  {
+    "title": "Gros-œuvre",
+    "tags": "lot",
+    "ch-entreprise": "Leroy Gros Œuvre SARL"
+  },
+  {
+    "title": "Charpente - Couverture",
+    "tags": "lot",
+    "ch-entreprise": "Bois & Toit SAS"
+  },
+  {
+    "title": "Électricité",
+    "tags": "lot",
+    "ch-entreprise": "Elec Pro 34"
+  },
+  {
+    "title": "Réunion de chantier n°1",
+    "tags": "reunion",
+    "ch-numero": "1",
+    "ch-date": "03/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+  },
+  {
+    "title": "Accès chantier non sécurisé côté rue",
+    "tags": "point",
+    "ch-numero": "1.1",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "Gros-œuvre",
+    "ch-responsables": "Leroy Michel",
+    "ch-echeance": "10/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le périmètre de sécurité côté rue n'est pas conforme. Prévoir barrières de chantier homologuées et panneau de signalisation avant reprise des travaux."
+  },
+  {
+    "title": "Réunion de chantier n°2",
+    "tags": "reunion",
+    "ch-numero": "2",
+    "ch-date": "10/06/2026",
+    "ch-lieu": "Base de chantier"
+  },
+  {
+    "title": "Réunion de chantier n°3",
+    "tags": "reunion",
+    "ch-numero": "3",
+    "ch-date": "17/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+  },
+  {
+    "title": "Choix coloris menuiseries extérieures",
+    "tags": "point",
+    "ch-numero": "2.1",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "Charpente - Couverture",
+    "ch-responsables": "Dupont Jean",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "resolu",
+    "text": "Le maître d'ouvrage a validé le coloris RAL 7016 gris anthracite pour l'ensemble des menuiseries extérieures. Transmettre bon de commande à l'entreprise."
+  },
+  {
+    "title": "Raccordement électrique provisoire",
+    "tags": "point",
+    "ch-numero": "2.2",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "Électricité",
+    "ch-responsables": "Leroy Michel",
+    "ch-echeance": "24/06/2026",
+    "ch-statut": "pour-rappel",
+    "text": "Le raccordement électrique provisoire n'est toujours pas réalisé malgré la demande du CR n°1. Point en retard — intervention Elec Pro 34 à programmer d'urgence."
+  },
+  {
+    "title": "Validation plan de fondations",
+    "tags": "point",
+    "ch-numero": "1.2",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "Gros-œuvre Structure",
+    "ch-responsables": "Martin Sophie",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le BET structure doit valider le plan de fondations révisé (indice B) transmis par l'architecte le 28/05/2026. Retour attendu avant la prochaine réunion."
+  },
+  {
+    "title": "DTU 20.1 — Ouvrages en maçonnerie",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Réglementation",
+    "ch-statut": "reference",
+    "text": "Document Technique Unifié relatif aux ouvrages en maçonnerie de petits éléments — parois et murs. Applicable à l'ensemble des ouvrages en blocs béton du projet. Version en vigueur : DTU 20.1 P1-1 (mars 2008)."
+  },
+  {
+    "title": "Décret n°2004-924 — Travail en hauteur",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Sécurité",
+    "ch-statut": "reference",
+    "text": "Décret relatif à l'utilisation des équipements de travail mis à disposition pour des travaux temporaires en hauteur. Rappel : tout travail à plus de 3 m nécessite un équipement collectif de protection (échafaudage, garde-corps) sauf impossibilité technique justifiée."
+  },
+  {
+    "title": "Fiche technique béton C25/30",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Matériau",
+    "ch-statut": "reference",
+    "text": "Béton structurel de résistance caractéristique fck = 25 MPa, classe d'exposition XC2/XC3. Dosage ciment CEM II/A 42,5 : 350 kg/m³. Rapport E/C ≤ 0,55. Affaissement cône d'Abrams : S3 (100–150 mm). Granulats 0/20 mm. Fournisseur : Bétons du Midi — centrale de Montpellier-Est."
+  }
+]

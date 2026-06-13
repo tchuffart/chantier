@@ -1,0 +1,24 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/lot/Lots
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addLotState() $:/state/chantier/add-lot
+
+<$list filter=<<ch-all-lots>>
+  template="$:/plugins/UncleTom/chantier/ui/lot/LotItem"
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyLotsTitle>></p><p><<lingo EmptyLotsDescription>></p></div>"""
+/>
+
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddLot/Hint}}>
+    <$action-setfield $tiddler=<<addLotState>> text={{{ [<addLotState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddLot/Caption>>
+  </$button>
+</div>
+
+<$reveal type="match" state=<<addLotState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddLot}}
+</$reveal>

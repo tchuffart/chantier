@@ -1,0 +1,71 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddPoint
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addPointState() $:/state/chantier/add-point/$(currentTiddler)$
+
+\define add-point-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[description]] }}}
+    $savetitle="$:/state/chantier/new-point"
+    tags="point"
+    ch-numero={{{ [{!!ch-numero}addsuffix[.]] [all[tiddlers]tag[point]field:ch-reunion-creation<currentTiddler>count[]add[1]] +[join[]] }}}
+    ch-reunion-creation=<<currentTiddler>>
+    ch-lots={{{ [<stateTiddler>getlist[lots]join[ ]] }}}
+    ch-responsables={{{ [<stateTiddler>get[responsables]] }}}
+    ch-echeance={{{ [<stateTiddler>get[echeance]] }}}
+    text={{{ [<stateTiddler>get[texte]] }}}
+    ch-statut="ouvert"
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> description="" lots="" responsables="" echeance="" texte=""/>
+  <$action-setfield $tiddler=<<addPointState>> text="closed"/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/point-form">>>
+  <div class="ch-form ch-form-point">
+    <$edit-text tiddler=<<stateTiddler>> field="description"
+      placeholder={{$:/language/chantier/AddPointToReunion/Placeholder}}
+      class="ch-input"
+    />
+    <div class="ch-form-row">
+      <div class="ch-form-group">
+        <label class="ch-form-label"><<lingo LotsConCernes/Caption>></label>
+        <div class="ch-lots-checkboxes">
+          <$list filter=<<ch-all-lots>> variable="lotTitle">
+            <label class="ch-checkbox-label">
+              <$checkbox tiddler=<<stateTiddler>> listField="lots" checked=<<lotTitle>>>
+                <$text text=<<lotTitle>>/>
+              </$checkbox>
+            </label>
+          </$list>
+        </div>
+      </div>
+      <div class="ch-form-group">
+        <$edit-text tiddler=<<stateTiddler>> field="responsables"
+          placeholder={{$:/language/chantier/Responsables/Placeholder}}
+          class="ch-input"
+        />
+        <$edit-text tiddler=<<stateTiddler>> field="echeance"
+          type="date"
+          class="ch-input ch-input-small"
+        />
+      </div>
+    </div>
+    <$edit-text tiddler=<<stateTiddler>> field="texte"
+      placeholder={{$:/language/chantier/Texte/Placeholder}}
+      class="ch-input ch-textarea ch-textarea-full"
+      tag="textarea"
+    />
+    <div class="ch-form-actions">
+      <$button actions=<<add-point-actions>> class="ch-btn-primary">
+        <<lingo AddPoint/Caption>>
+      </$button>
+      <$button class="ch-btn" tooltip={{$:/language/chantier/Cancel/Caption}}>
+        <$action-setfield $tiddler=<<addPointState>> text="closed"/>
+        <<lingo Cancel/Caption>>
+      </$button>
+    </div>
+  </div>
+</$vars>

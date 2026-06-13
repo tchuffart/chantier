@@ -1,0 +1,89 @@
+title: $:/language/chantier/
+
+AddIntervenant/Caption: Ajouter un intervenant
+AddIntervenant/Hint: Ajouter un nouvel intervenant à cette opération
+AddLot/Caption: Ajouter un lot
+AddLot/Hint: Ajouter un nouveau lot
+Lot/Placeholder: Nom du lot (ex: Gros-oeuvre, Peinture...)
+AddPoint/Caption: Ajouter un point
+AddPoint/Hint: Ajouter un nouveau point à la réunion
+AddPointToReunion/Placeholder: Décrivez ce point...
+AddReference/Caption: Ajouter une référence
+AddReference/Hint: Ajouter une référence permanente
+AddReferenceToChantier/Placeholder: Nommez cette référence...
+AddReunion/Caption: Nouvelle réunion
+AddReunion/Hint: Créer un nouveau compte-rendu de réunion de chantier
+Date/Caption: Date
+Date/Placeholder: Date de la réunion (ex: 03/06/2024)
+Lieu/Caption: Lieu
+Lieu/Placeholder: Lieu de la réunion
+Numero/Caption: Numéro
+Numero/Placeholder: Numéro de réunion (ex: 1)
+Reunion/Placeholder: Titre de la réunion
+Absent/Caption: Absent
+Email/Caption: Email
+Email/Placeholder: Adresse email
+Entreprise/Caption: Entreprise
+Entreprise/Placeholder: Nom de l'entreprise
+Intervenant/Placeholder: Nom complet
+Role/Caption: Rôle
+Role/Placeholder: Rôle (ex: Maître d'œuvre)
+Tel/Caption: Téléphone
+Tel/Placeholder: Numéro de téléphone
+Echeance/Caption: Échéance
+Echeance/Placeholder: Échéance (ex: 01/07/2024)
+EmptyPointsReportesTitle: Aucun point reporté
+PointsNouveaux/Caption: Décisions du jour
+PointsReportes/Caption: Points reportés des réunions précédentes
+PointsResolus/Caption: Points résolus cette séance
+PrintCR/Caption: Imprimer CR
+PrintCR/Hint: Aperçu et impression du compte-rendu
+Responsables/Placeholder: Responsables
+Cancel/Caption: Annuler
+Categorie/Acces: Accès
+Categorie/Altimetrie: Altimétrie
+Categorie/Caption: Catégorie
+Categorie/ChoixProduit: Choix de produit
+Categorie/Materiau: Matériaux
+Categorie/Reglementation: Réglementation
+Categorie/Securite: Sécurité
+Intervenant/Caption: Intervenant
+Chantier/Caption: Chantier
+Close/Caption: Fermer
+Convoque/Caption: Convoqué à la prochaine réunion
+Dashboard: Tableau de bord
+Delete/Caption: Supprimer
+Edit/Caption: Modifier
+EmptyIntervenantsDescription: Ajoutez votre premier intervenant.
+EmptyIntervenantsTitle: Aucun intervenant
+EmptyLotsDescription: Ajoutez votre premier lot.
+EmptyLotsTitle: Aucun lot
+EmptyPointsDescription: Ajoutez votre premier point à cette réunion.
+EmptyPointsTitle: Aucun point
+EmptyReferencesDescription: Ajoutez votre première référence permanente.
+EmptyReferencesTitle: Aucune référence
+EmptyReunionsDescription: Créez le premier compte-rendu de réunion.
+EmptyReunionsTitle: Aucune réunion
+Excuse/Caption: Excusé
+Intervenants/Caption: Intervenants
+Lot/Caption: Lot
+LotsConCernes/Caption: Lots concernés
+Lots/Caption: Lots
+NewChantier: Nouveau chantier
+Point/Caption: Point
+Points/Caption: Points
+PointsOuverts/Caption: Points ouverts
+PointsPourRappel/Caption: Points pour rappel
+PourRappel/Caption: Pour rappel
+Present/Caption: Présent
+Reference/Caption: Référence
+References/Caption: Références
+Reunion/Caption: Réunion
+Reunions/Caption: Réunions
+Save/Caption: Enregistrer
+Statut/Caption: Statut
+Texte/Placeholder: Contenu du point (détails, décisions...)
+Statut/PourRappel: Pour rappel
+Statut/Reference: Référence permanente
+Statut/Resolu: Résolu
+TableauPresences/Caption: Tableau des présences

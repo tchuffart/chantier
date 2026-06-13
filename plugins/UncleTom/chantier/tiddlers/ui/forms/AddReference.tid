@@ -1,0 +1,39 @@
+created: 20210601000000000
+modified: 20260603000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddReference
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+\define add-reference-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[titre]] }}}
+    $savetitle="$:/state/chantier/new-reference"
+    tags="reference"
+    ch-categorie={{{ [<stateTiddler>get[categorie]] }}}
+    ch-statut="reference"
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" categorie=""/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/reference-form">>>
+  <div class="ch-form-point">
+    <$keyboard key="Enter" actions=<<add-reference-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="titre"
+        placeholder={{$:/language/chantier/AddReferenceToChantier/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <$select tiddler=<<stateTiddler>> field="categorie" class="ch-select">
+      <option value="">— Catégorie —</option>
+      <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+        <option value=<<catTid>>><$view tiddler=<<catTid>> field="ch-label"/></option>
+      </$list>
+    </$select>
+    <div class="ch-form-actions">
+      <$button actions=<<add-reference-actions>> class="ch-btn-primary">
+        <<lingo AddReference/Caption>>
+      </$button>
+    </div>
+  </div>
+</$vars>

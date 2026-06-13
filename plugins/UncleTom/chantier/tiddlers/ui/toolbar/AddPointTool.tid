@@ -1,0 +1,15 @@
+created: 20210601000000000
+modified: 20210601000000000
+tags: $:/plugins/UncleTom/chantier/ReunionTools
+title: $:/plugins/UncleTom/chantier/ui/toolbar/AddPointTool
+list: AddPointTool
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addPointState() $:/state/chantier/add-point/$(currentTiddler)$
+
+<$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddPoint/Hint}}>
+  <$action-setfield $tiddler=<<addPointState>> text={{{ [<addPointState>get[text]match[open]then[closed]else[open]] }}}/>
+  {{$:/core/images/new-button}}
+  <<lingo AddPoint/Caption>>
+</$button>

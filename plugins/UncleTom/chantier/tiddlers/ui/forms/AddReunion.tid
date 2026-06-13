@@ -1,0 +1,44 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddReunion
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+\define add-reunion-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[titre]] }}}
+    $savetitle="$:/state/chantier/new-reunion"
+    tags="reunion"
+    ch-numero={{{ [<stateTiddler>get[numero]] }}}
+    ch-date={{{ [<stateTiddler>get[date]] }}}
+    ch-lieu={{{ [<stateTiddler>get[lieu]] }}}
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> titre="" numero="" date="" lieu=""/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/reunion-form">>>
+  <div class="ch-form">
+    <$keyboard key="Enter" actions=<<add-reunion-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="titre"
+        placeholder={{$:/language/chantier/Reunion/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <$edit-text tiddler=<<stateTiddler>> field="numero"
+      placeholder={{$:/language/chantier/Numero/Placeholder}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="date"
+      type="date"
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="lieu"
+      placeholder={{$:/language/chantier/Lieu/Placeholder}}
+      class="ch-input"
+    />
+    <$button actions=<<add-reunion-actions>> class="ch-btn-primary">
+      <<lingo AddReunion/Caption>>
+    </$button>
+  </div>
+</$vars>

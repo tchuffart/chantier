@@ -1,0 +1,19 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/reunion/ReunionItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class="ch-item ch-reunion-item">
+  <div class="ch-item-actions">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/ReunionActions}}
+  </div>
+  <span class="ch-reunion-numero"><$link to={{!!title}}>N°<$view field="ch-numero"/></$link></span>
+  <$list filter="[all[current]has[ch-date]]">
+    <span class="ch-reunion-date"> — <$view field="ch-date"/></span>
+  </$list>
+  <$list filter="[all[current]has[ch-lieu]]">
+    <span class="ch-reunion-lieu"> — <$view field="ch-lieu"/></span>
+  </$list>
+</div>

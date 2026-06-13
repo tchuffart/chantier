@@ -1,0 +1,27 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/point/PointItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class={{{ [all[current]get[ch-statut]addprefix[ch-point ch-point-]] }}}>
+  <div class="ch-item-actions ch-no-print">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/PointActions}}
+  </div>
+  <div class="ch-point-header">
+    <span class="ch-point-numero"><$view field="ch-numero"/></span>
+    <span class="ch-point-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
+    <$list filter="[all[current]has[ch-echeance]]">
+      <span class="ch-point-echeance"> — <<lingo Echeance/Caption>> : <$view field="ch-echeance"/></span>
+    </$list>
+    <$list filter="[all[current]has[ch-responsables]]">
+      <span class="ch-point-responsables"> (<$view field="ch-responsables"/>)</span>
+    </$list>
+  </div>
+  <$list filter="[all[current]!field:text[]]" variable="ignore" emptyMessage="">
+  </$list>
+  <$list filter="[all[current]has[text]!field:text[]]" variable="ignore">
+    <div class="ch-point-texte"><$view field="text" format="wikified"/></div>
+  </$list>
+</div>

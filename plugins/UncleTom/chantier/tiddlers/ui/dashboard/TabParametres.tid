@@ -1,0 +1,8 @@
+created: 20260605000000000
+modified: 20260605000000000
+tags: $:/plugins/UncleTom/chantier/DashboardTab
+title: $:/plugins/UncleTom/chantier/ui/dashboard/TabParametres
+caption: Paramètres
+type: text/vnd.tiddlywiki
+
+{{$:/plugins/UncleTom/chantier/ui/config/ProjetConfig}}
