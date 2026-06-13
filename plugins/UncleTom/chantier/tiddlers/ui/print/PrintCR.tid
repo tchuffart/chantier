@@ -89,6 +89,14 @@ type: text/vnd.tiddlywiki
     />
   </$list>
 
+  <!-- Pied de page -->
+  <div class="ch-cr-footer ch-no-screen">
+    <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
+    <$list filter="[all[current]has[ch-lieu]]" variable="ignore">
+      — <$view field="ch-lieu"/>
+    </$list>
+  </div>
+
   <!-- Références permanentes -->
   <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
