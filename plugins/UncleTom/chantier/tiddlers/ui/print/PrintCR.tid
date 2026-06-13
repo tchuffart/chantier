@@ -1,5 +1,5 @@
 created: 20210601000000000
-modified: 20260605000000000
+modified: 20260613000000000
 title: $:/plugins/UncleTom/chantier/ui/print/PrintCR
 type: text/vnd.tiddlywiki
 
@@ -10,6 +10,17 @@ type: text/vnd.tiddlywiki
 
 <$set name="thisNumero" value={{!!ch-numero}}>
 <$set name="projetConfig" value="$:/config/UncleTom/chantier/projet">
+
+<table class="ch-cr-page-table">
+<tfoot class="ch-no-screen"><tr><td>
+  <div class="ch-cr-footer">
+    <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
+    <$list filter="[all[current]has[ch-lieu]]" variable="ignore">
+      — <$view field="ch-lieu"/>
+    </$list>
+  </div>
+</td></tr></tfoot>
+<tbody><tr><td>
 
 <div class="ch-cr">
 
@@ -89,14 +100,6 @@ type: text/vnd.tiddlywiki
     />
   </$list>
 
-  <!-- Pied de page -->
-  <div class="ch-cr-footer ch-no-screen">
-    <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
-    <$list filter="[all[current]has[ch-lieu]]" variable="ignore">
-      — <$view field="ch-lieu"/>
-    </$list>
-  </div>
-
   <!-- Références permanentes -->
   <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]limit[1]]" variable="ignore" emptyMessage="">
     <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
@@ -112,6 +115,9 @@ type: text/vnd.tiddlywiki
   </$list>
 
 </div>
+
+</td></tr></tbody>
+</table>
 
 </$set>
 </$set>

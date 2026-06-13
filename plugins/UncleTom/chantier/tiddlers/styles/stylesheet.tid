@@ -1073,7 +1073,6 @@ type: text/vnd.tiddlywiki
   }
 
   @page {
-    margin-bottom: 18mm;
     @bottom-right {
       content: "Page " counter(page) " / " counter(pages);
       font-size: 8pt;
@@ -1081,20 +1080,21 @@ type: text/vnd.tiddlywiki
     }
   }
 
+  .ch-cr-page-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ch-cr-page-table > tbody > tr > td,
+  .ch-cr-page-table > tfoot > tr > td {
+    padding: 0;
+    border: none;
+  }
+
   .ch-cr-footer {
-    display: block !important;
-    visibility: visible !important;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     font-size: 8pt;
     color: #666;
     border-top: 1px solid #ccc;
     padding: 3mm 0 1mm;
-  }
-
-  .ch-cr-footer * {
-    visibility: visible !important;
   }
 }
