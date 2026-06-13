@@ -25,17 +25,7 @@ type: text/vnd.tiddlywiki
           </$list>
         </$list>
         <$list filter="[all[current]!tag[diffusé]]" variable="ignore">
-          <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
-            <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text tiddler=<<currentTiddler>> field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
-          </$list>
-          <$list filter="[all[current]!has[ch-prochaine-reunion]]" variable="ignore">
-            <span class="ch-reunion-prochaine-add">
-              <$button class="ch-btn tc-btn-invisible" tooltip="Définir la prochaine réunion">
-                <$action-setfield $tiddler=<<currentTiddler>> $field="ch-prochaine-reunion" $value=""/>
-                + Prochaine réunion
-              </$button>
-            </span>
-          </$list>
+          <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text tiddler=<<currentTiddler>> field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
         </$list>
         <$checkbox tag="diffusé">
           <span class="ch-diffuse-label">CR diffusé</span>
