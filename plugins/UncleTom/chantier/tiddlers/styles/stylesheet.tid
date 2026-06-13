@@ -320,7 +320,7 @@ type: text/vnd.tiddlywiki
 
 .ch-point {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 6px 0 6px 6px;
+  padding: 3px 0 3px 6px;
 }
 
 .ch-point:first-child {
@@ -333,7 +333,7 @@ type: text/vnd.tiddlywiki
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0 12px;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .ch-point-meta-item {
@@ -413,7 +413,7 @@ type: text/vnd.tiddlywiki
 }
 
 .ch-point-texte {
-  margin: 4px 0 2px 0;
+  margin: 2px 0 1px 0;
   font-size: .92em;
   color: <<colour foreground>>;
   white-space: pre-wrap;
