@@ -183,6 +183,94 @@
     "text": "Les coffrets provisoires ne respectent pas les distances réglementaires. Mise en conformité obligatoire avant la visite de contrôle prévue fin juin."
   },
   {
+    "title": "Étanchéité toiture-terrasse : points singuliers",
+    "tags": "point",
+    "ch-numero": "3.3",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "06 - Étanchéité",
+    "ch-responsables": "Dupont Étanchéité",
+    "ch-echeance": "01/07/2026",
+    "ch-statut": "ouvert",
+    "text": "Les relevés d'étanchéité en about de terrasse et au droit des acrotères ne sont pas conformes aux DTU 43.1. Prévoir reprise de l'ensemble des points singuliers et contrôle par le bureau de contrôle avant pose des couvertures définitives. Le maître d'œuvre effectuera une visite de réception partielle le 28/06."
+  },
+  {
+    "title": "Cloisonnement intérieur : planning de pose",
+    "tags": "point",
+    "ch-numero": "3.4",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "07 - Cloisons / Doublages",
+    "ch-responsables": "Plâtrerie Martin",
+    "ch-echeance": "15/07/2026",
+    "ch-statut": "ouvert",
+    "text": "Le démarrage des cloisons en plaque de plâtre est conditionné à la fin du gros-œuvre et à la mise hors d'eau. Plâtrerie Martin doit fournir un planning détaillé par niveau avant le 25/06. Prévoir coordination avec les lots techniques (électricité, plomberie) pour le passage des réseaux encastrés."
+  },
+  {
+    "title": "Carrelage RDC : validation teintes et formats",
+    "tags": "point",
+    "ch-numero": "3.5",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "08 - Carrelage",
+    "ch-responsables": "Faïences du Sud",
+    "ch-echeance": "20/06/2026",
+    "ch-statut": "ouvert",
+    "text": "La maîtrise d'ouvrage doit valider définitivement le choix des carreaux grès cérame 60×60 cm pour les circulations et 30×60 cm pour les locaux humides. Échantillons disponibles en agence. Décision attendue avant le 20/06 pour maintenir le délai d'approvisionnement de 4 semaines. Sans réponse, l'entreprise sera fondée à réclamer un prolongement du délai d'exécution."
+  },
+  {
+    "title": "Réseau plomberie : essai de pression",
+    "tags": "point",
+    "ch-numero": "3.6",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "10 - Plomberie / Sanitaires",
+    "ch-responsables": "Plomberie Rivière",
+    "ch-echeance": "30/06/2026",
+    "ch-statut": "ouvert",
+    "text": "L'essai de pression hydraulique à 1,3× la pression de service (soit 16 bars) est à réaliser sur l'ensemble des réseaux eau froide et eau chaude sanitaire. Prévoir la présence du bureau de contrôle. Date proposée : 27/06. Plomberie Rivière doit confirmer la disponibilité du matériel d'essai. PV d'essai à transmettre à la MOE dans les 48h."
+  },
+  {
+    "title": "Ventilation mécanique : recette des bouches",
+    "tags": "point",
+    "ch-numero": "3.7",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "11 - CVC",
+    "ch-responsables": "Clim & Ventil Services",
+    "ch-echeance": "10/07/2026",
+    "ch-statut": "ouvert",
+    "text": "Les débits mesurés sur les bouches de soufflage du plateau R+2 ne correspondent pas aux valeurs du CCTP (écart >15%). L'entreprise doit procéder au rééquilibrage du réseau et produire un nouveau rapport de mesures. La réception de l'installation est suspendue dans l'attente de la conformité. Délai : avant le 10/07."
+  },
+  {
+    "title": "Accès PMR : rampe d'entrée principale",
+    "tags": "point",
+    "ch-numero": "3.8",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "01 - VRD",
+    "ch-responsables": "Terrassement Azur",
+    "ch-echeance": "08/07/2026",
+    "ch-statut": "ouvert",
+    "text": "La pente de la rampe PMR côté entrée principale dépasse 5% (relevé topographique : 6,2%). Non-conformité à la réglementation ERP. Terrassement Azur doit proposer une solution technique (abaissement du niveau fini ou reprise du cheminement) avant le 25/06. Validation par le bureau d'accessibilité requise avant reprise des travaux dans cette zone."
+  },
+  {
+    "title": "Éclairage extérieur : implantation candélabres",
+    "tags": "point",
+    "ch-numero": "3.9",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "09 - Électricité",
+    "ch-responsables": "Bernard Électricité",
+    "ch-echeance": "05/07/2026",
+    "ch-statut": "ouvert",
+    "text": "L'implantation des candélabres d'éclairage extérieur doit être validée sur plans avant fouille. Un conflit est identifié entre les fondations prévues et le réseau EU existant en façade nord. Coordinateur SPS et ingénieur VRD doivent se concerter. Réunion de coordination spécifique à planifier avant le 30/06."
+  },
+  {
+    "title": "Isolation thermique façade : pont thermique linteau",
+    "tags": "point",
+    "ch-numero": "3.10",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "03 - Isolation / Façade",
+    "ch-responsables": "ITE Méditerranée",
+    "ch-echeance": "12/07/2026",
+    "ch-statut": "ouvert",
+    "text": "Des ponts thermiques ont été relevés au niveau des linteaux de baies en façade est. Le traitement prévu par rupteurs thermiques n'a pas été mis en œuvre sur 7 des 12 baies. ITE Méditerranée doit reprendre la mise en œuvre conformément aux plans d'exécution et aux préconisations du bureau d'études thermiques. Un contrôle par thermographie infra-rouge sera réalisé avant la réception."
+  },
+  {
     "title": "Lambert Christine",
     "tags": "intervenant",
     "ch-societe": "Ville de Montpellier",
