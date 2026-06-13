@@ -357,7 +357,6 @@ type: text/vnd.tiddlywiki
   letter-spacing: .04em;
   padding: 1px 6px;
   border-radius: 3px;
-  margin-bottom: 6px;
 }
 
 .ch-point-statut-ouvert {
