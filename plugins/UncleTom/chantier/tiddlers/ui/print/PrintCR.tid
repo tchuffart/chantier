@@ -11,17 +11,6 @@ type: text/vnd.tiddlywiki
 <$set name="thisNumero" value={{!!ch-numero}}>
 <$set name="projetConfig" value="$:/config/UncleTom/chantier/projet">
 
-<table class="ch-cr-page-table">
-<tfoot class="ch-no-screen"><tr><td>
-  <div class="ch-cr-footer">
-    <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
-    <$list filter="[all[current]has[ch-lieu]]" variable="ignore">
-      — <$view field="ch-lieu"/>
-    </$list>
-  </div>
-</td></tr></tfoot>
-<tbody><tr><td>
-
 <div class="ch-cr">
 
   <!-- En-tête -->
@@ -115,9 +104,6 @@ type: text/vnd.tiddlywiki
   </$list>
 
 </div>
-
-</td></tr></tbody>
-</table>
 
 </$set>
 </$set>

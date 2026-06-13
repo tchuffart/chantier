@@ -1042,37 +1042,19 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
-  /* Masquer tout le corps, puis révéler uniquement la chaîne vers ch-print-target */
+  /* Masquer tout le corps, puis révéler uniquement le contenu à imprimer */
   body * { visibility: hidden; }
 
-  .ch-modal-overlay,
-  .ch-modal-a4,
   .ch-print-target,
   .ch-print-target * { visibility: visible; }
 
-  .ch-modal-overlay {
-    position: static !important;
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: block !important;
-    overflow: visible !important;
-  }
-
-  .ch-modal-a4 {
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    width: 100% !important;
-    min-height: 0 !important;
-    display: block !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
   .ch-print-target {
-    padding: 0 !important;
-    width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 15mm !important;
+    box-sizing: border-box !important;
   }
 
   .ch-cr-logo {
@@ -1096,21 +1078,4 @@ type: text/vnd.tiddlywiki
     }
   }
 
-  .ch-cr-page-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .ch-cr-page-table > tbody > tr > td,
-  .ch-cr-page-table > tfoot > tr > td {
-    padding: 0;
-    border: none;
-  }
-
-  .ch-cr-footer {
-    font-size: 8pt;
-    color: #666;
-    border-top: 1px solid #ccc;
-    padding: 3mm 0 1mm;
-  }
 }
