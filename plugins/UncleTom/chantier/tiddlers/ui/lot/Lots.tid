@@ -4,15 +4,21 @@ title: $:/plugins/UncleTom/chantier/ui/lot/Lots
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
-
-<div class="ch-heading">
-  <h2><<lingo Lots/Caption>></h2>
-</div>
+\define addLotState() $:/state/chantier/add-lot
 
 <$list filter=<<ch-all-lots>>
   template="$:/plugins/UncleTom/chantier/ui/lot/LotItem"
   emptyMessage="""<div class="ch-empty"><p><<lingo EmptyLotsTitle>></p><p><<lingo EmptyLotsDescription>></p></div>"""
 />
 
-<h3><<lingo AddLot/Caption>></h3>
-{{$:/plugins/UncleTom/chantier/ui/forms/AddLot}}
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddLot/Hint}}>
+    <$action-setfield $tiddler=<<addLotState>> text={{{ [<addLotState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddLot/Caption>>
+  </$button>
+</div>
+
+<$reveal type="match" state=<<addLotState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddLot}}
+</$reveal>

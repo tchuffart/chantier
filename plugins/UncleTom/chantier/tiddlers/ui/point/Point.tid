@@ -1,0 +1,35 @@
+created: 20210601000000000
+modified: 20260606000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/point/Point
+list-before: $:/core/ui/ViewTemplate/body
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$list filter="[all[current]tag[point]]" variable="ignore">
+  <div class={{{ [all[current]get[ch-statut]addprefix[ch-point-view ch-point-view-]] }}}>
+    <table class="lignes ch-header-table">
+      <tr>
+        <th>N°</th>
+        <td class="ch-point-numero"><$view field="ch-numero"/></td>
+        <th><<lingo Statut/Caption>></th>
+        <td><$view field="ch-statut"/></td>
+      </tr>
+      <$list filter="[all[current]has[ch-lots]]" variable="ignore">
+        <tr>
+          <th><<lingo Lots/Caption>></th>
+          <td><$view field="ch-lots"/></td>
+          <th><<lingo Echeance/Caption>></th>
+          <td><$view field="ch-echeance"/></td>
+        </tr>
+      </$list>
+      <$list filter="[all[current]has[ch-responsables]]" variable="ignore">
+        <tr>
+          <th><<lingo Responsables/Placeholder>></th>
+          <td colspan="3"><$view field="ch-responsables"/></td>
+        </tr>
+      </$list>
+    </table>
+  </div>
+</$list>

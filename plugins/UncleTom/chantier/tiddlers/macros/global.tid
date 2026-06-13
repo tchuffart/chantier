@@ -1,0 +1,79 @@
+created: 20260609000000000
+modified: 20260609000000000
+tags: $:/tags/Global
+title: $:/plugins/UncleTom/chantier/macros/global
+type: text/vnd.tiddlywiki
+
+\define ch-all-intervenants()
+[all[tiddlers]tag[intervenant]!has[draft.of]sort[ch-societe]]
+\end
+
+\define ch-all-lots()
+[all[tiddlers]tag[lot]!has[draft.of]sort[title]]
+\end
+
+\define ch-all-reunions()
+[all[tiddlers]tag[reunion]!has[draft.of]sort[ch-numero]]
+\end
+
+\define ch-points-of-reunion(reunion)
+[all[tiddlers]tag[point]field:ch-reunion[$reunion$]!has[draft.of]sort[ch-numero]]
+\end
+
+\define ch-points-ouverts()
+[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]sort[ch-numero]]
+\end
+
+\define ch-points-pour-rappel()
+[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]sort[ch-numero]]
+\end
+
+\define ch-references()
+[all[tiddlers]tag[reference]!has[draft.of]sort[ch-categorie]]
+\end
+
+\define ch-presences-of-reunion(reunion)
+[all[tiddlers]tag[presence]field:ch-reunion[$reunion$]!has[draft.of]]
+\end
+
+\define ch-intervenants-table(typeFilter, typeLabel, showHeader:"yes")
+<$set name="count" value={{{ [all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$count[]] }}}>
+<$list filter="[<count>compare:number:gt[0]]" variable="ignore">
+  <h3 class="ch-cr-subsection">$typeLabel$</h3>
+  <table class="lignesmini ch-cr-intervenants">
+    <$list filter="[[$showHeader$]match[yes]]" variable="ignore">
+    <thead><tr>
+      <th>Lot</th>
+      <th>Société</th>
+      <th>Contact</th>
+      <th>Rôle</th>
+      <th class="ch-cr-cell-presence" title="Présent">P</th>
+      <th class="ch-cr-cell-presence" title="Excusé">E</th>
+      <th class="ch-cr-cell-presence" title="Absent">A</th>
+      <th class="ch-cr-cell-presence" title="Convoqué">C</th>
+    </tr></thead>
+    </$list>
+    <tbody>
+      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[ch-lot]]" variable="intervenantTitle">
+        <$vars presenceTiddler=<<presenceTid>>>
+          <tr>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-societe"/></td>
+            <td>
+              <$text text=<<intervenantTitle>>/>
+              <$list filter="[<intervenantTitle>get[ch-email]!is[blank]]" variable="ignore"><br/><span class="ch-cr-contact-detail"><$view tiddler=<<intervenantTitle>> field="ch-email"/></span></$list>
+              <$list filter="[<intervenantTitle>get[ch-tel]!is[blank]]" variable="ignore"><br/><span class="ch-cr-contact-detail"><$view tiddler=<<intervenantTitle>> field="ch-tel"/></span></$list>
+            </td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
+            <td class="ch-cr-cell-center ch-cr-cell-presence"><$list filter="[<presenceTiddler>field:ch-statut[present]]" variable="ignore">✓</$list></td>
+            <td class="ch-cr-cell-center ch-cr-cell-presence"><$list filter="[<presenceTiddler>field:ch-statut[excuse]]" variable="ignore">E</$list></td>
+            <td class="ch-cr-cell-center ch-cr-cell-presence"><$list filter="[<presenceTiddler>field:ch-statut[absent]]" variable="ignore">✗</$list></td>
+            <td class="ch-cr-cell-center ch-cr-cell-presence"><$list filter="[<presenceTiddler>field:ch-convoque[oui]]" variable="ignore">✓</$list></td>
+          </tr>
+        </$vars>
+      </$list>
+    </tbody>
+  </table>
+</$list>
+</$set>
+\end

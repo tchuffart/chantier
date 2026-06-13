@@ -1,0 +1,69 @@
+created: 20210601000000000
+modified: 20260609000000000
+title: $:/plugins/UncleTom/chantier/ui/presence/PresencesReunion
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
+\define presences-group(typeFilter, typeLabel)
+<$set name="count" value={{{ [all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$count[]] }}}>
+<$list filter="[<count>compare:number:gt[0]]" variable="ignore">
+  <p class="ch-cr-type-header">$typeLabel$</p>
+  <table class="lignes ch-presences-table">
+    <thead>
+      <tr>
+        <th>Lot</th>
+        <th>Société</th>
+        <th>Contact</th>
+        <th>Rôle</th>
+        <th class="ch-presence-cell">P</th>
+        <th class="ch-presence-cell">E</th>
+        <th class="ch-presence-cell">A</th>
+        <th class="ch-presence-cell">C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <$list filter="[all[tiddlers]tag[intervenant]!has[draft.of]$typeFilter$sort[ch-lot]]" variable="intervenantTitle">
+        <$vars presenceTiddler=<<presenceTid>>>
+          <tr>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-lot"/></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-societe"/></td>
+            <td><$link to=<<intervenantTitle>>><$text text=<<intervenantTitle>>/></$link></td>
+            <td><$view tiddler=<<intervenantTitle>> field="ch-role"/></td>
+            <td class="ch-presence-cell">
+              <$button class={{{ [<presenceTiddler>get[ch-statut]match[present]then[ch-btn-presence ch-btn-active]else[ch-btn-presence tc-btn-invisible]] }}}>
+                <$action-setfield $tiddler=<<presenceTiddler>> tags="presence" ch-reunion=<<reunionTitle>> ch-intervenant=<<intervenantTitle>> ch-statut="present"/>
+                P
+              </$button>
+            </td>
+            <td class="ch-presence-cell">
+              <$button class={{{ [<presenceTiddler>get[ch-statut]match[excuse]then[ch-btn-presence ch-btn-active]else[ch-btn-presence tc-btn-invisible]] }}}>
+                <$action-setfield $tiddler=<<presenceTiddler>> tags="presence" ch-reunion=<<reunionTitle>> ch-intervenant=<<intervenantTitle>> ch-statut="excuse"/>
+                E
+              </$button>
+            </td>
+            <td class="ch-presence-cell">
+              <$button class={{{ [<presenceTiddler>get[ch-statut]match[absent]then[ch-btn-presence ch-btn-active]else[ch-btn-presence tc-btn-invisible]] }}}>
+                <$action-setfield $tiddler=<<presenceTiddler>> tags="presence" ch-reunion=<<reunionTitle>> ch-intervenant=<<intervenantTitle>> ch-statut="absent"/>
+                A
+              </$button>
+            </td>
+            <td class="ch-presence-cell">
+              <$checkbox tiddler=<<presenceTiddler>> field="ch-convoque" checked="oui" unchecked="" default=""/>
+            </td>
+          </tr>
+        </$vars>
+      </$list>
+    </tbody>
+  </table>
+</$list>
+</$set>
+\end
+
+<$vars reunionTitle=<<currentTiddler>>>
+  <h3><<lingo Intervenants/Caption>></h3>
+  <<presences-group "field:ch-type[moa]" "Maîtrise d'ouvrage">>
+  <<presences-group "field:ch-type[moe]" "Maîtrise d'œuvre">>
+  <<presences-group "field:ch-type[entreprise]" "Entreprises">>
+  <<presences-group "!has[ch-type]" "Non classé">>
+</$vars>

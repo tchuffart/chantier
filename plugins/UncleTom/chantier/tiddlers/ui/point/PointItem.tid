@@ -1,0 +1,37 @@
+created: 20210601000000000
+modified: 20260611000000000
+title: $:/plugins/UncleTom/chantier/ui/point/PointItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class={{{ [all[current]get[ch-statut]addprefix[ch-item ch-point ch-point-]] }}}>
+  <div class="ch-item-actions ch-no-print">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/PointActions}}
+  </div>
+  <div class="ch-point-header">
+    <span class="ch-point-numero"><$view field="ch-numero"/></span>
+    <$set name="statut" value={{!!ch-statut}}>
+      <span class={{{ [<statut>addprefix[ch-point-statut-badge ch-point-statut-]] }}}>
+        <$list filter="[<statut>match[ouvert]]" variable="ignore">Ouvert</$list>
+        <$list filter="[<statut>match[pour-rappel]]" variable="ignore">Pour rappel</$list>
+        <$list filter="[<statut>match[leve]]" variable="ignore">Levé</$list>
+      </span>
+    </$set>
+    <span class="ch-point-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
+  </div>
+  <$list filter="[all[current]has[text]!field:text[]]" variable="ignore">
+    <div class="ch-point-texte"><$transclude field="text" mode="block"/></div>
+  </$list>
+  <div class="ch-point-meta-inline">
+    <$list filter="[all[current]has[ch-responsables]]" variable="ignore">
+      <span class="ch-point-meta-item"><span class="ch-point-meta-label">Resp.</span> <$view field="ch-responsables"/></span>
+    </$list>
+    <$list filter="[all[current]has[ch-echeance]]" variable="ignore">
+      <span class="ch-point-meta-item"><span class="ch-point-meta-label">Éch.</span> <$view field="ch-echeance"/></span>
+    </$list>
+    <$list filter="[all[current]field:ch-statut[leve]has[ch-date-validation]]" variable="ignore">
+      <span class="ch-point-meta-item"><span class="ch-point-meta-label">Levé le</span> <$view field="ch-date-validation"/></span>
+    </$list>
+  </div>
+</div>

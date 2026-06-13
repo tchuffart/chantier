@@ -1,6 +1,6 @@
 created: 20210601000000000
 modified: 20210601000000000
-title: $:/plugins/UncleTom/chantier/ui/buttons/LotActions
+title: $:/plugins/UncleTom/chantier/ui/buttons/ReunionActions
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/

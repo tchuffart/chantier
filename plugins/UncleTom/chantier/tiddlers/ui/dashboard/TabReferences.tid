@@ -1,0 +1,35 @@
+created: 20260605000000000
+modified: 20260610000000000
+tags: $:/plugins/UncleTom/chantier/DashboardTab
+title: $:/plugins/UncleTom/chantier/ui/dashboard/TabReferences
+caption: Références
+type: text/vnd.tiddlywiki
+
+\define printReferencesState() $:/state/chantier/print-references
+
+<div class="ch-toolbar ch-no-print" style="margin-bottom:1em;">
+  <$button class="ch-btn-tool">
+    <$action-setfield $tiddler=<<printReferencesState>> text={{{ [<printReferencesState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/print-button}}
+    Imprimer les références
+  </$button>
+</div>
+
+<$reveal type="match" state=<<printReferencesState>> text="open">
+  <div class="ch-modal-overlay">
+    <div class="ch-modal-a4">
+      <div class="ch-modal-toolbar ch-no-print">
+        <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>
+        <$button class="ch-btn">
+          <$action-setfield $tiddler=<<printReferencesState>> text="closed"/>
+          {{$:/core/images/close-button}}
+        </$button>
+      </div>
+      <div class="ch-cr-preview ch-print-target">
+        {{$:/plugins/UncleTom/chantier/ui/print/PrintReferences}}
+      </div>
+    </div>
+  </div>
+</$reveal>
+
+{{$:/plugins/UncleTom/chantier/ui/reference/References}}

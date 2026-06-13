@@ -1,0 +1,525 @@
+[
+  {
+    "title": "01 - Gros œuvre",
+    "tags": "lot",
+    "ch-societe": "Leroy Gros Œuvre SARL",
+    "ch-numero": "01"
+  },
+  {
+    "title": "02 - Charpente - Couverture",
+    "tags": "lot",
+    "ch-societe": "Bois & Toit SAS",
+    "ch-numero": "02"
+  },
+  {
+    "title": "03 - Façades - Isolation",
+    "tags": "lot",
+    "ch-societe": "Façades Sud EURL",
+    "ch-numero": "03"
+  },
+  {
+    "title": "04 - Menuiseries extérieures",
+    "tags": "lot",
+    "ch-societe": "Alu Concept Languedoc",
+    "ch-numero": "04"
+  },
+  {
+    "title": "05 - Cloisons - Doublages",
+    "tags": "lot",
+    "ch-societe": "Cloisonnement Méditerranée",
+    "ch-numero": "05"
+  },
+  {
+    "title": "06 - Menuiseries intérieures",
+    "tags": "lot",
+    "ch-societe": "Menuiserie Occitane SARL"
+  },
+  {
+    "title": "07 - Revêtements de sols",
+    "tags": "lot",
+    "ch-societe": "Sols & Surfaces SAS"
+  },
+  {
+    "title": "08 - Peinture",
+    "tags": "lot",
+    "ch-societe": "Peinture Roussillon"
+  },
+  {
+    "title": "09 - Plomberie - Sanitaires",
+    "tags": "lot",
+    "ch-societe": "Plomberie Faure & Fils",
+    "ch-numero": "09"
+  },
+  {
+    "title": "10 - CVC",
+    "tags": "lot",
+    "ch-societe": "Clim & Confort SARL",
+    "ch-numero": "10"
+  },
+  {
+    "title": "11 - Électricité",
+    "tags": "lot",
+    "ch-societe": "Elec Pro 34",
+    "ch-numero": "11"
+  },
+  {
+    "title": "12 - Structure",
+    "tags": "lot",
+    "ch-societe": "BET Structure Plus"
+  },
+  {
+    "title": "Réunion de chantier n°1",
+    "tags": "reunion diffusé",
+    "ch-numero": "1",
+    "ch-date": "03/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere",
+    "ch-prochaine-reunion": "10/06/2026"
+  },
+  {
+    "title": "Accès chantier non sécurisé côté rue",
+    "tags": "point",
+    "ch-numero": "1.1",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "Gros-œuvre",
+    "ch-responsables": "Leroy Michel",
+    "ch-echeance": "10/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le périmètre de sécurité côté rue n'est pas conforme. Prévoir barrières de chantier homologuées et panneau de signalisation avant reprise des travaux."
+  },
+  {
+    "title": "Réunion de chantier n°2",
+    "tags": "reunion diffusé",
+    "ch-numero": "2",
+    "ch-date": "10/06/2026",
+    "ch-lieu": "Base de chantier",
+    "ch-prochaine-reunion": "17/06/2026"
+  },
+  {
+    "title": "Réunion de chantier n°3",
+    "tags": "reunion",
+    "ch-numero": "3",
+    "ch-date": "17/06/2026",
+    "ch-lieu": "Salle de réunion — Mairie de Somewhere"
+  },
+  {
+    "title": "Choix coloris menuiseries extérieures",
+    "tags": "point levé",
+    "ch-numero": "2.1",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "04 - Menuiseries extérieures",
+    "ch-responsables": "Moreau Sylvain",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "leve",
+    "text": "Le maître d'ouvrage a validé le coloris RAL 7016 gris anthracite pour l'ensemble des menuiseries extérieures. Transmettre bon de commande à l'entreprise.",
+    "ch-reunion-validation": "Réunion de chantier n°2",
+    "ch-date-validation": "17/06/2026"
+  },
+  {
+    "title": "Raccordement électrique provisoire",
+    "tags": "point",
+    "ch-numero": "2.2",
+    "ch-reunion-creation": "Réunion de chantier n°2",
+    "ch-lots": "11 - Électricité",
+    "ch-responsables": "Bernard Électricité",
+    "ch-echeance": "24/06/2026",
+    "ch-statut": "pour-rappel",
+    "text": "Le raccordement électrique provisoire n'est toujours pas réalisé malgré la demande du CR n°1. Point en retard — intervention Elec Pro 34 à programmer d'urgence."
+  },
+  {
+    "title": "Validation plan de fondations",
+    "tags": "point",
+    "ch-numero": "1.2",
+    "ch-reunion-creation": "Réunion de chantier n°1",
+    "ch-lots": "01 - Gros œuvre",
+    "ch-responsables": "Martin Sophie",
+    "ch-echeance": "17/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Le BET structure doit valider le plan de fondations révisé (indice B) transmis par l'architecte le 28/05/2026. Retour attendu avant la prochaine réunion."
+  },
+  {
+    "title": "DTU 20.1 — Ouvrages en maçonnerie",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Réglementation",
+    "ch-statut": "reference",
+    "text": "Document Technique Unifié relatif aux ouvrages en maçonnerie de petits éléments — parois et murs. Applicable à l'ensemble des ouvrages en blocs béton du projet. Version en vigueur : DTU 20.1 P1-1 (mars 2008).",
+    "ch-date-creation": "20250110"
+  },
+  {
+    "title": "Décret n°2004-924 — Travail en hauteur",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Sécurité",
+    "ch-statut": "reference",
+    "text": "Décret relatif à l'utilisation des équipements de travail mis à disposition pour des travaux temporaires en hauteur. Rappel : tout travail à plus de 3 m nécessite un équipement collectif de protection (échafaudage, garde-corps) sauf impossibilité technique justifiée.",
+    "ch-date-creation": "20250215"
+  },
+  {
+    "title": "Fiche technique béton C25/30",
+    "tags": "reference",
+    "ch-categorie": "$:/plugins/UncleTom/chantier/categories/Matériau",
+    "ch-statut": "reference",
+    "text": "Béton structurel de résistance caractéristique fck = 25 MPa, classe d'exposition XC2/XC3. Dosage ciment CEM II/A 42,5 : 350 kg/m³. Rapport E/C ≤ 0,55. Affaissement cône d'Abrams : S3 (100–150 mm). Granulats 0/20 mm. Fournisseur : Bétons du Midi — centrale de Montpellier-Est.",
+    "ch-date-creation": "20250301"
+  },
+  {
+    "title": "Réception livraison charpente",
+    "tags": "point",
+    "ch-numero": "3.1",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "05 - Charpente",
+    "ch-responsables": "Roux Patrick",
+    "ch-echeance": "24/06/2026",
+    "ch-statut": "ouvert",
+    "text": "Planifier la livraison de la charpente bois avec le charpentier. Vérifier les accès et la zone de déchargement. Confirmer la date au plus tard le 20/06."
+  },
+  {
+    "title": "Mise en conformité coffrets électriques",
+    "tags": "point",
+    "ch-numero": "3.2",
+    "ch-reunion-creation": "Réunion de chantier n°3",
+    "ch-lots": "09 - Électricité",
+    "ch-responsables": "Bernard Électricité",
+    "ch-echeance": "30/06/2026",
+    "ch-statut": "pour-rappel",
+    "text": "Les coffrets provisoires ne respectent pas les distances réglementaires. Mise en conformité obligatoire avant la visite de contrôle prévue fin juin."
+  },
+  {
+    "title": "Lambert Christine",
+    "tags": "intervenant",
+    "ch-societe": "Ville de Montpellier",
+    "ch-role": "Directrice de projet",
+    "ch-lot": "",
+    "ch-type": "moa",
+    "ch-email": "c.lambert@montpellier.fr",
+    "ch-tel": "04 67 34 70 00"
+  },
+  {
+    "title": "Dupont Jean",
+    "tags": "intervenant",
+    "ch-societe": "Atelier Archi & Associés",
+    "ch-role": "Architecte mandataire",
+    "ch-lot": "",
+    "ch-type": "moe",
+    "ch-email": "j.dupont@atelier-archi.fr",
+    "ch-tel": "04 67 12 34 56"
+  },
+  {
+    "title": "Martin Sophie",
+    "tags": "intervenant",
+    "ch-societe": "BET Structure Plus",
+    "ch-role": "Ingénieur structure",
+    "ch-lot": "",
+    "ch-type": "moe",
+    "ch-email": "s.martin@structure-plus.fr",
+    "ch-tel": "04 67 98 76 54"
+  },
+  {
+    "title": "Leroy Michel",
+    "tags": "intervenant",
+    "ch-societe": "Leroy Gros Œuvre SARL",
+    "ch-role": "Chef de chantier",
+    "ch-lot": "01 - Gros œuvre",
+    "ch-type": "entreprise",
+    "ch-email": "m.leroy@leroy-go.fr",
+    "ch-tel": "06 12 34 56 78"
+  },
+  {
+    "title": "Roux Patrick",
+    "tags": "intervenant",
+    "ch-societe": "Charpentes du Midi SAS",
+    "ch-role": "Conducteur de travaux",
+    "ch-lot": "02 - Charpente - Couverture",
+    "ch-type": "entreprise",
+    "ch-email": "p.roux@charpentes-midi.fr",
+    "ch-tel": "06 23 45 67 89"
+  },
+  {
+    "title": "Bernard Thomas",
+    "tags": "intervenant",
+    "ch-societe": "Façades Sud EURL",
+    "ch-role": "Gérant",
+    "ch-lot": "03 - Façades - Isolation",
+    "ch-type": "entreprise",
+    "ch-email": "t.bernard@facades-sud.fr",
+    "ch-tel": "06 34 56 78 90"
+  },
+  {
+    "title": "Moreau Sylvain",
+    "tags": "intervenant",
+    "ch-societe": "Alu Concept Languedoc",
+    "ch-role": "Responsable chantier",
+    "ch-lot": "04 - Menuiseries extérieures",
+    "ch-type": "entreprise",
+    "ch-email": "s.moreau@alu-concept.fr",
+    "ch-tel": "06 45 67 89 01"
+  },
+  {
+    "title": "Faure Antoine",
+    "tags": "intervenant",
+    "ch-societe": "Plomberie Faure & Fils",
+    "ch-role": "Chef de chantier",
+    "ch-lot": "09 - Plomberie - Sanitaires",
+    "ch-type": "entreprise",
+    "ch-email": "a.faure@plomberie-faure.fr",
+    "ch-tel": "06 56 78 90 12"
+  },
+  {
+    "title": "Blanc Nathalie",
+    "tags": "intervenant",
+    "ch-societe": "Clim & Confort SARL",
+    "ch-role": "Conductrice de travaux",
+    "ch-lot": "10 - CVC",
+    "ch-type": "entreprise",
+    "ch-email": "n.blanc@clim-confort.fr",
+    "ch-tel": "06 67 89 01 23"
+  },
+  {
+    "title": "Bernard Électricité",
+    "tags": "intervenant",
+    "ch-societe": "Bernard Électricité SAS",
+    "ch-role": "Chef de chantier",
+    "ch-lot": "11 - Électricité",
+    "ch-type": "entreprise",
+    "ch-email": "contact@bernard-elec.fr",
+    "ch-tel": "06 78 90 12 34"
+  },
+  {
+    "title": "Réunion de chantier n°1/Lambert Christine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Lambert Christine",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Dupont Jean",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Dupont Jean",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Martin Sophie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Martin Sophie",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Leroy Michel",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Leroy Michel",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Roux Patrick",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Roux Patrick",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Bernard Thomas",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Bernard Thomas",
+    "ch-statut": "absent",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Moreau Sylvain",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Moreau Sylvain",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Faure Antoine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Faure Antoine",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Blanc Nathalie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Blanc Nathalie",
+    "ch-statut": "excuse",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°1/Bernard Électricité",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°1",
+    "ch-intervenant": "Bernard Électricité",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Lambert Christine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Lambert Christine",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Dupont Jean",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Dupont Jean",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Martin Sophie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Martin Sophie",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Leroy Michel",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Leroy Michel",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Roux Patrick",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Roux Patrick",
+    "ch-statut": "absent",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Bernard Thomas",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Bernard Thomas",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Moreau Sylvain",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Moreau Sylvain",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Faure Antoine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Faure Antoine",
+    "ch-statut": "excuse",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Blanc Nathalie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Blanc Nathalie",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°2/Bernard Électricité",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°2",
+    "ch-intervenant": "Bernard Électricité",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Lambert Christine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Lambert Christine",
+    "ch-statut": "excuse",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Dupont Jean",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Dupont Jean",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Martin Sophie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Martin Sophie",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Leroy Michel",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Leroy Michel",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Roux Patrick",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Roux Patrick",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Bernard Thomas",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Bernard Thomas",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Moreau Sylvain",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Moreau Sylvain",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Faure Antoine",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Faure Antoine",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Blanc Nathalie",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Blanc Nathalie",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  },
+  {
+    "title": "Réunion de chantier n°3/Bernard Électricité",
+    "tags": "presence",
+    "ch-reunion": "Réunion de chantier n°3",
+    "ch-intervenant": "Bernard Électricité",
+    "ch-statut": "present",
+    "ch-convoque": "oui"
+  }
+]

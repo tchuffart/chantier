@@ -1,0 +1,61 @@
+created: 20210601000000000
+modified: 20210601000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddIntervenant
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+\define add-intervenant-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[nom]] }}}
+    $savetitle="$:/state/chantier/new-intervenant"
+    tags="intervenant"
+    ch-societe={{{ [<stateTiddler>get[societe]] }}}
+    ch-lot={{{ [<stateTiddler>get[lot]] }}}
+    ch-type={{{ [<stateTiddler>get[type]] }}}
+    ch-role={{{ [<stateTiddler>get[role]] }}}
+    ch-email={{{ [<stateTiddler>get[email]] }}}
+    ch-tel={{{ [<stateTiddler>get[tel]] }}}
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> nom="" societe="" lot="" type="" role="" email="" tel=""/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/intervenant-form">>>
+  <div class="ch-form">
+    <$keyboard key="Enter" actions=<<add-intervenant-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="nom"
+        placeholder={{$:/language/chantier/Intervenant/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <$edit-text tiddler=<<stateTiddler>> field="societe"
+      placeholder={{$:/language/chantier/Entreprise/Placeholder}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="lot"
+      placeholder={{$:/language/chantier/Lot/Caption}}
+      class="ch-input"
+    />
+    <$select tiddler=<<stateTiddler>> field="type" class="ch-select">
+      <option value="">— Type —</option>
+      <option value="entreprise">Entreprise</option>
+      <option value="moa">Maîtrise d'ouvrage</option>
+      <option value="moe">Maîtrise d'œuvre</option>
+    </$select>
+    <$edit-text tiddler=<<stateTiddler>> field="role"
+      placeholder={{$:/language/chantier/Role/Placeholder}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="email"
+      placeholder={{$:/language/chantier/Email/Placeholder}}
+      class="ch-input"
+    />
+    <$edit-text tiddler=<<stateTiddler>> field="tel"
+      placeholder={{$:/language/chantier/Tel/Placeholder}}
+      class="ch-input"
+    />
+    <$button actions=<<add-intervenant-actions>> class="ch-btn-primary">
+      <<lingo AddIntervenant/Caption>>
+    </$button>
+  </div>
+</$vars>

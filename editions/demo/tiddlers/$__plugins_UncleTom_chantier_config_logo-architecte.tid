@@ -1,0 +1,14 @@
+title: $:/plugins/UncleTom/chantier/config/logo-architecte
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="#2c3e50" rx="6"/>
+  <!-- Triangle toit stylisé -->
+  <polygon points="30,55 60,20 90,55" fill="none" stroke="#ecf0f1" stroke-width="3"/>
+  <line x1="45" y1="55" x2="45" y2="42" stroke="#ecf0f1" stroke-width="2"/>
+  <line x1="60" y1="55" x2="60" y2="20" stroke="none"/>
+  <!-- Texte -->
+  <text x="105" y="32" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ecf0f1">ATELIER</text>
+  <text x="105" y="48" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#3498db">ARCHI &amp;</text>
+  <text x="105" y="64" font-family="Arial, sans-serif" font-size="10" fill="#bdc3c7">ASSOCIÉS</text>
+</svg>

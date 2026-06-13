@@ -1,0 +1,109 @@
+created: 20210601000000000
+modified: 20260605000000000
+title: $:/plugins/UncleTom/chantier/ui/print/PrintCR
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define ch-points-cr-nouveaux() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-creation{!!title}!field:ch-statut[leve]sort[ch-numero]]
+\define ch-points-cr-leves() [all[tiddlers]tag[point]!has[draft.of]field:ch-reunion-validation{!!title}field:ch-statut[leve]sort[ch-numero]]
+\define presenceTid() $(reunionTitle)$/$(intervenantTitle)$
+
+<$set name="thisNumero" value={{!!ch-numero}}>
+<$set name="projetConfig" value="$:/config/UncleTom/chantier/projet">
+
+<div class="ch-cr">
+
+  <!-- En-tête -->
+  <div class="ch-cr-header">
+    <div class="ch-cr-logo ch-cr-logo-left">
+      <$list filter="[[$:/plugins/UncleTom/chantier/config/logo-architecte]has[text]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo architecte</em>""">
+        <$image source="$:/plugins/UncleTom/chantier/config/logo-architecte" width="120"/>
+      </$list>
+    </div>
+    <div class="ch-cr-title">
+      <div class="ch-cr-chantier">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
+      <div class="ch-cr-reunion-info">
+        <<lingo Reunion/Caption>> N°<$view field="ch-numero"/> — <$view field="ch-date"/>
+      </div>
+      <div class="ch-cr-lieu"><$view field="ch-lieu"/></div>
+    </div>
+    <div class="ch-cr-logo ch-cr-logo-right">
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo MOA</em>""">
+        <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} width="120"/>
+      </$list>
+    </div>
+  </div>
+
+  <!-- Info MOA -->
+  <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-nom]!field:ch-moa-nom[]]" variable="ignore">
+    <div class="ch-cr-moa-info">
+      <strong>Maître d'ouvrage :</strong>
+      {{$:/config/UncleTom/chantier/projet!!ch-moa-nom}}
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-adresse]!field:ch-moa-adresse[]]" variable="ignore">
+        — {{$:/config/UncleTom/chantier/projet!!ch-moa-adresse}}
+      </$list>
+    </div>
+  </$list>
+
+  <!-- Tableau intervenants groupés par type -->
+  <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
+  <$vars reunionTitle=<<currentTiddler>>>
+    <<ch-intervenants-table "field:ch-type[moa]" "Maîtrise d'ouvrage" "yes">>
+    <<ch-intervenants-table "field:ch-type[moe]" "Maîtrise d'œuvre" "no">>
+    <<ch-intervenants-table "field:ch-type[entreprise]" "Entreprises" "no">>
+    <<ch-intervenants-table "!has[ch-type]" "Non classé" "no">>
+    <p class="ch-cr-legende">P : Présent — E : Excusé — A : Absent — C : Convoqué</p>
+  </$vars>
+
+  <!-- Points reportés (uniquement des réunions précédentes) -->
+  <h2 class="ch-cr-section"><<lingo PointsReportes/Caption>></h2>
+  <$list filter="[all[tiddlers]tag[point]!has[draft.of]field:ch-statut[ouvert]] [all[tiddlers]tag[point]!has[draft.of]field:ch-statut[pour-rappel]] +[sort[ch-numero]]" variable="pt" emptyMessage="">
+    <$set name="ptReunionNumero" value={{{ [<pt>get[ch-reunion-creation]get[ch-numero]] }}}>
+      <$list filter="[<ptReunionNumero>compare:number:lt<thisNumero>]" variable="ignore" emptyMessage="">
+        <$list filter="[<pt>]" template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
+      </$list>
+    </$set>
+  </$list>
+
+  <!-- Décisions du jour -->
+  <h2 class="ch-cr-section"><<lingo PointsNouveaux/Caption>></h2>
+  <$list filter=<<ch-points-cr-nouveaux>>
+    template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
+    emptyMessage="""<p><em><<lingo EmptyPointsTitle>></em></p>"""
+  />
+
+  <!-- Points levés -->
+  <$list filter=<<ch-points-cr-leves>> variable="ignore" emptyMessage="">
+    <h2 class="ch-cr-section"><<lingo PointsResolus/Caption>></h2>
+    <$list filter=<<ch-points-cr-leves>>
+      template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
+    />
+  </$list>
+
+  <!-- Prochaine réunion -->
+  <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
+    <div class="ch-cr-prochaine-reunion">
+      <strong>Prochaine réunion :</strong> <$view field="ch-prochaine-reunion"/>
+    </div>
+  </$list>
+
+  <!-- Références permanentes -->
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]limit[1]]" variable="ignore" emptyMessage="">
+    <h2 class="ch-cr-section"><<lingo References/Caption>></h2>
+    <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]!has[draft.of]sort[ch-label]]" variable="catTid">
+      <$set name="refsInCat" value={{{ [all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>count[]] }}}>
+      <$list filter="[<refsInCat>compare:number:gt[0]]" variable="ignore">
+        <h3 class="ch-cr-subsection"><$view tiddler=<<catTid>> field="ch-label"/></h3>
+        <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>sort[ch-date-creation]]"
+          template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+      </$list>
+      </$set>
+    </$list>
+  </$list>
+
+</div>
+
+</$set>
+</$set>

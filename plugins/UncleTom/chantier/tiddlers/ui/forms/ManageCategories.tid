@@ -1,0 +1,45 @@
+created: 20260603000000000
+modified: 20260603000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/ManageCategories
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define newCatState() $:/temp/chantier/new-categorie
+
+\define add-categorie-actions()
+<$set name="newLabel" value={{{ [<newCatState>get[text]trim[]] }}}>
+  <$list filter="[<newLabel>!match[]]" variable="ignore">
+    <$action-createtiddler
+      $basetitle={{{ [$:/plugins/UncleTom/chantier/categories/] [<newCatState>get[text]trim[]] +[join[]] }}}
+      tags="$:/plugins/UncleTom/chantier/CategorieReference"
+      ch-label={{{ [<newCatState>get[text]trim[]] }}}
+    />
+    <$action-setfield $tiddler=<<newCatState>> text=""/>
+  </$list>
+</$set>
+\end
+
+<div class="ch-form-point">
+  <div class="ch-form-label">Gérer les catégories de références</div>
+
+  <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+    <div class="ch-item" style="display:flex;align-items:center;gap:8px;">
+      <$edit-text tiddler=<<catTid>> field="ch-label" class="ch-input" style="flex:1;"/>
+      <$button class="ch-btn ch-btn-danger" tooltip="Supprimer cette catégorie">
+        <$action-deletetiddler $tiddler=<<catTid>>/>
+        {{$:/core/images/close-button}}
+      </$button>
+    </div>
+  </$list>
+
+  <div class="ch-form-row" style="margin-top:10px;">
+    <div class="ch-form-group">
+      <$keyboard key="Enter" actions=<<add-categorie-actions>>>
+        <$edit-text tiddler=<<newCatState>> field="text" class="ch-input" placeholder="Nouvelle catégorie…"/>
+      </$keyboard>
+    </div>
+    <$button actions=<<add-categorie-actions>> class="ch-btn-primary">
+      Ajouter
+    </$button>
+  </div>
+</div>

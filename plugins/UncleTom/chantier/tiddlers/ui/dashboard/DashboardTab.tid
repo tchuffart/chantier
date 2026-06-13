@@ -1,0 +1,2 @@
+title: $:/plugins/UncleTom/chantier/DashboardTab
+list: $:/plugins/UncleTom/chantier/ui/dashboard/TabVue $:/plugins/UncleTom/chantier/ui/dashboard/TabIntervenants $:/plugins/UncleTom/chantier/ui/dashboard/TabLots $:/plugins/UncleTom/chantier/ui/dashboard/TabReunions $:/plugins/UncleTom/chantier/ui/dashboard/TabReferences $:/plugins/UncleTom/chantier/ui/dashboard/TabFicheRappel $:/plugins/UncleTom/chantier/ui/dashboard/TabParametres

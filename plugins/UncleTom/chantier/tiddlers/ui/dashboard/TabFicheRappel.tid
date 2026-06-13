@@ -1,0 +1,68 @@
+created: 20260605000000000
+modified: 20260605000000000
+tags: $:/plugins/UncleTom/chantier/DashboardTab
+title: $:/plugins/UncleTom/chantier/ui/dashboard/TabFicheRappel
+caption: Fiche de rappel
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define ficheState() $:/state/chantier/fiche-rappel
+\define printFicheState() $:/state/chantier/print-fiche-rappel
+
+<div class="ch-fiche-rappel ch-no-print">
+  <div class="ch-form-row" style="align-items:flex-end;margin-bottom:1em;">
+    <div class="ch-form-group">
+      <label class="ch-form-label">Intervenant</label>
+      <$select tiddler=<<ficheState>> field="intervenant" class="ch-select">
+        <option value="">— Choisir un intervenant —</option>
+        <$list filter=<<ch-all-intervenants>> variable="intTitle">
+          <option value=<<intTitle>>><$text text=<<intTitle>>/> — <$view tiddler=<<intTitle>> field="ch-societe"/></option>
+        </$list>
+      </$select>
+    </div>
+    <$list filter="[<ficheState>get[intervenant]!match[]]" variable="ignore">
+      <$button class="ch-btn-tool" tooltip="Aperçu impression">
+        <$action-setfield $tiddler=<<printFicheState>> text={{{ [<printFicheState>get[text]match[open]then[closed]else[open]] }}}/>
+        {{$:/core/images/print-button}}
+        Imprimer
+      </$button>
+    </$list>
+  </div>
+</div>
+
+<$set name="selectedIntervenant" value={{{ [<ficheState>get[intervenant]] }}}>
+<$list filter="[<selectedIntervenant>!match[]]" variable="ignore">
+
+  <$reveal type="match" state=<<printFicheState>> text="open">
+    <div class="ch-modal-overlay">
+      <div class="ch-modal-a4">
+        <div class="ch-modal-toolbar ch-no-print">
+          <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>
+          <$button class="ch-btn">
+            <$action-setfield $tiddler=<<printFicheState>> text="closed"/>
+            {{$:/core/images/close-button}}
+          </$button>
+        </div>
+        <div class="ch-cr-preview ch-print-target">
+          {{||$:/plugins/UncleTom/chantier/ui/print/PrintFicheRappel}}
+        </div>
+      </div>
+    </div>
+  </$reveal>
+
+  <$reveal type="nomatch" state=<<printFicheState>> text="open">
+    <div class="ch-fiche-screen">
+      <h3><$view tiddler=<<selectedIntervenant>> field="title"/> — <$view tiddler=<<selectedIntervenant>> field="ch-societe"/></h3>
+      <p style="font-size:.88em;opacity:.6"><$view tiddler=<<selectedIntervenant>> field="ch-role"/></p>
+      <$set name="fichePoints" value={{{ [all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]count[]] }}}>
+        <$list filter="[<fichePoints>compare:number:gt[0]]" variable="ignore"
+          emptyMessage="""<em>Aucun point ouvert pour cet intervenant.</em>""">
+          <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]]"
+            template="$:/plugins/UncleTom/chantier/ui/point/PointItem"/>
+        </$list>
+      </$set>
+    </div>
+  </$reveal>
+
+</$list>
+</$set>

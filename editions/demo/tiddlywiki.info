@@ -1,16 +1,14 @@
 {
   "description": "Chantier demo edition",
   "plugins": [
-    "tiddlywiki/filesystem",
-    "tiddlywiki/tiddlyweb"
+    "UncleTom/chantier",
+    "UncleTom/chantier-fr-FR"
   ],
   "themes": [
     "tiddlywiki/vanilla",
     "tiddlywiki/snowwhite"
   ],
-  "languages": [
-    "fr-FR"
-  ],
+  "languages": [],
   "build": {
     "index": [
       "--rendertiddler",

@@ -1,0 +1,42 @@
+created: 20210601000000000
+modified: 20260606000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/reunion/Reunion
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$list filter="[all[current]tag[reunion]]" variable="ignore">
+  <div class={{{ [all[current]tags[]match[diffusé]then[ch-reunion-view ch-reunion-diffuse-view]else[ch-reunion-view]] }}}>
+    <div class="ch-reunion-header">
+      <div class="ch-reunion-header-info">
+        <span class="ch-reunion-header-numero">Réunion N°<$view field="ch-numero"/></span>
+        <span class="ch-reunion-header-sep"> — </span>
+        <span class="ch-reunion-header-date"><$view field="ch-date"/></span>
+        <$list filter="[all[current]has[ch-lieu]]" variable="ignore">
+          <span class="ch-reunion-header-sep"> — </span>
+          <span class="ch-reunion-header-lieu"><$view field="ch-lieu"/></span>
+        </$list>
+      </div>
+      <div class="ch-reunion-header-right">
+        <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
+          <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
+        </$list>
+        <$list filter="[all[current]!has[ch-prochaine-reunion]]" variable="ignore">
+          <span class="ch-reunion-prochaine-add">
+            <$button class="ch-btn tc-btn-invisible" tooltip="Définir la prochaine réunion">
+              <$action-setfield field="ch-prochaine-reunion" value=""/>
+              + Prochaine réunion
+            </$button>
+          </span>
+        </$list>
+        <$checkbox tag="diffusé">
+          <span class="ch-diffuse-label">CR diffusé</span>
+        </$checkbox>
+      </div>
+    </div>
+
+    {{||$:/plugins/UncleTom/chantier/ui/presence/PresencesReunion}}
+    {{||$:/plugins/UncleTom/chantier/ui/point/Points}}
+  </div>
+</$list>

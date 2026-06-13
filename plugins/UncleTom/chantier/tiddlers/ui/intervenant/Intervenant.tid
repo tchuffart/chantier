@@ -1,0 +1,32 @@
+created: 20210601000000000
+modified: 20210601000000000
+tags: $:/tags/ViewTemplate
+title: $:/plugins/UncleTom/chantier/ui/intervenant/Intervenant
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<$list filter="[all[current]tag[intervenant]]" variable="ignore">
+  <div class="ch-intervenant-view">
+    <table class="lignes ch-header-table">
+      <tr>
+        <th>Société</th>
+        <td><$view field="ch-societe"/></td>
+        <th>Type</th>
+        <td><$set name="chType" value={{!!ch-type}}><$list filter="[<chType>match[moa]]" variable="ignore">Maîtrise d'ouvrage</$list><$list filter="[<chType>match[moe]]" variable="ignore">Maîtrise d'œuvre</$list><$list filter="[<chType>match[entreprise]]" variable="ignore">Entreprise</$list></$set></td>
+      </tr>
+      <tr>
+        <th><<lingo Lot/Caption>></th>
+        <td><$view field="ch-lot"/></td>
+        <th><<lingo Role/Caption>></th>
+        <td><$view field="ch-role"/></td>
+      </tr>
+      <tr>
+        <th><<lingo Email/Caption>></th>
+        <td><$view field="ch-email"/></td>
+        <th><<lingo Tel/Caption>></th>
+        <td><$view field="ch-tel"/></td>
+      </tr>
+    </table>
+  </div>
+</$list>

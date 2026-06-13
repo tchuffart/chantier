@@ -1,0 +1,75 @@
+created: 20260606000000000
+modified: 20260606000000000
+title: $:/plugins/UncleTom/chantier/ui/forms/AddIntervenantInLot
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addIntervenantInLotState() $:/state/chantier/add-intervenant-lot/$(currentTiddler)$
+
+\define add-intervenant-lot-actions()
+  <$action-createtiddler
+    $basetitle={{{ [<stateTiddler>get[nom]] }}}
+    $savetitle="$:/state/chantier/new-intervenant"
+    tags="intervenant"
+    ch-societe={{{ [<stateTiddler>get[societe]] }}}
+    ch-lot=<<currentTiddler>>
+    ch-type={{{ [<stateTiddler>get[type]] }}}
+    ch-role={{{ [<stateTiddler>get[role]] }}}
+    ch-email={{{ [<stateTiddler>get[email]] }}}
+    ch-tel={{{ [<stateTiddler>get[tel]] }}}
+  />
+  <$action-setfield $tiddler=<<stateTiddler>> nom="" societe="" type="" role="" email="" tel=""/>
+  <$action-setfield $tiddler=<<addIntervenantInLotState>> text="closed"/>
+\end
+
+<$vars stateTiddler=<<qualify "$:/temp/chantier/intervenant-lot-form">>>
+  <div class="ch-form-point">
+    <$keyboard key="Enter" actions=<<add-intervenant-lot-actions>>>
+      <$edit-text tiddler=<<stateTiddler>> field="nom"
+        placeholder={{$:/language/chantier/Intervenant/Placeholder}}
+        class="ch-input"
+      />
+    </$keyboard>
+    <div class="ch-form-row">
+      <div class="ch-form-group">
+        <$select tiddler=<<stateTiddler>> field="type" class="ch-select">
+          <option value="">— Type —</option>
+          <option value="entreprise">Entreprise</option>
+          <option value="moa">Maîtrise d'ouvrage</option>
+          <option value="moe">Maîtrise d'œuvre</option>
+        </$select>
+      </div>
+    </div>
+    <div class="ch-form-row">
+      <div class="ch-form-group">
+        <$edit-text tiddler=<<stateTiddler>> field="role"
+          placeholder={{$:/language/chantier/Role/Placeholder}}
+          class="ch-input"
+        />
+      </div>
+    </div>
+    <div class="ch-form-row">
+      <div class="ch-form-group">
+        <$edit-text tiddler=<<stateTiddler>> field="email"
+          placeholder={{$:/language/chantier/Email/Placeholder}}
+          class="ch-input"
+        />
+      </div>
+      <div class="ch-form-group">
+        <$edit-text tiddler=<<stateTiddler>> field="tel"
+          placeholder={{$:/language/chantier/Tel/Placeholder}}
+          class="ch-input"
+        />
+      </div>
+    </div>
+    <div class="ch-form-actions">
+      <$button actions=<<add-intervenant-lot-actions>> class="ch-btn-primary">
+        <<lingo AddIntervenant/Caption>>
+      </$button>
+      <$button class="ch-btn">
+        <$action-setfield $tiddler=<<addIntervenantInLotState>> text="closed"/>
+        <<lingo Cancel/Caption>>
+      </$button>
+    </div>
+  </div>
+</$vars>

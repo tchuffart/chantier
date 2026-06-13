@@ -1,0 +1,24 @@
+created: 20260609000000000
+modified: 20260609000000000
+title: $:/plugins/UncleTom/chantier/ui/dashboard/ProjetHeader
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-nom]!field:ch-nom[]]" variable="ignore">
+<div class="ch-projet-header">
+  <div class="ch-projet-header-left">
+    <div class="ch-projet-header-nom">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-adresse]!field:ch-adresse[]]" variable="ignore">
+      <div class="ch-projet-header-adresse">{{$:/config/UncleTom/chantier/projet!!ch-adresse}}</div>
+    </$list>
+  </div>
+  <div class="ch-projet-header-right">
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-nom]!field:ch-moa-nom[]]" variable="ignore">
+      <div class="ch-projet-header-moa-label">Maître d'ouvrage</div>
+      <div class="ch-projet-header-moa-nom">{{$:/config/UncleTom/chantier/projet!!ch-moa-nom}}</div>
+    </$list>
+    <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-moa-adresse]!field:ch-moa-adresse[]]" variable="ignore">
+      <div class="ch-projet-header-moa-adresse">{{$:/config/UncleTom/chantier/projet!!ch-moa-adresse}}</div>
+    </$list>
+  </div>
+</div>
+</$list>

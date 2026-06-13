@@ -1,0 +1,54 @@
+created: 20260605000000000
+modified: 20260605000000000
+title: $:/plugins/UncleTom/chantier/ui/print/PrintFicheRappel
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define ficheState() $:/state/chantier/fiche-rappel
+
+<$set name="selectedIntervenant" value={{{ [<ficheState>get[intervenant]] }}}>
+
+<div class="ch-cr">
+
+  <!-- En-tête -->
+  <div class="ch-cr-header">
+    <div class="ch-cr-logo ch-cr-logo-left">
+      <$list filter="[[$:/plugins/UncleTom/chantier/config/logo-architecte]has[text]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo architecte</em>""">
+        <$image source="$:/plugins/UncleTom/chantier/config/logo-architecte" width="120"/>
+      </$list>
+    </div>
+    <div class="ch-cr-title">
+      <div class="ch-cr-chantier">{{$:/config/UncleTom/chantier/projet!!ch-nom}}</div>
+      <div class="ch-cr-reunion-info">Fiche de rappel</div>
+      <div class="ch-cr-lieu">Édité le <<now "DD/0MM/YYYY">></div>
+    </div>
+    <div class="ch-cr-logo ch-cr-logo-right">
+      <$list filter="[[$:/config/UncleTom/chantier/projet]has[ch-logo-moa]!field:ch-logo-moa[]]" variable="ignore"
+        emptyMessage="""<em style="font-size:.8em;color:#aaa">Logo MOA</em>""">
+        <$image source={{$:/config/UncleTom/chantier/projet!!ch-logo-moa}} width="120"/>
+      </$list>
+    </div>
+  </div>
+
+  <!-- Info intervenant -->
+  <h2 class="ch-cr-section">Destinataire</h2>
+  <table class="invisible" style="width:auto;margin-bottom:16px;">
+    <tr><th>Nom</th><td><$view tiddler=<<selectedIntervenant>> field="title"/></td></tr>
+    <tr><th>Société</th><td><$view tiddler=<<selectedIntervenant>> field="ch-societe"/></td></tr>
+    <tr><th>Rôle</th><td><$view tiddler=<<selectedIntervenant>> field="ch-role"/></td></tr>
+    <$list filter="[<selectedIntervenant>get[ch-email]!match[]]" variable="ignore">
+      <tr><th>Email</th><td><$view tiddler=<<selectedIntervenant>> field="ch-email"/></td></tr>
+    </$list>
+  </table>
+
+  <!-- Points en cours -->
+  <h2 class="ch-cr-section">Points en attente de votre intervention</h2>
+  <$list filter="[all[tiddlers]tag[point]!has[draft.of]search:ch-responsables<selectedIntervenant>!field:ch-statut[leve]sort[ch-numero]]"
+    template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
+    emptyMessage="<p><em>Aucun point en cours.</em></p>"
+  />
+
+</div>
+
+</$set>

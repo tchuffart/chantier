@@ -1,0 +1,73 @@
+created: 20210601000000000
+modified: 20260603000000000
+title: $:/plugins/UncleTom/chantier/ui/reference/References
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+\define addReferenceState() $:/state/chantier/add-reference
+\define manageCategoriesState() $:/state/chantier/manage-categories
+\define showArchivedState() $:/state/chantier/show-archived-references
+
+<$reveal type="nomatch" state=<<showArchivedState>> text="open">
+  <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+    <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>limit[1]]" variable="ignore" emptyMessage="">
+      <h3><$view tiddler=<<catTid>> field="ch-label"/></h3>
+      <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]field:ch-categorie<catTid>sort[ch-date-creation]]"
+        template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+    </$list>
+  </$list>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]!has[ch-categorie]limit[1]]" variable="ignore" emptyMessage="">
+    <h3>Sans catégorie</h3>
+    <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!field:ch-statut[archivé]!has[ch-categorie]sort[ch-date-creation]]"
+      template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+  </$list>
+</$reveal>
+
+<$reveal type="match" state=<<showArchivedState>> text="open">
+  <$list filter="[all[shadows+tiddlers]tag[$:/plugins/UncleTom/chantier/CategorieReference]sort[ch-label]]" variable="catTid">
+    <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>limit[1]]" variable="ignore" emptyMessage="">
+      <h3><$view tiddler=<<catTid>> field="ch-label"/></h3>
+      <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-categorie<catTid>sort[ch-date-creation]]"
+        template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+    </$list>
+  </$list>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!has[ch-categorie]limit[1]]" variable="ignore" emptyMessage="">
+    <h3>Sans catégorie</h3>
+    <$list filter="[all[tiddlers]tag[reference]!has[draft.of]!has[ch-categorie]sort[ch-date-creation]]"
+      template="$:/plugins/UncleTom/chantier/ui/reference/ReferenceItem"/>
+  </$list>
+</$reveal>
+
+<$list filter=<<ch-references>>
+  emptyMessage="""<div class="ch-empty"><p><<lingo EmptyReferencesTitle>></p><p><<lingo EmptyReferencesDescription>></p></div>"""
+  variable="ignore">
+</$list>
+
+<div class="ch-toolbar ch-no-print">
+  <$button class="ch-btn-tool" tooltip={{$:/language/chantier/AddReference/Hint}}>
+    <$action-setfield $tiddler=<<addReferenceState>> text={{{ [<addReferenceState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/new-button}}
+    <<lingo AddReference/Caption>>
+  </$button>
+  <$button class="ch-btn-tool">
+    <$action-setfield $tiddler=<<manageCategoriesState>> text={{{ [<manageCategoriesState>get[text]match[open]then[closed]else[open]] }}}/>
+    {{$:/core/images/list-bullet}}
+    Catégories
+  </$button>
+  <$list filter="[all[tiddlers]tag[reference]!has[draft.of]field:ch-statut[archivé]limit[1]]" variable="ignore">
+    <$button class="ch-btn-tool">
+      <$action-setfield $tiddler=<<showArchivedState>> text={{{ [<showArchivedState>get[text]match[open]then[closed]else[open]] }}}/>
+      {{$:/core/images/unfold-button}}
+      <$list filter="[<showArchivedState>get[text]match[open]]" variable="ignore">Masquer archivées</$list>
+      <$list filter="[<showArchivedState>!get[text]match[open]]" variable="ignore">Voir archivées</$list>
+    </$button>
+  </$list>
+</div>
+
+<$reveal type="match" state=<<addReferenceState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/AddReference}}
+</$reveal>
+
+<$reveal type="match" state=<<manageCategoriesState>> text="open">
+  {{$:/plugins/UncleTom/chantier/ui/forms/ManageCategories}}
+</$reveal>

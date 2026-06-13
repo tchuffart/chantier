@@ -6,6 +6,119 @@ type: text/vnd.tiddlywiki
 
 \rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
 
+/* Toolbar */
+.ch-toolbar {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0 4px;
+  padding: 4px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.ch-btn-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid <<colour primary>>;
+  border-radius: 4px;
+  color: <<colour primary>>;
+  font-size: .85em;
+  background: transparent;
+}
+
+.ch-btn-tool svg {
+  width: 14px;
+  height: 14px;
+  fill: <<colour primary>>;
+}
+
+.ch-btn-tool:hover {
+  background: <<colour primary>>;
+  color: #fff;
+}
+
+.ch-btn-tool:hover svg {
+  fill: #fff;
+}
+
+/* Formulaire point */
+.ch-form-point {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+  background: rgba(0,0,0,0.02);
+}
+
+.ch-form-row {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.ch-form-group {
+  flex: 1;
+}
+
+.ch-form-label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 4px;
+  font-size: .85em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.ch-lots-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ch-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .88em;
+}
+
+.ch-select {
+  padding: 4px 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  font-size: .88em;
+  background: transparent;
+}
+
+.ch-select-inline {
+  margin-right: 8px;
+  font-size: .82em;
+  color: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
+.ch-textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.ch-textarea-full {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.ch-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .ch-heading {
   display: flex;
   justify-content: space-between;
@@ -29,6 +142,151 @@ type: text/vnd.tiddlywiki
 
 .ch-item:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Réunion diffusée — data-tags sur le tiddler ouvert dans la story river */
+[data-tags*=" diffusé "] .tc-tiddler-body {
+  border-left: 3px solid #2980b9;
+  padding-left: 10px;
+}
+
+/* Badge et bordure dans la liste des réunions */
+.ch-reunion-diffuse {
+  border-left: 3px solid #27ae60;
+  padding-left: 8px;
+}
+
+.ch-reunion-diffuse-badge {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 10px;
+  background: #27ae60;
+  color: white;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.ch-diffuse-cell {
+  text-align: right;
+  padding-left: 16px;
+  white-space: nowrap;
+  color: #666;
+  font-size: .88em;
+}
+
+.ch-diffuse-label {
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* En-tête réunion */
+.ch-reunion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  margin-bottom: 1.2em;
+  border-radius: 8px;
+  background: <<colour primary>>;
+  color: #fff;
+}
+
+.ch-reunion-header-info {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.ch-reunion-header-sep {
+  opacity: 0.7;
+}
+
+.ch-reunion-header-numero {
+  font-weight: bold;
+}
+
+.ch-reunion-header-date,
+.ch-reunion-header-lieu {
+  font-weight: normal;
+  opacity: 0.9;
+}
+
+.ch-reunion-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: .88em;
+  opacity: 0.9;
+}
+
+.ch-reunion-header-right .ch-diffuse-label {
+  color: #fff;
+}
+
+.ch-reunion-prochaine {
+  color: #fff;
+  font-size: .85em;
+  opacity: 0.85;
+}
+
+.ch-input-inline {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 3px;
+  color: #fff;
+  padding: 1px 4px;
+  font-size: .9em;
+  width: auto;
+}
+
+.ch-reunion-prochaine-add button {
+  color: rgba(255,255,255,0.7) !important;
+  font-size: .82em;
+}
+
+.ch-cr-prochaine-reunion {
+  margin: 16px 0;
+  padding: 10px 14px;
+  border: 1.5px solid <<colour primary>>;
+  border-radius: 5px;
+  font-size: .95em;
+  color: <<colour primary>>;
+}
+
+@media print {
+  .ch-cr-prochaine-reunion {
+    border-color: #2c3e50;
+    color: #2c3e50;
+  }
+}
+
+.ch-reunion-diffuse-view .ch-reunion-header {
+  background: #27ae60;
+}
+
+/* Vue tiddler point selon statut */
+.ch-point-view-pour-rappel {
+  border-left: 4px solid #e73939;
+  padding-left: 12px;
+}
+
+.ch-point-view-pour-rappel .lignes th {
+  border-bottom-color: #e73939;
+  color: #e73939;
+}
+
+.ch-point-view-leve {
+  border-left: 4px solid #27ae60;
+  padding-left: 12px;
+}
+
+.ch-point-view-leve .lignes th {
+  border-bottom-color: #27ae60;
+  color: #27ae60;
 }
 
 .ch-item-actions {
@@ -55,30 +313,121 @@ type: text/vnd.tiddlywiki
   }
 }
 
-/* Points */
-.ch-point {
+.ch-heading {
   padding: 6px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ch-point {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 6px 0 6px 6px;
 }
 
 .ch-point:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Layout 2 colonnes */
+.ch-point-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0 12px;
+  margin-top: 2px;
+}
+
+.ch-point-meta-item {
+  font-size: .78em;
+  color: <<colour foreground>>;
+  opacity: 0.7;
+}
+
+.ch-point-meta-label {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  opacity: 0.7;
+}
+
+.ch-point-statut-badge {
+  display: inline-block;
+  font-size: .75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+.ch-point-statut-ouvert {
+  background: rgba(0,0,0,0.06);
+  color: <<colour foreground>>;
+}
+
+.ch-point-statut-pour-rappel {
+  background: rgba(231, 57, 57, 0.12);
+  color: #e73939;
+}
+
+.ch-point-statut-leve {
+  background: rgba(39, 174, 96, 0.12);
+  color: #27ae60;
+}
+
+.ch-point-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
 .ch-point-numero {
   font-weight: bold;
   color: <<colour primary>>;
-  margin-right: 6px;
+  margin-right: 2px;
+  white-space: nowrap;
 }
 
-.ch-point-pour-rappel .ch-point-numero {
+.ch-btn-valider {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #27ae60;
+  background: transparent;
+  border: 1.5px solid #27ae60;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.ch-btn-valider:hover {
+  background: #27ae60;
+  color: white;
+}
+
+.ch-point-texte {
+  margin: 4px 0 2px 0;
+  font-size: .92em;
+  color: <<colour foreground>>;
+  white-space: pre-wrap;
+}
+
+.ch-point-pour-rappel .ch-point-numero,
+.ch-point-view-pour-rappel .ch-point-numero {
   color: #e73939;
 }
 
 .ch-point-pour-rappel {
-  background: rgba(231, 57, 57, 0.05);
-  padding: 6px 4px;
   border-left: 3px solid #e73939;
+  padding-left: 8px;
 }
 
 .ch-point-reference {
@@ -87,12 +436,250 @@ type: text/vnd.tiddlywiki
   border-left: 3px solid #2da562;
 }
 
-.ch-point-resolu {
+.ch-point-leve {
+  border-left: 3px solid #27ae60;
+  padding-left: 8px;
+}
+
+.ch-point-leve .ch-point-numero {
+  color: #27ae60;
+}
+
+/* Références */
+[class*="ch-reference-item"] {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ch-reference-body {
+  flex: 1;
+}
+
+.ch-reference-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  min-width: 80px;
+  padding-left: 8px;
+}
+
+.ch-reference-date {
+  font-size: .75em;
+  color: <<colour muted-foreground>>;
+}
+
+.ch-reference-archive-badge {
+  display: inline-block;
+  font-size: .7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.07);
+  color: <<colour muted-foreground>>;
+}
+
+.ch-reference-item-archivé {
+  opacity: 0.5;
+  border-left: 3px solid rgba(0,0,0,0.15);
+  padding-left: 8px;
+}
+
+.ch-reference-item-archivé .ch-reference-titre {
+  text-decoration: line-through;
+  color: <<colour muted-foreground>>;
+}
+
+.ch-reference-view-archivé {
+  border-left: 3px solid rgba(0,0,0,0.15);
+  padding-left: 8px;
+  opacity: 0.7;
+}
+
+/* En-tête projet */
+.ch-projet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 24px;
+  margin-bottom: 1.5em;
+  border-radius: 8px;
+  background: <<colour primary>>;
+  color: #fff;
+}
+
+.ch-projet-header-left {
+  text-align: left;
+}
+
+.ch-projet-header-right {
+  text-align: right;
+}
+
+.ch-projet-header-nom {
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.ch-projet-header-adresse {
+  font-size: .88em;
+  opacity: 0.85;
+  margin-top: 3px;
+  white-space: pre-line;
+}
+
+.ch-projet-header-moa-label {
+  font-size: .75em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: 0.75;
+}
+
+.ch-projet-header-moa-nom {
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.ch-projet-header-moa-adresse {
+  font-size: .88em;
+  opacity: 0.85;
+  margin-top: 3px;
+  white-space: pre-line;
+}
+
+/* Sous-titres globaux plugin */
+.ch-reunion-view h3,
+.ch-lot-view h3,
+.ch-intervenant-view h3 {
+  color: <<colour primary>>;
+  border-bottom: 1px solid <<colour primary>>;
+  padding-bottom: 4px;
+}
+
+/* Config form */
+.ch-config-form h3 {
+  margin: 1.2em 0 .5em;
+  color: <<colour primary>>;
+  border-bottom: 1px solid <<colour primary>>;
+  padding-bottom: 4px;
+}
+
+.ch-config-hint {
+  font-size: .82em;
+  opacity: 0.6;
+  margin: 4px 0 0;
+}
+
+.ch-config-logo-preview {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px dashed rgba(0,0,0,0.15);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.ch-cr-moa-info {
+  font-size: .88em;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+/* Dashboard */
+.ch-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.ch-dashboard-card {
+  display: block;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none !important;
+  color: inherit !important;
+  background: rgba(100,120,220,0.06);
+  transition: background .15s, box-shadow .15s;
+}
+
+.ch-dashboard-card:hover {
+  background: rgba(100,120,220,0.13);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-decoration: none !important;
+}
+
+  padding: 1em;
+  text-align: center;
+  background: rgba(0,0,0,0.02);
+}
+
+.ch-dashboard-card-count {
+  font-size: 3.2em;
+  font-weight: bold;
+  color: <<colour primary>>;
+  line-height: 1.1;
+}
+
+.ch-dashboard-card-label {
+  font-size: .85em;
+  color: <<colour primary>>;
+  opacity: 0.7;
+  margin: 4px 0 0;
+}
+
+
+.ch-dashboard-card-warning .ch-dashboard-card-count,
+.ch-dashboard-card-warning .ch-dashboard-card-label {
+  color: #2980b9;
+}
+
+.ch-dashboard-card-rappel .ch-dashboard-card-count,
+.ch-dashboard-card-rappel .ch-dashboard-card-label {
+  color: #e73939;
+}
+
+.ch-dashboard-card-rappel {
+  background: rgba(231, 57, 57, 0.06);
+}
+
+/* Tableau de bord — vue transversale points par réunion */
+.ch-vue-reunion-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 0 4px;
+  border-top: 2px solid <<colour primary>>;
+  margin-top: 16px;
+}
+
+.ch-vue-reunion-title {
+  font-weight: bold;
+  font-size: 1em;
+  color: <<colour primary>> !important;
+  text-decoration: none !important;
+}
+
+.ch-vue-reunion-title:hover {
+  text-decoration: underline !important;
+}
+
+.ch-vue-reunion-date {
+  font-size: .82em;
   opacity: 0.6;
 }
 
-.ch-point-resolu .ch-point-numero {
-  color: #2da562;
+.ch-vue-reunion-badges {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
 }
 
 /* Tableau des présences */
@@ -100,13 +687,15 @@ type: text/vnd.tiddlywiki
   width: 100%;
   border-collapse: collapse;
   font-size: .9em;
+  table-layout: fixed;
 }
 
 .ch-presences-table th,
 .ch-presences-table td {
   border: 1px solid rgba(0,0,0,0.1);
-  padding: 4px 8px;
+  padding: 4px 6px;
   text-align: center;
+  overflow: hidden;
 }
 
 .ch-presences-table th {
@@ -114,39 +703,370 @@ type: text/vnd.tiddlywiki
   font-weight: bold;
 }
 
+.ch-presences-table td:nth-child(1) { width: 5%; text-align: left; }
+.ch-presences-table td:nth-child(2) { width: 22%; overflow-wrap: break-word; text-align: left; }
+.ch-presences-table td:nth-child(3) { width: 20%; overflow-wrap: break-word; text-align: left; }
+.ch-presences-table td:nth-child(4) { width: 15%; overflow-wrap: break-word; text-align: left; }
+
+.ch-presence-cell {
+  text-align: center !important;
+  width: 28px !important;
+  padding: 2px !important;
+}
+
 .ch-presences-table td:first-child {
   text-align: left;
+}
+
+.ch-btn-presence {
+  min-width: unset;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: .8em;
+  line-height: 24px;
 }
 
 .ch-present { color: #2da562; font-weight: bold; }
 .ch-excuse  { color: #e77a39; font-weight: bold; }
 .ch-absent  { color: #ccc; }
 
+.ch-btn-presence {
+  min-width: 28px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .85em;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+.ch-btn-presence.ch-btn-active {
+  color: #fff;
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
+/* Modal A4 */
+.ch-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px 0 40px;
+}
+
+.ch-modal-a4 {
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ch-modal-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* CR — aperçu écran */
+.ch-cr-preview {
+  padding: 15mm;
+  flex: 1;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+.ch-cr-preview p,
+.ch-cr-preview .ch-point-texte {
+  margin: 2px 0;
+  line-height: 1.35;
+}
+
+.ch-cr-preview .lignesmini {
+  font-size: 8pt;
+}
+
+.ch-cr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.ch-cr-logo {
+  width: 120px;
+  min-height: 60px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8em;
+  color: #aaa;
+  border-radius: 4px;
+}
+
+.ch-cr-title {
+  text-align: center;
+  flex: 1;
+  padding: 0 16px;
+}
+
+.ch-cr-chantier {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ch-cr-reunion-info {
+  font-size: 1em;
+  margin: 4px 0;
+}
+
+.ch-cr-lieu {
+  font-size: .9em;
+  color: #666;
+}
+
+.ch-cr-type-header {
+  font-size: 8pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: <<colour primary>>;
+  margin: 10px 0 2px;
+}
+
+.ch-cr-cell-presence {
+  width: 16px !important;
+  min-width: unset !important;
+  padding: 2px !important;
+  text-align: center;
+}
+
+.ch-cr-subsection {
+  font-size: 9pt;
+  font-weight: bold;
+  color: <<colour primary>>;
+  margin: 8px 0 2px;
+  border-bottom: 1px solid <<colour primary>>;
+  padding-bottom: 2px;
+}
+
+/* Masquer les actions dans la prévisualisation modale */
+.ch-modal-a4 .ch-item-actions {
+  display: none !important;
+}
+
+.ch-cr-contact-detail {
+  font-size: 7pt;
+  color: #555;
+  font-style: italic;
+}
+
+.ch-cr-legende {
+  font-size: 7pt;
+  color: #666;
+  margin: 3px 0 0;
+  font-style: italic;
+}
+
+.ch-cr-section {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: <<colour primary>>;
+  border-bottom: 2px solid <<colour primary>>;
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+}
+
+.ch-cr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88em;
+  margin-bottom: 12px;
+}
+
+.ch-cr-table th,
+.ch-cr-table td {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 4px 8px;
+}
+
+.ch-cr-table th {
+  background: rgba(0,0,0,0.06);
+  font-weight: bold;
+}
+
+.ch-cr-cell-center {
+  text-align: center;
+}
+
+/* Fiche de rappel */
+.ch-fiche-screen h3 {
+  margin: 0 0 2px;
+}
+
+/* Tableaux */
+.lignes {
+  background: <<colour tiddler-background>>;
+  border-collapse: collapse;
+  border-color: <<colour tiddler-background>>;
+}
+.lignes th {
+  background-color: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-background>>;
+  border-bottom: 2px solid #346790;
+  color: #346790;
+  padding: 5px 8px;
+  text-align: left;
+}
+.lignes td {
+  background: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-background>>;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+  padding: 3px 8px;
+  min-width: 150px;
+}
+
+.lignesmini {
+  background: <<colour tiddler-background>>;
+  border-collapse: collapse;
+  border-color: <<colour tiddler-background>>;
+  font-size: 9pt;
+  padding: 0px;
+}
+.lignesmini th {
+  background-color: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-background>>;
+  border-bottom: 2px solid #346790;
+  color: #346790;
+  padding: 3px;
+  text-align: left;
+}
+.lignesmini td {
+  background: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-background>>;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+  padding: 1px 4px;
+}
+
+.ch-cr-intervenants {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.ch-cr-intervenants th,
+.ch-cr-intervenants td {
+  min-width: unset;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Colonnes P E A C : pas de retour à la ligne */
+.ch-cr-intervenants th:nth-child(5),
+.ch-cr-intervenants td:nth-child(5),
+.ch-cr-intervenants th:nth-child(6),
+.ch-cr-intervenants td:nth-child(6),
+.ch-cr-intervenants th:nth-child(7),
+.ch-cr-intervenants td:nth-child(7),
+.ch-cr-intervenants th:nth-child(8),
+.ch-cr-intervenants td:nth-child(8) {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Lot, Entreprise, Contact, Rôle — largeurs relatives */
+.ch-cr-intervenants th:nth-child(1),
+.ch-cr-intervenants td:nth-child(1) { width: 14%; }
+.ch-cr-intervenants th:nth-child(2),
+.ch-cr-intervenants td:nth-child(2) { width: 24%; }
+.ch-cr-intervenants th:nth-child(3),
+.ch-cr-intervenants td:nth-child(3) { width: 24%; }
+.ch-cr-intervenants th:nth-child(4),
+.ch-cr-intervenants td:nth-child(4) { width: 20%; }
+
+.invisible {
+  border-collapse: collapse !important;
+  border: 0 !important;
+  background: <<colour tiddler-background>>;
+}
+.invisible th,
+.invisible td,
+.invisible tr,
+.invisible thead td,
+.invisible thead th {
+  background: <<colour tiddler-background>> !important;
+  color: <<colour foreground>>;
+  padding: 4px 8px;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Tableaux d'en-tête réunion / point */
+.ch-header-table th {
+  color: <<colour primary>>;
+  font-size: .82em;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-right: 6px !important;
+  padding-left: 0 !important;
+  opacity: 0.75;
+}
+.ch-header-table td {
+  padding-right: 20px !important;
+}
+
 /* Impression */
 @media print {
   .ch-no-print { display: none !important; }
 
-  .ch-print-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  /* Masquer tout le corps, puis révéler uniquement la chaîne vers ch-print-target */
+  body * { visibility: hidden; }
+
+  .ch-print-target,
+  .ch-print-target * { visibility: visible; }
+
+  .ch-no-print { display: none !important; }
+
+  .ch-print-target {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 15mm !important;
+    box-sizing: border-box !important;
   }
 
-  .ch-print-header img {
-    max-height: 60px;
-  }
-
-  .ch-print-header .ch-print-title {
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
+  .ch-cr-logo {
+    border: 1px solid #ccc;
   }
 
   .ch-point-pour-rappel {
     border-left: 3px solid #e73939;
+    page-break-inside: avoid;
+  }
+
+  .ch-cr-table {
     page-break-inside: avoid;
   }
 }

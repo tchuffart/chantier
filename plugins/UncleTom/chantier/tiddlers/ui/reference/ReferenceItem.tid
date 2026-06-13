@@ -1,0 +1,31 @@
+created: 20210601000000000
+modified: 20260603000000000
+title: $:/plugins/UncleTom/chantier/ui/reference/ReferenceItem
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/chantier/
+
+<div class={{{ [all[current]get[ch-statut]addprefix[ch-item ch-reference-item ch-reference-item-]] }}}>
+  <div class="ch-item-actions ch-no-print">
+    {{||$:/plugins/UncleTom/chantier/ui/buttons/ReferenceActions}}
+  </div>
+  <div class="ch-reference-body">
+    <div class="ch-point-header">
+      <$list filter="[all[current]has[ch-numero]]" variable="ignore">
+        <span class="ch-point-numero"><$view field="ch-numero"/></span>
+      </$list>
+      <span class="ch-reference-titre"><$link to={{!!title}}><$view field="title"/></$link></span>
+    </div>
+    <$list filter="[all[current]has[text]!field:text[]]" variable="ignore">
+      <div class="ch-point-texte"><$view field="text" format="wikified"/></div>
+    </$list>
+  </div>
+  <div class="ch-reference-meta ch-no-print">
+    <$list filter="[all[current]has[ch-date-creation]]" variable="ignore">
+      <span class="ch-reference-date"><$view field="ch-date-creation" format="date" template="DD/MM/YYYY"/></span>
+    </$list>
+    <$list filter="[all[current]field:ch-statut[archivé]]" variable="ignore">
+      <span class="ch-reference-archive-badge">archivé</span>
+    </$list>
+  </div>
+</div>
