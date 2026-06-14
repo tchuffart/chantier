@@ -1042,20 +1042,60 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
-  /* Masquer tout le corps, puis révéler uniquement le contenu à imprimer */
-  body * { visibility: hidden; }
+  /* Masquer le chrome TW5 */
+  .tc-topbar,
+  .tc-sidebar-scrollable { display: none !important; }
 
-  .ch-print-target,
-  .ch-print-target * { visibility: visible; }
+  /* Masquer tous les tiddlers sauf celui qui contient notre cible d'impression */
+  .tc-story-river .tc-tiddler-frame:not(:has(.ch-print-target)) {
+    display: none !important;
+  }
+
+  /* Aplatir la chaîne DOM jusqu'au print target */
+  .tc-story-river,
+  .tc-story-river .tc-tiddler-frame:has(.ch-print-target),
+  .tc-story-river .tc-tiddler-frame:has(.ch-print-target) > * {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  /* Aplatir la modale */
+  .ch-modal-overlay {
+    display: block !important;
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .ch-modal-a4 {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
   .ch-print-target {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 15mm !important;
-    box-sizing: border-box !important;
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
   }
+
+  @page { margin: 15mm; }
 
   .ch-cr-logo {
     border: 1px solid #ccc;
