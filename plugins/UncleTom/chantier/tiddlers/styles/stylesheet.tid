@@ -1042,6 +1042,10 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
+  /* Masquer le contenu normal de la réunion (frère de la modale) */
+  .ch-reunion-view,
+  .ch-reunion-diffuse-view { display: none !important; }
+
   /* Masquer le chrome TW5 */
   .tc-topbar,
   .tc-sidebar-scrollable { display: none !important; }
