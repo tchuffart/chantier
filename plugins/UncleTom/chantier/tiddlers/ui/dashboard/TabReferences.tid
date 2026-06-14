@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
 </div>
 
 <$reveal type="match" state=<<printReferencesState>> text="open">
-  <div class="ch-modal-overlay">
+  <div class="ch-print-page-modal">
     <div class="ch-modal-a4">
       <div class="ch-modal-toolbar ch-no-print">
         <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>

@@ -747,7 +747,7 @@ type: text/vnd.tiddlywiki
 }
 
 /* Modal A4 */
-.ch-modal-overlay {
+.ch-print-page-modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
@@ -1042,60 +1042,17 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
-  /* Masquer le contenu normal de la réunion */
-  .ch-reunion-view,
-  .ch-reunion-diffuse-view { display: none !important; }
+  /* Masquer tout le chrome TW5 */
+  body > * { display: none !important; }
 
-  /* Masquer le chrome TW5 : sidebar, topbar, autres tiddlers */
-  .tc-topbar,
-  .tc-sidebar-scrollable { display: none !important; }
-
-  .tc-story-river .tc-tiddler-frame:not(:has(.ch-modal-overlay)) {
-    display: none !important;
-  }
-
-  /* Dans le tiddler qui contient la modale : masquer les éléments TW5 standard */
-  .tc-tiddler-title,
-  .tc-title,
-  .tc-titlebar,
-  .tc-tiddler-controls,
-  .tc-subtitle,
-  .tc-tags-wrapper,
-  .tc-tiddler-body,
-  .tc-tiddler-info,
-  .tc-fold-banner,
-  .tc-unfold-banner { display: none !important; }
-
-  /* Aplatir le tiddler-frame contenant la modale */
-  .tc-story-river,
-  .tc-story-river .tc-tiddler-frame:has(.ch-modal-overlay),
-  .tc-story-river .tc-tiddler-frame:has(.ch-modal-overlay) > * {
-    position: static !important;
+  /* Afficher uniquement le conteneur d'impression (PageTemplate hors story-river) */
+  .ch-print-page-modal {
     display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    overflow: visible !important;
   }
 
-  /* Aplatir la modale */
-  .ch-modal-overlay {
+  .ch-print-page-modal .ch-modal-a4 {
     display: block !important;
-    position: static !important;
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    overflow: visible !important;
-  }
-
-  .ch-modal-a4 {
-    display: block !important;
-    position: static !important;
     width: 100% !important;
     min-height: 0 !important;
     box-shadow: none !important;
@@ -1106,7 +1063,6 @@ type: text/vnd.tiddlywiki
 
   .ch-print-target {
     display: block !important;
-    position: static !important;
     width: 100% !important;
   }
 

@@ -9,6 +9,7 @@ type: text/vnd.tiddlywiki
 \define previewCRState() $:/state/chantier/preview-cr/$(currentTiddler)$
 
 <$button class="ch-btn-tool" tooltip={{$:/language/chantier/PrintCR/Hint}}>
+  <$action-setfield $tiddler="$:/state/chantier/print-reunion-title" text=<<currentTiddler>>/>
   <$action-setfield $tiddler=<<previewCRState>> text={{{ [<previewCRState>get[text]match[open]then[closed]else[open]] }}}/>
   {{$:/core/images/print-button}}
   <<lingo PrintCR/Caption>>
