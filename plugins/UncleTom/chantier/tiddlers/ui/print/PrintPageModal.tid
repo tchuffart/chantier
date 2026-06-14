@@ -19,8 +19,9 @@ list-after: $:/core/ui/PageTemplate/story
             </$button>
           </div>
           <div class="ch-cr-preview ch-print-target">
-            <$transclude tiddler=<<printTiddler>> mode="block"
-              template="$:/plugins/UncleTom/chantier/ui/print/PrintCR"/>
+            <$tiddler tiddler=<<printTiddler>>>
+              {{||$:/plugins/UncleTom/chantier/ui/print/PrintCR}}
+            </$tiddler>
           </div>
         </div>
       </div>

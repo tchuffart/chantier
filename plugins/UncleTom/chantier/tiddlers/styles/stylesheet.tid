@@ -1042,13 +1042,18 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
-  /* Masquer tout le chrome TW5 */
-  body > * { display: none !important; }
+  /* Masquer les éléments TW5 */
+  .tc-sidebar-scrollable,
+  .tc-topbar,
+  .tc-story-river { display: none !important; }
 
-  /* Afficher uniquement le conteneur d'impression (PageTemplate hors story-river) */
+  /* Modale en flux normal pour pagination multi-pages */
   .ch-print-page-modal {
+    position: static !important;
     display: block !important;
-    width: 100% !important;
+    background: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
   .ch-print-page-modal .ch-modal-a4 {
