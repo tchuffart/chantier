@@ -1056,11 +1056,15 @@ type: text/vnd.tiddlywiki
 
   /* Dans le tiddler qui contient la modale : masquer les éléments TW5 standard */
   .tc-tiddler-title,
+  .tc-title,
+  .tc-titlebar,
   .tc-tiddler-controls,
   .tc-subtitle,
   .tc-tags-wrapper,
   .tc-tiddler-body,
-  .tc-tiddler-info { display: none !important; }
+  .tc-tiddler-info,
+  .tc-fold-banner,
+  .tc-unfold-banner { display: none !important; }
 
   /* Aplatir le tiddler-frame contenant la modale */
   .tc-story-river,
