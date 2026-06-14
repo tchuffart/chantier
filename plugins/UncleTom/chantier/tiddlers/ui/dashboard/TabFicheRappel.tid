@@ -34,7 +34,7 @@ type: text/vnd.tiddlywiki
 <$list filter="[<selectedIntervenant>!match[]]" variable="ignore">
 
   <$reveal type="match" state=<<printFicheState>> text="open">
-    <div class="ch-modal-overlay">
+    <div class="ch-print-page-modal">
       <div class="ch-modal-a4">
         <div class="ch-modal-toolbar ch-no-print">
           <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>

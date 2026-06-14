@@ -5,6 +5,7 @@ title: $:/plugins/UncleTom/chantier/ui/reunion/Reunion
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/chantier/
+\define previewCRState() $:/state/chantier/preview-cr/$(currentTiddler)$
 
 <$list filter="[all[current]tag[reunion]]" variable="ignore">
   <div class={{{ [all[current]tags[]match[diffusé]then[ch-reunion-view ch-reunion-diffuse-view]else[ch-reunion-view]] }}}>
@@ -19,16 +20,13 @@ type: text/vnd.tiddlywiki
         </$list>
       </div>
       <div class="ch-reunion-header-right">
-        <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
-          <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
+        <$list filter="[all[current]tag[diffusé]]" variable="ignore">
+          <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
+            <span class="ch-reunion-prochaine">Prochaine réunion : <$view field="ch-prochaine-reunion"/></span>
+          </$list>
         </$list>
-        <$list filter="[all[current]!has[ch-prochaine-reunion]]" variable="ignore">
-          <span class="ch-reunion-prochaine-add">
-            <$button class="ch-btn tc-btn-invisible" tooltip="Définir la prochaine réunion">
-              <$action-setfield field="ch-prochaine-reunion" value=""/>
-              + Prochaine réunion
-            </$button>
-          </span>
+        <$list filter="[all[current]!tag[diffusé]]" variable="ignore">
+          <span class="ch-reunion-prochaine">Prochaine réunion : <$edit-text tiddler=<<currentTiddler>> field="ch-prochaine-reunion" type="date" class="ch-input-inline"/></span>
         </$list>
         <$checkbox tag="diffusé">
           <span class="ch-diffuse-label">CR diffusé</span>

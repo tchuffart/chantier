@@ -1,5 +1,5 @@
 created: 20210601000000000
-modified: 20260605000000000
+modified: 20260613000000000
 title: $:/plugins/UncleTom/chantier/ui/print/PrintCR
 type: text/vnd.tiddlywiki
 
@@ -47,6 +47,13 @@ type: text/vnd.tiddlywiki
     </div>
   </$list>
 
+  <!-- Prochaine réunion -->
+  <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
+    <div class="ch-cr-prochaine-reunion">
+      <strong>Prochaine réunion :</strong> <$view field="ch-prochaine-reunion"/>
+    </div>
+  </$list>
+
   <!-- Tableau intervenants groupés par type -->
   <h2 class="ch-cr-section"><<lingo Intervenants/Caption>></h2>
   <$vars reunionTitle=<<currentTiddler>>>
@@ -80,13 +87,6 @@ type: text/vnd.tiddlywiki
     <$list filter=<<ch-points-cr-leves>>
       template="$:/plugins/UncleTom/chantier/ui/point/PointItem"
     />
-  </$list>
-
-  <!-- Prochaine réunion -->
-  <$list filter="[all[current]has[ch-prochaine-reunion]]" variable="ignore">
-    <div class="ch-cr-prochaine-reunion">
-      <strong>Prochaine réunion :</strong> <$view field="ch-prochaine-reunion"/>
-    </div>
   </$list>
 
   <!-- Références permanentes -->

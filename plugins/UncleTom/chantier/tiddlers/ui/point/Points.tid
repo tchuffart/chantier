@@ -40,22 +40,5 @@ type: text/vnd.tiddlywiki
   {{||$:/plugins/UncleTom/chantier/ui/forms/AddReferenceInReunion}}
 </$reveal>
 
-<$reveal type="match" state=<<previewCRState>> text="open">
-  <div class="ch-modal-overlay">
-    <div class="ch-modal-a4">
-      <div class="ch-modal-toolbar ch-no-print">
-        <$button class="ch-btn" message="tm-print">{{$:/core/images/print-button}} Imprimer</$button>
-        <$button class="ch-btn">
-          <$action-setfield $tiddler=<<previewCRState>> text="closed"/>
-          {{$:/core/images/close-button}}
-        </$button>
-      </div>
-      <div class="ch-cr-preview ch-print-target">
-        {{||$:/plugins/UncleTom/chantier/ui/print/PrintCR}}
-      </div>
-    </div>
-  </div>
-</$reveal>
-
 </$vars>
 </$set>
