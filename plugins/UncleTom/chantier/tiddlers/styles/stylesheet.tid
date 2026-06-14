@@ -1042,23 +1042,30 @@ type: text/vnd.tiddlywiki
   .ch-no-print { display: none !important; }
   .ch-no-screen { display: block; }
 
-  /* Masquer le contenu normal de la réunion (frère de la modale) */
+  /* Masquer le contenu normal de la réunion */
   .ch-reunion-view,
   .ch-reunion-diffuse-view { display: none !important; }
 
-  /* Masquer le chrome TW5 */
+  /* Masquer le chrome TW5 : sidebar, topbar, autres tiddlers */
   .tc-topbar,
   .tc-sidebar-scrollable { display: none !important; }
 
-  /* Masquer tous les tiddlers sauf celui qui contient notre cible d'impression */
-  .tc-story-river .tc-tiddler-frame:not(:has(.ch-print-target)) {
+  .tc-story-river .tc-tiddler-frame:not(:has(.ch-modal-overlay)) {
     display: none !important;
   }
 
-  /* Aplatir la chaîne DOM jusqu'au print target */
+  /* Dans le tiddler qui contient la modale : masquer les éléments TW5 standard */
+  .tc-tiddler-title,
+  .tc-tiddler-controls,
+  .tc-subtitle,
+  .tc-tags-wrapper,
+  .tc-tiddler-body,
+  .tc-tiddler-info { display: none !important; }
+
+  /* Aplatir le tiddler-frame contenant la modale */
   .tc-story-river,
-  .tc-story-river .tc-tiddler-frame:has(.ch-print-target),
-  .tc-story-river .tc-tiddler-frame:has(.ch-print-target) > * {
+  .tc-story-river .tc-tiddler-frame:has(.ch-modal-overlay),
+  .tc-story-river .tc-tiddler-frame:has(.ch-modal-overlay) > * {
     position: static !important;
     display: block !important;
     width: 100% !important;
