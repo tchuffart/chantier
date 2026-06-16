@@ -1,0 +1,38 @@
+title: $:/language/tekan/
+
+AddCard/ButtonLabel: Add a note...
+AddCard/Placeholder: New note
+AddCard/AddButton: Add
+
+AddList/ButtonLabel: Add a list...
+AddList/Placeholder: Add a list…
+AddList/AddButton: Add
+
+BoardSelect/ButtonLabel: Projects
+
+Navbar/EmptyBoard: Create a project or select an existing project
+
+NavboardButtons/RearrangeTooltip: Rearrange lists
+NavboardButtons/DeleteTooltip: Delete this project
+NavboardButtons/DeleteTitle: Delete project
+NavboardButtons/DeleteWarning: This will delete the project, as well as all its lists, notes and related tasks
+NavboardButtons/DeleteConfirm: Are you sure?
+NavboardButtons/DeleteButton: Permanently delete
+NavboardButtons/AddTooltip: Add new project
+NavboardButtons/CreateTitle: Create a project
+NavboardButtons/TitleLabel: Title
+NavboardButtons/TitlePlaceholder: What are you organizing?
+NavboardButtons/TitleDefault: New project
+NavboardButtons/CreateButton: Create New Project
+NavboardButtons/BackTooltip: Back to TW5
+
+EditCardModal/EditButton: Edit
+EditCardModal/CommentTitle: Comment
+EditCardModal/CommentPlaceholder: Write a comment…
+EditCardModal/ChecklistTitle: Checklist
+EditCardModal/ChecklistPlaceholder: Add an item…
+EditCardModal/AddButton: Add
+EditCardModal/ArchiveChecked: Archive checked items
+EditCardModal/DeleteButton: Delete
+EditCardModal/ArchiveButton: Archive
+EditCardModal/DoneButton: Done
